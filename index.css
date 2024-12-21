@@ -1,0 +1,79 @@
+/* Reset delle impostazioni base */
+body {
+    margin: 0;
+    font-family: 'Baskerville', serif;
+    overflow: hidden; /* Impedisce lo scrolling */
+    position: relative; /* Permette di posizionare gli elementi assoluti */
+}
+
+/* Imposta il canvas come sfondo */
+canvas {
+    position: fixed; /* Posiziona il canvas fisso */
+    top: 50%; /* Centra il canvas verticalmente */
+    left: 50%; /* Centra il canvas orizzontalmente */
+    width: 100vw; /* Imposta larghezza del canvas */
+    height: 100vh; /* Imposta altezza del canvas */
+    transform: translate(-20%, -50%) scale(1.8); /* Centra e ingrandisce il canvas */
+    z-index: -2; /* Mette il canvas dietro al contenuto */
+    pointer-events: none; /* Disabilita interazioni con il canvas */
+}
+
+/* Overlay per scurire il canvas */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(6, 1, 30, 0.5); /* Blu scuro con opacità del 70% */
+    z-index: -1; /* Mette l'overlay sopra il canvas ma sotto il contenuto */
+}
+
+/* Stile della pagina Home */
+body.home {
+    background-color: transparent; /* Permette di vedere il canvas */
+    color: #F8FFB8; /* Giallo pallido */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 5vw; /* Spaziatura dal bordo sinistro */
+    position: relative; /* Posiziona il contenuto sopra l'overlay */
+    z-index: 1;
+}
+
+.logo {
+    width: 40%; /* Dimensione relativa alla larghezza dello schermo */
+    height: auto; /* Mantiene le proporzioni */
+    margin-bottom: 2vh; /* Spaziatura verticale tra logo e bottone */
+}
+
+button {
+    background-color: #06011E; /* Blu scuro */
+    color: #F8FFB8; /* Giallo pallido */
+    border: 0.2vw solid #F8FFB8; /* Bordo con dimensione relativa */
+    border-radius: 2vw; /* Arrotondamento degli angoli relativo */
+    padding: 1vw 3vw; /* Spaziatura interna relativa */
+    font-size: 1.2vw; /* Dimensione del testo relativa alla larghezza dello schermo */
+    cursor: pointer; /* Cambia il cursore */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aggiunge l'animazione */
+    margin-left: 11vw;
+}
+
+/* Effetto hover */
+button:hover {
+    transform: scale(1.1); /* Effetto ingrandimento */
+    box-shadow: 0 0 1vw #F8FFB8; /* Illumina il bottone al passaggio del mouse */
+}
+
+/* Effetto clic */
+button:active {
+    box-shadow: 0 0 1.5vw #F8FFB8; /* Illumina il bottone */
+    transform: scale(1.05); /* Leggero rimpicciolimento durante il clic */
+}
