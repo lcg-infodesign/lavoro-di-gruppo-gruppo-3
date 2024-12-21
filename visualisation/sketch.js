@@ -55,7 +55,7 @@ function draw() {
     
     // Mappa il valore della media al diametro tra 10 e 20
     let size = windowWidth * 0.1;
-    let diameter = map(value, minAverage, maxAverage, size * 0.06, size * 0.14);
+    let diameter = map(value, minAverage, maxAverage, size * 0.06, size * 0.13);
     
     // Imposta il colore con opacità mappata (se vuoi mantenerlo uguale a prima)
     let opacity = map(value, minAverage, maxAverage, 45, 255); // 115 è 45% di 255, 255 è 100% di opacità
@@ -63,11 +63,22 @@ function draw() {
     drawHalo(x, y, value, diameter);
     // Disegno il glifo con il colore e il diametro mappato
     drawGliph(x, y, c, diameter); 
-
-    // Aggiungi il link per aprire il secondo sketch con i parametri
     let link = createA(`/sun.html?country=${encodeURIComponent(paese)}&average=${encodeURIComponent(value)}&longitude=${encodeURIComponent(lon)}&latitude=${encodeURIComponent(lat)}`, '');
-    link.position(x - diameter / 2, y - diameter / 2); // Posiziona il link sopra il pallino
-    link.size(diameter, diameter);
+    
+    // Posiziona il link sopra il glifo
+    let linkYPosition = y - diameter / 2 - 10; // Posiziona il link un po' sopra il glifo
+    let linkXPosition = x - diameter / 2;     // Allineato al centro del glifo
+    
+    // Posiziona il link esattamente sopra il glifo
+    link.position(linkXPosition, linkYPosition); 
+    link.size(diameter, diameter); // Il link ha la stessa dimensione del glifo
+ // Aggiungi uno stile visibile per il link (opzionale)
+    link.style('color', 'white');
+    link.style('font-size', '12px');
+    link.style('text-decoration', 'none');
+    link.style('background', 'rgba(211, 39, 39, 0.5)'); // Aggiunge un fondo scuro al link
+    
+    // Quando clicchi sul glifo, il link dovrebbe essere aperto
     link.mousePressed(() => {
       window.location.href = link.attribute('href'); // Vai al link quando cliccato
     });
