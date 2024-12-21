@@ -8,7 +8,7 @@ let offsetAngolo = 90; // angolo di offset per ruotare gli spicchi
 function preload() {
   data = loadTable("/assets/data.csv", "csv", "header");
  // poppinsRegular = loadFont('assets/Poppins-Regular.ttf');
- // inconsolataRegular = loadFont('assets/Inconsolata-Regular.ttf');
+  inconsolataRegular = loadFont('../fonts/Inconsolata-Regular.ttf');
 }
 
 function setup() {
@@ -18,10 +18,20 @@ function setup() {
   createCanvas(totalWidth, totalHeight);
   background("#06011E");
 
-  // Definiamo 14 scritte diverse per ogni spicchio
- // for (let i = 0; i < 14; i++) {
-// scritte.push(Scritto ${i + 1});
-// }
+ // Recupera i parametri dall'URL
+ let params = getURLParams();
+ let country = params['country'];
+ let avg = params['average'];
+ let lon = params['longitude'];
+ let lat = params['latitude'];
+
+ // Trova i dati del paese selezionato
+ paeseData = findCountryData(country);
+
+ if (paeseData) {
+   // Disegna i dettagli del paese
+   disegnaSole(width / 2, height / 2, 300, paeseData);
+ }
 }
 
 function draw() {
@@ -62,7 +72,7 @@ function draw() {
   
 
    // Seleziona il primo paese nel dataset
-   let paese = nazioni[Object.keys(nazioni)[0]];  // Prendi il primo paese nel dataset
+   let paese = nazioni[Object.keys(nazioni)[9]];  // Prendi il primo paese nel dataset
   
 
    // Passa il paese alla funzione disegnaSole
@@ -486,3 +496,13 @@ function titoloPaese(x, y, size) {
   text ("Afghanistan", x, y);
 }
   let xPos = 11/16*totalWidth;
+
+  function findCountryData(countryName) {
+    for (let r of data.rows) {
+      let riga = r.obj;
+      if (riga["Country"] === countryName) {
+        return riga;
+      }
+    }
+    return null; // Se il paese non viene trovato
+  }

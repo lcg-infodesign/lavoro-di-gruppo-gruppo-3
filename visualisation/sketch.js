@@ -55,14 +55,22 @@ function draw() {
     
     // Mappa il valore della media al diametro tra 10 e 20
     let size = windowWidth * 0.1;
-    let diameter = map(value, minAverage, maxAverage, size * 0.04, size * 0.14);
+    let diameter = map(value, minAverage, maxAverage, size * 0.06, size * 0.14);
     
     // Imposta il colore con opacità mappata (se vuoi mantenerlo uguale a prima)
     let opacity = map(value, minAverage, maxAverage, 45, 255); // 115 è 45% di 255, 255 è 100% di opacità
     let c = color(253, 255, 160, opacity); // Usa il colore bianco con l'opacità mappata
     drawHalo(x, y, value, diameter);
     // Disegno il glifo con il colore e il diametro mappato
-    drawGliph(x, y, c, diameter);
+    drawGliph(x, y, c, diameter); 
+
+    // Aggiungi il link per aprire il secondo sketch con i parametri
+    let link = createA(`/sun.html?country=${encodeURIComponent(paese)}&average=${encodeURIComponent(value)}&longitude=${encodeURIComponent(lon)}&latitude=${encodeURIComponent(lat)}`, '');
+    link.position(x - diameter / 2, y - diameter / 2); // Posiziona il link sopra il pallino
+    link.size(diameter, diameter);
+    link.mousePressed(() => {
+      window.location.href = link.attribute('href'); // Vai al link quando cliccato
+    });
   }
 }
 
@@ -83,3 +91,4 @@ function drawGliph(x, y, c, diameter){
   noStroke();
   ellipse(x, y, diameter); // Usa il diametro mappato per il pallino
 }
+
