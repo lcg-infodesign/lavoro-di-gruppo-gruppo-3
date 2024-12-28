@@ -62,17 +62,17 @@ function draw() {
     let c = color(253, 255, 160, opacity); // Usa il colore bianco con l'opacità mappata
     drawHalo(x, y, value, diameter);
     // Disegno il glifo con il colore e il diametro mappato
-    drawGliph(x, y, c, diameter); 
-    let link = createA(`/sun.html?country=${encodeURIComponent(paese)}&average=${encodeURIComponent(value)}&longitude=${encodeURIComponent(lon)}&latitude=${encodeURIComponent(lat)}`, '');
+    drawGliph(x, y, c, diameter);
     
-    // Posiziona il link sopra il glifo
-    let linkYPosition = y - diameter / 2 - 10; // Posiziona il link un po' sopra il glifo
-    let linkXPosition = x - diameter / 2;     // Allineato al centro del glifo
+    let link = createA(`/sun.html?country=${encodeURIComponent(paese)}&average=${encodeURIComponent(value)}&longitude=${encodeURIComponent(lon)}&latitude=${encodeURIComponent(lat)}`, paese);    
+    // Posiziona il link sovrapposto il glifo
+    let linkYPosition = y + 110; // Posiziona il link sopra il centro del glifo
+    let linkXPosition = x; // Centra il link orizzontalmente
     
     // Posiziona il link esattamente sopra il glifo
-    link.position(linkXPosition, linkYPosition); 
+    link.position(linkXPosition - diameter / 2, linkYPosition - diameter / 2); 
     link.size(diameter, diameter); // Il link ha la stessa dimensione del glifo
- // Aggiungi uno stile visibile per il link (opzionale)
+    // Aggiungi uno stile visibile per il link (opzionale)
     link.style('color', 'white');
     link.style('font-size', '12px');
     link.style('text-decoration', 'none');
@@ -84,6 +84,7 @@ function draw() {
     });
   }
 }
+
 
 function drawHalo(x, y, value, diameter) {
   let maxHaloSize = map(value, 0, 10, diameter * 0.1, diameter * 0.6); // Mappa la grandezza dell'alone in base al valore "average"
