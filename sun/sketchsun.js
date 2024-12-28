@@ -13,8 +13,8 @@ function preload() {
 
 function setup() {
   noLoop();
-  let totalWidth = windowWidth * 0.999;
-  let totalHeight = windowHeight * 0.999;
+  let totalWidth = windowWidth * 0.950;
+  let totalHeight = windowHeight * 0.950;
   createCanvas(totalWidth, totalHeight);
   background("#06011E");
 
@@ -58,8 +58,8 @@ function draw() {
   console.log(nazioni);
   
   // background("#06011E");
-  let totalWidth = windowWidth * 0.999;
-  let totalHeight = windowHeight * 0.999;
+  let totalWidth = windowWidth * 0.950;
+  let totalHeight = windowHeight * 0.950;
   let size = 5/16*totalWidth;
   let xPos = 11/16*totalWidth;
   let yPos = totalHeight/2;
@@ -134,8 +134,8 @@ function drawRay(index, rayLengthData, size) {
   }
   
 
-  let totalWidth = windowWidth * 0.999;
-  let totalHeight = windowHeight * 0.999;
+  let totalWidth = windowWidth * 0.950;
+  let totalHeight = windowHeight * 0.950;
   let centerX = 11/16*totalWidth;
   let centerY = totalHeight/2;
   let numRays = 14; 
