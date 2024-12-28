@@ -6,22 +6,65 @@
   <title>Project</title>
   <link rel="stylesheet" href="generalstyle.css">
   <link rel="stylesheet" href="visualisation.css">
+  <link rel="stylesheet" href="swiperparameters.css">
+  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body class="project-page">
   <!-- Header con logo centrato a sinistra -->
   <header class="header">
     <img src="/logo/logoheader.png" alt="Logo" class="logo">
- <!-- Menu di navigazione -->
-  <nav class="menu">
-    <a href="visualisation.html">Visualisation</a>
-    <a href="about.html">About</a>
-    <a href="parameters.html">Parameters</a>
-  </nav>
-</header>
+    <!-- Menu di navigazione -->
+    <nav class="menu">
+      <a href="visualisation.html">Visualisation</a>
+      <a href="about.html">About</a>
+      <a href="parameters.html">Parameters</a>
+    </nav>
+  </header>
+
+  <!-- Box centrale con swiper -->
+  <div class="center-box">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+        Bank account ownership: tracks women's access to formal financial systems, essential for autonomy and participation in the economy.</div>
+        <div class="swiper-slide">Slide 2: Scopri di più</div>
+        <div class="swiper-slide">Slide 3: Personalizza i tuoi contenuti</div>
+        <div class="swiper-slide">Slide 4: Aggiungi ulteriori informazioni</div>
+      </div>
+      
+      <!-- Rimuovi la paginazione -->
+      <!-- <div class="swiper-pagination"></div> -->
+
+      <!-- Navigazione (bottoni di scorrimento) -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
-    <p>Laboratorio di Computer Grafica per l'Information Design - Politecnico di Milano
-    </p>
+    <p>Laboratorio di Computer Grafica per l'Information Design - Politecnico di Milano</p>
   </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      loop: true, // Abilita il loop
+      effect: 'fade', // Effetto di transizione graduale
+      fadeEffect: {
+        crossFade: true, // Passaggio morbido tra le slide
+      },
+      pagination: false, // Disabilita la paginazione (i pallini)
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
 </body>
 </html>
+
+

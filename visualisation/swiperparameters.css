@@ -1,0 +1,74 @@
+
+/* Importazione del font personalizzato */
+@font-face {
+    font-family: 'Baskerville';
+    src: url('../fonts/BaskerVilleRegular.ttf') format('truetype');
+  }
+
+.center-box {
+    width: 50%; /* Larghezza del box */
+    padding: 10%; /* Padding uniforme */
+    backdrop-filter: blur(10px); /* Sfondo sfocato */
+    margin-left: 20%; /* Stacco dal margine sinistro */
+    transform: translateX(-5%); /* Compensazione per centrare visivamente */
+}
+
+/* Stile dello swiper */
+.swiper-container {
+    width: 100%; /* Larghezza piena */
+    padding: 20% 0; /* Spazio sopra e sotto */
+}
+
+
+/* Stile dei testi */
+.swiper-slide {
+    font-size: clamp(0.8rem, 1vw, 1.2rem); /* Dimensione del testo più piccola e responsiva */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 20%; /* Altezza delle slide */
+    word-wrap: break-word; /* Impedisce overflow del testo */
+    line-height: 1.5; /* Imposta l'interlinea (modificabile secondo necessità) */
+}
+
+
+/* Modifica il colore dei bottoni di scorrimento */
+.swiper-button-prev, .swiper-button-next {
+    font-size: 0.2rem; /* Dimensione dei bottoni */
+    width: 2%; /* Larghezza dei bottoni */
+    height: 2%; /* Altezza dei bottoni */
+    margin-top: 20%; /* Distanza tra il bottone e il testo */
+    opacity: 0.8; /* Opacità iniziale */
+    transition: opacity 0.3s ease; /* Transizione per quando si passa sopra con il mouse */
+    color: transparent; /* Rendi il colore del testo trasparente */
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover {
+    opacity: 1; /* Opacità al massimo quando si passa sopra */
+}
+
+/* Stile dell'icona SVG all'interno dei bottoni */
+.swiper-button-prev::after, .swiper-button-next::after {
+    font-size: 1em; /* Imposta la dimensione corretta */
+    color: #F8FFB8; /* Colore giallo */
+    display: block;
+    content: ""; /* Rendi visibile l'icona */
+}
+
+/* Rimuovi la paginazione */
+.swiper-pagination {
+    display: none !important;
+}
+
+/* Stile della paginazione */
+.swiper-pagination-bullet-active {
+    background: white; /* Bullet attivo in bianco */
+}
+
+/* Stile del menu */
+.menu a:hover {
+    text-decoration: underline;
+}
+
+  
+  

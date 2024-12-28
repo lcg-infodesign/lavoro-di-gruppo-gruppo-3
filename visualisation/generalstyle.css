@@ -1,68 +1,78 @@
+/* Importazione del font personalizzato */
+@font-face {
+  font-family: 'Baskerville';
+  src: url('../fonts/BaskerVilleRegular.ttf') format('truetype');
+}
+
 /* Stile per il corpo */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #06011E; /* Sfondo blu scuro */
-    color: #F8FFB8; /* Colore del testo principale */
-    font-family: serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  /* Stile per l'header */
-  .header {
-    background-color: #06011E; /* Sfondo dell'header */
-    text-align: left;
-    padding: 4vh 1vw;
-    height: 8vh;
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Logo dentro l'header */
-  .logo {
-    width: 30vw;
-    height: auto;
-    padding-left: 2vw;
-    padding-top: 2vh;
-  }
-  
-  /* Menu di navigazione */
-  nav {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    gap: 2vw;
-    font-family: 'Poppins', sans-serif;
-    margin-left: 38vw;
-    margin-top: 3vh;
-  }
-  
-  nav a {
-    color: #F8FFB8;
-    text-decoration: none;
-    font-size: 1vw;
-    transition: text-shadow 0.3s ease, transform 0.1s ease;
-  }
-  
-  nav a:hover {
-    text-shadow: 0 0 9px #F8FFB8, 0 0 8px rgba(248, 255, 184, 0.3), 0 0 10px rgba(248, 255, 184, 0.9);
-  }
-  
-  /* Contenitore per lo sketch */
-  #sketch-container {
-    flex: 1; /* Occupa tutto lo spazio disponibile tra header e footer */
-    position: relative;
-    background-color: #06011E; /* Mantiene lo sfondo blu scuro */
-  }
-  
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 2% 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.6vw;
-    color: #F8FFB8;
-  }
-  
+  margin: 0;
+  padding: 0;
+  background-color: #06011E; /* Sfondo blu scuro */
+  color: #F8FFB8; /* Colore del testo principale */
+  font-family: 'Baskerville', serif; /* Usa il font personalizzato */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Stile per l'header */
+.header {
+  background-color: #06011E; /* Sfondo dell'header */
+  text-align: left;
+  padding: 4vh 1vw;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Logo dentro l'header */
+.logo {
+  width: 30vw;
+  height: auto;
+  padding-left: 2vw;
+  padding-top: 2vh;
+}
+
+/* Menu di navigazione */
+nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 1.5vw;
+  margin-left: 45vw;
+  margin-top: 3vh;
+}
+
+/* Stile dei link nel menu */
+nav a {
+  color: #F8FFB8;
+  text-decoration: none !important; /* Rimuove ogni decorazione */
+  font-size: 1vw;
+  transition: text-shadow 0.3s ease, transform 0.1s ease;
+}
+
+nav a:hover {
+  text-shadow: 0 0 9px #F8FFB8, 0 0 8px rgba(248, 255, 184, 0.3), 0 0 10px rgba(248, 255, 184, 0.9);
+  text-decoration: none !important; /* Assicura che non appaia decorazione anche in hover */
+}
+
+/* Contenitore per lo sketch */
+#sketch-container {
+  flex: 1; /* Occupa tutto lo spazio disponibile tra header e footer */
+  position: relative;
+  background-color: #06011E; /* Mantiene lo sfondo blu scuro */
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2% 0;
+  font-size: 0.6vw;
+  color: #F8FFB8;
+}
+
+/* Reset per tutti i link (opzionale, per sicurezza) */
+a {
+  text-decoration: none !important;
+}

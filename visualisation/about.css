@@ -1,0 +1,23 @@
+/* Stile per il contenitore del testo */
+.text-container {
+  display: flex;
+  justify-content: center; /* Centra il contenuto orizzontalmente */
+  align-items: flex-start; /* Allinea il contenuto verso l'alto (vicino all'header) */
+  padding-top: 50px; /* Distanza tra l'header e il contenitore del testo (puoi regolare il valore) */
+  height: auto; /* Rimuove l'altezza 100vh per evitare che il contenitore occupi tutta l'altezza */
+}
+
+/* Stile per la sezione del testo (interna al contenitore) */
+.text {
+  width: 50%; /* Imposta una larghezza del 60% per il contenitore del testo */
+  max-width: 700px; /* Imposta una larghezza massima per non allargarsi troppo */
+  padding: 20px; /* Aggiunge del padding per staccare il testo dai bordi */
+  border-radius: 20px; /* Rende gli angoli arrotondati */
+  color: #F8FFB8; /* Colore del testo */
+  font-size: 0.7rem; /* Imposta una dimensione del font più piccola */
+  line-height: 1.87; /* Aumenta la spaziatura tra le righe per migliorare la leggibilità */
+  margin: 0;
+}
+
+  
+  

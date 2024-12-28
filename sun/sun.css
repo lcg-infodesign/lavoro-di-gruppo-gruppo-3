@@ -1,0 +1,28 @@
+body {
+    background-color: #06011E;
+}
+/* Stile per la freccia */
+.back-arrow {
+    position: absolute; /* Posiziona la freccia in modo assoluto */
+    top: 20px; /* Spazio dal bordo superiore */
+    left: 20px; /* Spazio dal bordo sinistro */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-size: 2rem; /* Dimensione del carattere */
+    color: #F8FFB8; /* Colore della freccia */
+    background-color: #06011E; /* Sfondo scuro per contrasto */
+    border-radius: 50%; /* Rende lo sfondo circolare */
+    width: 50px; /* Larghezza del cerchio */
+    height: 50px; /* Altezza del cerchio */
+    display: flex; /* Centra il contenuto nel cerchio */
+    align-items: center; /* Allinea verticalmente il contenuto */
+    justify-content: center; /* Allinea orizzontalmente il contenuto */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Effetti di transizione */
+  }
+  
+  /* Effetto hover per la freccia */
+  .back-arrow:hover {
+    transform: scale(1.1); /* Leggero ingrandimento */
+    background-color: #F8FFB8; /* Cambia il colore dello sfondo al passaggio del mouse */
+    color: #06011E; /* Cambia il colore della freccia */
+  }
+  
