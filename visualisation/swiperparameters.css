@@ -1,9 +1,8 @@
-
 /* Importazione del font personalizzato */
 @font-face {
     font-family: 'Baskerville';
     src: url('../fonts/BaskerVilleRegular.ttf') format('truetype');
-  }
+}
 
 .center-box {
     width: 50%; /* Larghezza del box */
@@ -17,8 +16,12 @@
 .swiper-container {
     width: 100%; /* Larghezza piena */
     padding: 20% 0; /* Spazio sopra e sotto */
+    
+    /* Aggiungi il bordo giallo, il bagliore esterno e arrotondamento */
+    border: 2px solid #F8FFB8; /* Bordo giallo di 2px */
+    box-shadow: 0 0 15px 5px rgba(248, 255, 184, 0.7); /* Bagliore esterno giallo */
+    border-radius: 20px; /* Arrotondamento degli angoli del box */
 }
-
 
 /* Stile dei testi */
 .swiper-slide {
@@ -31,13 +34,12 @@
     line-height: 1.5; /* Imposta l'interlinea (modificabile secondo necessità) */
 }
 
-
 /* Modifica il colore dei bottoni di scorrimento */
 .swiper-button-prev, .swiper-button-next {
-    font-size: 0.2rem; /* Dimensione dei bottoni */
-    width: 2%; /* Larghezza dei bottoni */
-    height: 2%; /* Altezza dei bottoni */
-    margin-top: 20%; /* Distanza tra il bottone e il testo */
+    font-size: 0.001em; /* Dimensione dei bottoni */
+    width: 1%; /* Larghezza dei bottoni */
+    height: 1%; /* Altezza dei bottoni */
+    margin-top: 30%; /* Distanza tra il bottone e il testo */
     opacity: 0.8; /* Opacità iniziale */
     transition: opacity 0.3s ease; /* Transizione per quando si passa sopra con il mouse */
     color: transparent; /* Rendi il colore del testo trasparente */
@@ -49,7 +51,7 @@
 
 /* Stile dell'icona SVG all'interno dei bottoni */
 .swiper-button-prev::after, .swiper-button-next::after {
-    font-size: 1em; /* Imposta la dimensione corretta */
+    font-size: 0.1em; /* Imposta la dimensione corretta */
     color: #F8FFB8; /* Colore giallo */
     display: block;
     content: ""; /* Rendi visibile l'icona */
@@ -70,5 +72,30 @@
     text-decoration: underline;
 }
 
-  
-  
+/* Stile per il contenitore del testo */
+.text-container {
+    display: flex;
+    justify-content: center; /* Centra il contenuto orizzontalmente */
+    align-items: flex-start; /* Allinea il contenuto verso l'alto (vicino all'header) */
+    padding-top: 4%; /* Distanza tra l'header e il contenitore del testo (puoi regolare il valore) */
+    height: auto; /* Rimuove l'altezza 100vh per evitare che il contenitore occupi tutta l'altezza */
+}
+
+/* Stile per la sezione del testo (interna al contenitore) */
+.text {
+    width: 450px; /* Imposta una larghezza del 60% per il contenitore del testo */
+    max-width: 700px; /* Imposta una larghezza massima per non allargarsi troppo */
+    padding: 2%; /* Aggiunge del padding per staccare il testo dai bordi */
+    border-radius: 20px; /* Rende gli angoli arrotondati */
+    color: #F8FFB8; /* Colore del testo */
+    font-size: 0.7rem; /* Imposta una dimensione del font più piccola */
+    line-height: 1.87; /* Aumenta la spaziatura tra le righe per migliorare la leggibilità */
+    margin: 0;
+}
+
+/* Aggiungi lo stile per il testo sopra il box (centrato) */
+.text-container {
+    text-align: center; /* Allinea il testo orizzontalmente al centro */
+    padding-bottom: 5%; /* Aggiungi un po' di spazio sotto il testo per separarlo dal box */
+}
+
