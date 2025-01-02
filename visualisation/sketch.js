@@ -64,7 +64,7 @@ function draw() {
     // Disegno il glifo con il colore e il diametro mappato
     drawGliph(x, y, c, diameter);
     
-    let link = createA(`/sun.html?country=${encodeURIComponent(paese)}&average=${encodeURIComponent(value)}&longitude=${encodeURIComponent(lon)}&latitude=${encodeURIComponent(lat)}`, paese);    
+    let link = createA(`/sun/sun.html?country=${encodeURIComponent(paese)}`, paese);    
     // Posiziona il link sovrapposto il glifo
     let linkYPosition = y + 110; // Posiziona il link sopra il centro del glifo
     let linkXPosition = x; // Centra il link orizzontalmente

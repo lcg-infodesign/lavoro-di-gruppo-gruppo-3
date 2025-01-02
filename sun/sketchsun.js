@@ -2,68 +2,79 @@ let data;
 let dataObj;
 let poppinsRegular;
 let inconsolataRegular;
-let scritte = []; // array per le scritte
-let offsetAngolo = 90; // angolo di offset per ruotare gli spicchi
+let baskerville;
+
+let activeRay = -1;  // Nessun raggio attivo inizialmente
+let spicchiText = [
+  "Perception that a woman earning more money than her husband doesn't cause any problems",
+  "Perception that men shouldn't have more right to a job than women",
+  "Perception that children sufference isn't a consequence of a mother working for pay",
+  "Perceptions that men don't necessarily make better business executives than women",
+  "Feeling of safety at night",
+  "Confidence in the judicial system and courts",
+  "Perception that men don't necessarily make better political leaders than women",
+  "Percentage of women not in a child marriage",
+  "Non genital-mutilated women percentage",
+  "Perception that female genital mutilation should stop",
+  "Perception that a husband is not justified in hitting or beating his wife under any circumstances",
+  "Bank account ownership",
+  "House ownership",
+  "Land ownership",
+];
 
 function preload() {
-  data = loadTable("/assets/data.csv", "csv", "header");
+  data = loadTable("../assets/data.csv", "csv", "header");
  // poppinsRegular = loadFont('assets/Poppins-Regular.ttf');
   inconsolataRegular = loadFont('../fonts/Inconsolata-Regular.ttf');
+  baskerville = loadFont ('../fonts/BaskervilleItalicBT.ttf')
 }
 
 function setup() {
-  noLoop();
-  let totalWidth = windowWidth * 0.950;
-  let totalHeight = windowHeight * 0.950;
+  //noLoop();
+  window.totalWidth = windowWidth * 0.950;
+  window.totalHeight = windowHeight * 0.950;
   createCanvas(totalWidth, totalHeight);
-  background("#06011E");
+  
+    //sistemo il dataset per avere a diposizione i dati per ciascun Paese
+    window.nazioni = {} 
+    console.log(data);
+    for (let r of data["rows"]) {
+      let riga = r["obj"];
+  
+      let nomeC = riga ["Country"];
+  
+      if (!(nomeC in nazioni)){
+        nazioni[nomeC] = {
+          "nome" : nomeC,
+          "continent" : riga ["Country"],
+          "area" : riga ["Area"],
+          "average" : riga ["Average"],
+        };    
+      }
+      nazioni[nomeC][riga["Parameter"]] = riga ["Value"];
+    }
+  
+    console.log(nazioni);
+     
+    window.size = 5/16*totalWidth;
+    window.xPos = 11/16*totalWidth;
+    window.yPos = totalHeight/2;
+    
+    window.centerX = 11/16*totalWidth;
+    window.centerY = totalHeight/2;
 
- // Recupera i parametri dall'URL
- let params = getURLParams();
- let country = params['country'];
- let avg = params['average'];
- let lon = params['longitude'];
- let lat = params['latitude'];
-
- // Trova i dati del paese selezionato
- paeseData = findCountryData(country);
-
- if (paeseData) {
-   // Disegna i dettagli del paese
-   disegnaSole(width / 2, height / 2, 300, paeseData);
- }
+    window.indiceSpicchio = -1;
+   
 }
 
 function draw() {
+  background("#06011E");
 
-  //sistemo il dataset per avere a diposizione i dati per ciascun Paese
-  let nazioni = {} 
-  console.log(data);
-  for (let r of data["rows"]) {
-    let riga = r["obj"];
-
-    let nomeC = riga ["Country"];
-
-    if (!(nomeC in nazioni)){
-      nazioni[nomeC] = {
-        "nome" : nomeC,
-        "continent" : riga ["Country"],
-        "area" : riga ["Area"],
-        "average" : riga ["Average"],
-      };    
-    }
-    nazioni[nomeC][riga["Parameter"]] = riga ["Value"];
-  }
-
-  console.log(nazioni);
+  // Recupera i parametri dall'URL
+  let params = getURLParams();
+  let country = params['country']; 
   
-  // background("#06011E");
-  let totalWidth = windowWidth * 0.950;
-  let totalHeight = windowHeight * 0.950;
-  let size = 5/16*totalWidth;
-  let xPos = 11/16*totalWidth;
-  let yPos = totalHeight/2;
-
+  
   disegnaCerchi(xPos, yPos, size);
   
 
@@ -72,12 +83,16 @@ function draw() {
   
 
    // Seleziona il primo paese nel dataset
-   let paese = nazioni[Object.keys(nazioni)[9]];  // Prendi il primo paese nel dataset
+   let paese = nazioni[country];  // Prendi il primo paese nel dataset
   
 
+   mouseOverReaction(paese, size)
    // Passa il paese alla funzione disegnaSole
    disegnaSole(xPos, yPos, size, paese);
+   
   //disegnaSole (xPos,yPos, size, nazioni[nomeC]);
+
+  ilGrandeNome (xPos, totalHeight, size, paese, baskerville);
 
   // ----------------------- testi curvi ---------------------------------
   testoCurvoEconomic (xPos, yPos, size);
@@ -86,20 +101,82 @@ function draw() {
   testoCurvoViolence (xPos, yPos, size);
   //---------------------------------------------------------------------
 
-  percentuali (xPos,yPos, size, paese);
+}
 
-  ilMouseOver (xPos, yPos, size);
 
-  titoloPaese (xPos, yPos, size);
+function mouseOverReaction(nazione, size) {
+  window.indiceSpicchio = -1;
+
+  let distanza = dist(mouseX, mouseY, centerX, centerY);
+  console.log(size, distanza)
+
+  // Se il mouse è dentro il cerchio
+  if (distanza < size/2) {
+    // Calcoliamo l'angolo in radianti
+    let angolo = atan2(mouseY - centerY, mouseX - centerX);
+    
+    // Convertiamo l'angolo da radianti a gradi
+    let angoloGradi = degrees(angolo);
+    
+    // Normalizziamo l'angolo per farlo variare tra 0 e 360
+    if (angoloGradi < 0) {
+      angoloGradi += 360;
+    }
+    
+    // Aggiungiamo l'offset all'angolo e mappiamo l'angolo in gradi a uno degli spicchi (14 spicchi)
+    angoloGradi = (angoloGradi + 360/28) % 360;  // Ruotiamo gli spicchi
+    window.indiceSpicchio = floor(map(angoloGradi, 0, 360, 0, 14)) % 14;
+
+    // Mostriamo la scritta corrispondente
+    fill("white");
+    textSize (size *0.05)
+    textAlign(LEFT, BOTTOM);
+    text(spicchiText[indiceSpicchio]+"\n\n"+nazione[spicchiText[indiceSpicchio]], 100, 400);
+  }
   
-
 }
 
 function disegnaSole (x, y, size, nazione){
+  noStroke();
   fill("#F8FFB8");
+  //ellipse(x, y, size/12, size/12);
+  // fill(255, 255, 191, 50)
+  // ellipse(x, y, size/9, size/9);
+  // fill(255, 255, 191, 25)
   ellipse(x, y, size/7, size/7);
+  // fill(255, 255, 191, 16)
+  // ellipse(x, y, size/6, size/6);
 
-  
+  drawTRay (11, nazione["Bank account ownership"], size);
+  drawTRay(12, nazione["House ownership"], size);
+  drawTRay(13, nazione["Land ownership"], size);
+  drawTRay(0, nazione["Perception that a woman earning more money than her husband doesn't cause any problems"], size);
+  drawTRay(1, nazione["Perception that men shouldn't have more right to a job than women"], size);
+  drawTRay(2, nazione["Perception that children sufference isn't a consequence of a mother working for pay"], size);
+  drawTRay(3, nazione["Perceptions that men don't necessarily make better business executives than women"], size);
+  drawTRay(4, nazione["Feeling of safety at night"], size);
+  drawTRay(5, nazione["Confidence in the judicial system and courts"], size);
+  drawTRay(6, nazione["Perception that men don't necessarily make better political leaders than women"], size);
+  drawTRay(7, nazione["Percentage of women not in a child marriage"], size);
+  drawTRay(8, nazione["Non genital-mutilated women percentage"], size);
+  drawTRay(9, nazione["Perception that female genital mutilation should stop"], size);
+  drawTRay(10, nazione["Perception that a husband is not justified in hitting or beating his wife under any circumstances"], size);
+
+  drawSecondRay (11, nazione["Bank account ownership"], size);
+  drawSecondRay(12, nazione["House ownership"], size);
+  drawSecondRay(13, nazione["Land ownership"], size);
+  drawSecondRay(0, nazione["Perception that a woman earning more money than her husband doesn't cause any problems"], size);
+  drawSecondRay(1, nazione["Perception that men shouldn't have more right to a job than women"], size);
+  drawSecondRay(2, nazione["Perception that children sufference isn't a consequence of a mother working for pay"], size);
+  drawSecondRay(3, nazione["Perceptions that men don't necessarily make better business executives than women"], size);
+  drawSecondRay(4, nazione["Feeling of safety at night"], size);
+  drawSecondRay(5, nazione["Confidence in the judicial system and courts"], size);
+  drawSecondRay(6, nazione["Perception that men don't necessarily make better political leaders than women"], size);
+  drawSecondRay(7, nazione["Percentage of women not in a child marriage"], size);
+  drawSecondRay(8, nazione["Non genital-mutilated women percentage"], size);
+  drawSecondRay(9, nazione["Perception that female genital mutilation should stop"], size);
+  drawSecondRay(10, nazione["Perception that a husband is not justified in hitting or beating his wife under any circumstances"], size);
+
   // Disegnare ogni raggio separatamente
   drawRay(11, nazione["Bank account ownership"], size);
   drawRay(12, nazione["House ownership"], size);
@@ -115,11 +192,14 @@ function disegnaSole (x, y, size, nazione){
   drawRay(8, nazione["Non genital-mutilated women percentage"], size);
   drawRay(9, nazione["Perception that female genital mutilation should stop"], size);
   drawRay(10, nazione["Perception that a husband is not justified in hitting or beating his wife under any circumstances"], size);
+
 }
 
 function drawRay(index, rayLengthData, size) {
+  
   noStroke();
-  fill("#F8FFB8")
+  fill(255, 255, 191, 100)
+  //fill(248, 255, 184)
   let rayLength = parseInt(rayLengthData);
   if(isNaN(rayLength)) {
     
@@ -132,12 +212,7 @@ function drawRay(index, rayLengthData, size) {
     
     
   }
-  
-
-  let totalWidth = windowWidth * 0.950;
-  let totalHeight = windowHeight * 0.950;
-  let centerX = 11/16*totalWidth;
-  let centerY = totalHeight/2;
+   
   let numRays = 14; 
   let angleStep = TWO_PI / numRays; // Passo angolare per distribuire i raggi in modo uniforme
   
@@ -147,8 +222,8 @@ function drawRay(index, rayLengthData, size) {
   let x1 = centerX + cos(angle) * size/10; // Aggiustiamo la distanza dal centro (partono più distanti)
   let y1 = centerY + sin(angle) * size/10; // Aggiustiamo la distanza dal centro (partono più distanti)
   
-  let minRadius = 2/500*size;  // Raggio minimo per il primo cerchio
-  let maxRadius = 8/500*size;  // Raggio massimo per l'ultimo cerchio
+  let minRadius = 0/500*size;  // Raggio minimo per il primo cerchio
+  let maxRadius = 6/500*size;  // Raggio massimo per l'ultimo cerchio
   
   
   // Ciclo per disegnare i cerchi lungo il raggio
@@ -165,11 +240,119 @@ function drawRay(index, rayLengthData, size) {
   }
 }
 
+function drawSecondRay(index, rayLengthData, size) {
+  noStroke();
+  fill(255, 255, 191, 4)
+  //fill(248, 255, 184)
+  let rayLength = parseInt(rayLengthData);
+  if(isNaN(rayLength)) {
+    
+    rayLength = 100;
+     // Crea il colore #F8FFB8 con trasparenza (ad esempio alpha = 128)
+  let c = color(248, 255, 184 ,0); // RGB (248, 255, 184) con alpha 128
+  
+  fill(c); // Applica il colore con trasparenza
+  
+    
+    
+  } 
+  let numRays = 14; 
+  let angleStep = TWO_PI / numRays; // Passo angolare per distribuire i raggi in modo uniforme
+  
+  let angle = angleStep * index; // Calcola l'angolo per il raggio corrente
+
+  // Posizione iniziale dei cerchi (i raggi partono da una distanza maggiore dal centro)
+  let x1 = centerX + cos(angle) * size/10; // Aggiustiamo la distanza dal centro (partono più distanti)
+  let y1 = centerY + sin(angle) * size/10; // Aggiustiamo la distanza dal centro (partono più distanti)
+  
+  let minRadius = 2/500*size;  // Raggio minimo per il primo cerchio
+  let maxRadius = 12/500*size;  // Raggio massimo per l'ultimo cerchio
+  
+  
+  // Ciclo per disegnare i cerchi lungo il raggio
+  for (let j = 0; j < rayLength * size/155; j++) {
+    //let radius = map(j, 0, rayLength, minRadius, maxRadius); // Raggio che cresce lungo il raggio
+    let radius = map(j, 0, rayLength * 17 / 4, minRadius, maxRadius);
+    let distance = j * 2 / 4; // La distanza tra i cerchi lungo il raggio
+
+    // Calcola la posizione di ogni cerchio lungo il raggio
+    let x = x1 + cos(angle) * distance;
+    let y = y1 + sin(angle) * distance;
+    
+    ellipse(x, y, radius * 2, radius * 2); // Disegna il cerchio
+  }
+}
+
+function drawTRay(index, rayLengthData, size) {
+  noStroke();
+  fill(255, 255, 191, 0.6)
+  if(index == indiceSpicchio) {
+    fill(200, 200, 200, 2);
+  }
+  //fill(248, 255, 184)
+  let rayLength = parseInt(rayLengthData);
+  if(isNaN(rayLength)) {
+    
+    rayLength = 100;
+     // Crea il colore #F8FFB8 con trasparenza (ad esempio alpha = 128)
+  let c = color(248, 255, 184 ,0); // RGB (248, 255, 184) con alpha 128
+ 
+  fill(c); // Applica il colore con trasparenza
+  
+    
+    
+  }
+   
+  let numRays = 14; 
+  let angleStep = TWO_PI / numRays; // Passo angolare per distribuire i raggi in modo uniforme
+  
+  let angle = angleStep * index; // Calcola l'angolo per il raggio corrente
+
+  // Posizione iniziale dei cerchi (i raggi partono da una distanza maggiore dal centro)
+  let x1 = centerX + cos(angle) * size/10; // Aggiustiamo la distanza dal centro (partono più distanti)
+  let y1 = centerY + sin(angle) * size/10; // Aggiustiamo la distanza dal centro (partono più distanti)
+  
+  let minRadius = 3/500*size;  // Raggio minimo per il primo cerchio
+  let maxRadius = 20/500*size;  // Raggio massimo per l'ultimo cerchio
+  
+  
+  // Ciclo per disegnare i cerchi lungo il raggio
+  for (let j = 0; j < rayLength * size/150; j++) {
+    //let radius = map(j, 0, rayLength, minRadius, maxRadius); // Raggio che cresce lungo il raggio
+    let radius = map(j, 0, rayLength * 17 / 4, minRadius, maxRadius);
+    let distance = j * 2 / 4; // La distanza tra i cerchi lungo il raggio
+
+    // Calcola la posizione di ogni cerchio lungo il raggio
+    let x = x1 + cos(angle) * distance;
+    let y = y1 + sin(angle) * distance;
+    
+    ellipse(x, y, radius * 2, radius * 2); // Disegna il cerchio
+  }
+}
+
+function mouseMoved() {
+
+  let mouseDist = dist(mouseX, mouseY, centerX, centerY);
+  if (mouseDist < size / 2) {  // Controlla se il mouse è dentro il cerchio
+    let numRays = 14;
+    let angleStep = TWO_PI / numRays; // Passo angolare per distribuire i raggi in modo uniforme
+    let angle = atan2(mouseY - centerY, mouseX - centerX); // Calcola l'angolo rispetto al centro
+
+    // Trova il raggio corrispondente all'angolo
+    activeRay = floor((angle + PI) / angleStep); // Calcola quale spicchio è attivo
+    if (activeRay < 0) activeRay = numRays - 1; // Correggi l'angolo negativo
+  } else {
+    activeRay = -1;  // Nessun raggio attivo se il mouse è fuori dal cerchio
+  }
+}
+
 function disegnaCerchi(x, y, size){
   noFill();
-  stroke("#17144f");
-  drawingContext.setLineDash([10, 10]);
+  strokeWeight (2);
+  stroke(214, 214, 156, 90);
+  drawingContext.setLineDash([0.5, 10.5]);
   ellipse(x, y, size*22/26, size*22/26);
+  stroke(214, 214, 156, 70);
   ellipse(x, y, size*14/26, size*14/26);
 
   let arco = 360/14
@@ -414,95 +597,23 @@ function testoCurvoViolence (x, y, size) {
   
 }
 
-function percentuali(x, y, size, paese) {
-  push();
-    
-    rotate(90 / value.length * j); 
-    
-    fill ("white");
-    textAlign(CENTER, CENTER)
-    textSize (12);
-    text(-(spessore/2) + 5/7*size + 200 * fiume["length"]/6000, 0);
-    
-    pop();
-
+function ilGrandeNome (x, totalHeight, size, nome, font){
   
-  pop(); 
-
-  nomeOutflow (xPos, yPos, circleSize, outflow);
+  textAlign(CENTER, TOP);
+  textSize (size *0.1)
+  textFont (font);
+  fill(248, 255, 184);
+  text(nome["nome"], x - 13/16*x, (totalHeight/2)-(8/16*size))
 }
 
-function ilMouseOver (x, y, size) {
-   // Disegniamo il cerchio
-   stroke(0);
-   fill(200, 200, 255, 150);
-   ellipse(x, y, size*22/26, size*22/26);
- 
-   // Calcoliamo la posizione del mouse rispetto al centro
-   let distanza = dist(mouseX, mouseY, x, y);
- 
-   // Se il mouse è dentro il cerchio
-   if (distanza < 11/26*size) {
-     // Calcoliamo l'angolo in radianti
-     let angolo = atan2(mouseY - y, mouseX - x);
-     
-     // Convertiamo l'angolo da radianti a gradi
-     let angoloGradi = degrees(angolo);
-     
-     // Normalizziamo l'angolo per farlo variare tra 0 e 360
-     if (angoloGradi < 0) {
-       angoloGradi += 360;
-     }
-     
-     // Aggiungiamo l'offset all'angolo e mappiamo l'angolo in gradi a uno degli spicchi (14 spicchi)
-     angoloGradi = (angoloGradi + offsetAngolo) % 360;  // Ruotiamo gli spicchi
-     let indiceSpicchio = floor(map(angoloGradi, 0, 360, 0, 14)) % 14;
- 
-     // Mostriamo la scritta corrispondente
-     fill(0);
-     textSize(24);
-     textAlign(CENTER, BOTTOM);
-     text(scritte[indiceSpicchio], width / 2, height - 50);
-   }
- 
-   // Disegniamo le linee che dividono il cerchio in 14 spicchi
-   stroke(0);
-   for (let i = 0; i < 14; i++) {
-     // Aggiungiamo l'offset all'angolo iniziale e finale per ruotare gli spicchi
-     let angoloInizio = map(i, 0, 14, 0, 360) + offsetAngolo;
-     let angoloFine = map(i + 1, 0, 14, 0, 360) + offsetAngolo;
-     
-     // Normalizziamo gli angoli in modo che siano sempre tra 0 e 360
-     angoloInizio = angoloInizio % 360;
-     angoloFine = angoloFine % 360;
-     
-     // Convertiamo gli angoli in radianti
-     let radInizio = radians(angoloInizio);
-     let radFine = radians(angoloFine);
-     
-     // Disegniamo le linee di separazione tra gli spicchi
-     line(x, y, x + cos(radInizio) * size* 11/26, y + sin(radInizio) * raggio);
-     line(centerX, centerY, centerX + cos(radFine) * raggio, centerY + sin(radFine) * raggio);
-   }
-}
-
-function titoloPaese(x, y, size) {
-  fill("#F8FFB8");
-  noStroke();
-  textFont(inconsolataRegular);
-  textSize (size * 0.5);
-  textAlign (LEFT, LEFT);
-
-  text ("Afghanistan", x, y);
-}
-  let xPos = 11/16*totalWidth;
-
-  function findCountryData(countryName) {
+function findCountryData(countryName) {
     for (let r of data.rows) {
       let riga = r.obj;
       if (riga["Country"] === countryName) {
+        console.log("Data found for", countryName);
         return riga;
       }
     }
+    console.log("Data not found for", countryName);  // Aggiungi un log per verificare
     return null; // Se il paese non viene trovato
-  }
+}
