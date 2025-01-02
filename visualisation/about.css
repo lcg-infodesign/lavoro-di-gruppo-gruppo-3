@@ -1,23 +1,89 @@
+/* Importa i font dalla cartella del progetto */
+@font-face {
+  font-family: 'LibreBaskerville';
+  src: url('../fonts/LibreBaskervilleRegular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'LibreBaskerville Italic';
+  src: url('../fonts/LibreBaskervilleItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'LibreBaskerville Bold';
+  src: url('../fonts/LibreBaskervilleBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* Stile per il testo in Libre Baskerville Italic */
+.libre-baskerville-italic {
+  font-family: 'LibreBaskerville Italic', serif;
+  font-size: 0.9em; /* Imposta la dimensione desiderata */
+}
+
+/* Stile per il testo in Libre Baskerville Bold */
+.libre-baskerville-bold {
+  font-family: 'LibreBaskerville Bold', serif;
+  font-size: 0.9em; /* Imposta la dimensione desiderata */
+}
+
+
 /* Stile per il contenitore del testo */
 .text-container {
   display: flex;
-  justify-content: center; /* Centra il contenuto orizzontalmente */
-  align-items: flex-start; /* Allinea il contenuto verso l'alto (vicino all'header) */
-  padding-top: 50px; /* Distanza tra l'header e il contenitore del testo (puoi regolare il valore) */
-  height: auto; /* Rimuove l'altezza 100vh per evitare che il contenitore occupi tutta l'altezza */
+  flex-direction: column; /* Direzione colonna per separare le sezioni */
+  justify-content: flex-start;
+  align-items: center; /* Centra il contenuto orizzontalmente */
+  padding-top: 50px;
+  height: auto;
 }
 
-/* Stile per la sezione del testo (interna al contenitore) */
+/* Stile per la sezione del testo */
 .text {
-  width: 450px; /* Imposta una larghezza del 60% per il contenitore del testo */
-  max-width: 700px; /* Imposta una larghezza massima per non allargarsi troppo */
-  padding: 20px; /* Aggiunge del padding per staccare il testo dai bordi */
-  border-radius: 20px; /* Rende gli angoli arrotondati */
-  color: #F8FFB8; /* Colore del testo */
-  font-size: 0.7rem; /* Imposta una dimensione del font più piccola */
-  line-height: 1.87; /* Aumenta la spaziatura tra le righe per migliorare la leggibilità */
+  width: 500px;
+  max-width: 700px;
+  padding: 20px;
+  border-radius: 20px;
+  color: #f8ffb890;
+  font-size: 1.0em;
+  line-height: 1.5em;
+  letter-spacing: 0.02em; /* Spazio leggero tra le lettere */
   margin: 0;
 }
+
+/* Titolo della sezione con font maggiore e in italic */
+.title {
+  font-family: 'LibreBaskerville Italic', serif; /* Usa la versione Italic del font */
+  font-size: 1.5rem; /* Imposta una dimensione maggiore per i titoli */
+  margin-bottom: 20px; /* Spazio sotto il titolo */
+  color: #F8FFB8; /* Colore del titolo */
+  font-weight: 500; /* Mantieni il peso normale */
+}
+.subtitle {
+  font-family: 'LibreBaskerville Italic', serif; /* Usa la versione Italic del font */
+  font-size: 1.1rem; /* Imposta una dimensione maggiore per i titoli */
+  margin-bottom: 20px; /* Spazio sotto il titolo */
+  color: #F8FFB8; /* Colore del titolo */
+  font-weight: 500; /* Mantieni il peso normale */
+}
+/* Stile per ogni sezione, aggiungi maggiore distanza tra le sezioni */
+.section {
+  margin-bottom: 20%; /* Aggiunge distanza tra ogni sezione (puoi regolare il valore) */
+}
+
+/* Opzionale: distanza aggiuntiva per un po' più di separazione tra paragrafi */
+.text p {
+  margin-bottom: 6%; /* Spazio tra i paragrafi all'interno di ogni sezione */
+}
+
+
+
+
 
   
   

@@ -4,98 +4,106 @@
     src: url('../fonts/BaskerVilleRegular.ttf') format('truetype');
 }
 
+/* Stile per la pagina specifica */
+body.project-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    font-family: 'Baskerville', serif;
+}
+
+/* Contenitore del testo sopra la galleria */
+.text-container {
+    text-align: center;
+    padding-bottom: 5%; /* Ridotto lo spazio sotto il testo */
+    width: 40%;
+    max-width: 50%;
+    padding-top:5%
+}
+
+.text-container .text {
+    font-size: 0.8em;
+    line-height: 1.6em;
+    letter-spacing: 0.02em;
+    color: #F8FFB8; /* Colore giallo */
+    margin: 0;
+    text-align: center;
+}
+
+/* Box centrale per lo swiper */
 .center-box {
-    width: 50%; /* Larghezza del box */
-    padding: 10%; /* Padding uniforme */
-    backdrop-filter: blur(10px); /* Sfondo sfocato */
-    margin-left: 20%; /* Stacco dal margine sinistro */
-    transform: translateX(-5%); /* Compensazione per centrare visivamente */
+    width: 30%;
+    max-width: 600px;
+    padding: 2%;
+    margin-bottom: 10%; /* Spazio extra sotto il box */
+    backdrop-filter: blur(10px);
+    border: 2px solid #F8FFB8;
+    box-shadow: 0 0 25px rgba(248, 255, 184, 0.7);
+    border-radius: 15px;
+    position: relative; /* Necessario per posizionare le frecce all'interno */
 }
 
 /* Stile dello swiper */
 .swiper-container {
-    width: 100%; /* Larghezza piena */
-    padding: 20% 0; /* Spazio sopra e sotto */
-    
-    /* Aggiungi il bordo giallo, il bagliore esterno e arrotondamento */
-    border: 2px solid #F8FFB8; /* Bordo giallo di 2px */
-    box-shadow: 0 0 15px 5px rgba(248, 255, 184, 0.7); /* Bagliore esterno giallo */
-    border-radius: 20px; /* Arrotondamento degli angoli del box */
+    width: 100%;
+    padding: 5% 0; /* Ridotto padding */
+    position: relative;
+    margin-bottom: 10px; /* Spazio sotto il contenitore Swiper */
 }
 
-/* Stile dei testi */
+
+/* Slide della galleria */
 .swiper-slide {
-    font-size: clamp(0.8rem, 1vw, 1.2rem); /* Dimensione del testo più piccola e responsiva */
+    font-size: 1rem;
     text-align: center;
     display: flex;
+    justify-content: center;
     align-items: center;
-    height: 20%; /* Altezza delle slide */
-    word-wrap: break-word; /* Impedisce overflow del testo */
-    line-height: 1.5; /* Imposta l'interlinea (modificabile secondo necessità) */
+    height: 100%;
+    word-wrap: break-word;
+    line-height: 1.5em;
+    color: #F8FFB890;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
 }
 
-/* Modifica il colore dei bottoni di scorrimento */
-.swiper-button-prev, .swiper-button-next {
-    font-size: 0.001em; /* Dimensione dei bottoni */
-    width: 1%; /* Larghezza dei bottoni */
-    height: 1%; /* Altezza dei bottoni */
-    margin-top: 30%; /* Distanza tra il bottone e il testo */
-    opacity: 0.8; /* Opacità iniziale */
-    transition: opacity 0.3s ease; /* Transizione per quando si passa sopra con il mouse */
-    color: transparent; /* Rendi il colore del testo trasparente */
+.swiper-slide-active {
+    opacity: 1 !important;
+    z-index: 1;
 }
 
-.swiper-button-prev:hover, .swiper-button-next:hover {
-    opacity: 1; /* Opacità al massimo quando si passa sopra */
+.swiper-slide-prev,
+.swiper-slide-next {
+    opacity: 0 !important;
 }
 
-/* Stile dell'icona SVG all'interno dei bottoni */
-.swiper-button-prev::after, .swiper-button-next::after {
-    font-size: 0.1em; /* Imposta la dimensione corretta */
-    color: #F8FFB8; /* Colore giallo */
-    display: block;
-    content: ""; /* Rendi visibile l'icona */
-}
-
-/* Rimuovi la paginazione */
-.swiper-pagination {
-    display: none !important;
-}
-
-/* Stile della paginazione */
-.swiper-pagination-bullet-active {
-    background: white; /* Bullet attivo in bianco */
-}
-
-/* Stile del menu */
-.menu a:hover {
-    text-decoration: underline;
-}
-
-/* Stile per il contenitore del testo */
-.text-container {
+/* Bottoni di navigazione dello swiper */
+.swiper-button-prev-small, .swiper-button-next-small {
+    position: absolute;
     display: flex;
-    justify-content: center; /* Centra il contenuto orizzontalmente */
-    align-items: flex-start; /* Allinea il contenuto verso l'alto (vicino all'header) */
-    padding-top: 4%; /* Distanza tra l'header e il contenitore del testo (puoi regolare il valore) */
-    height: auto; /* Rimuove l'altezza 100vh per evitare che il contenitore occupi tutta l'altezza */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.8em;
+    color: #F8FFB8;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    z-index: 10; /* Sopra le slide */
 }
 
-/* Stile per la sezione del testo (interna al contenitore) */
-.text {
-    width: 450px; /* Imposta una larghezza del 60% per il contenitore del testo */
-    max-width: 700px; /* Imposta una larghezza massima per non allargarsi troppo */
-    padding: 2%; /* Aggiunge del padding per staccare il testo dai bordi */
-    border-radius: 20px; /* Rende gli angoli arrotondati */
-    color: #F8FFB8; /* Colore del testo */
-    font-size: 0.7rem; /* Imposta una dimensione del font più piccola */
-    line-height: 1.87; /* Aumenta la spaziatura tra le righe per migliorare la leggibilità */
-    margin: 0;
+/* Freccette centrate orizzontalmente */
+.swiper-button-prev-small {
+    left: calc(50% - 50%); /* Posiziona a sinistra, centrato */
 }
 
-/* Aggiungi lo stile per il testo sopra il box (centrato) */
-.text-container {
-    text-align: center; /* Allinea il testo orizzontalmente al centro */
-    padding-bottom: 5%; /* Aggiungi un po' di spazio sotto il testo per separarlo dal box */
+.swiper-button-next-small {
+    right: calc(50% - 50%); /* Posiziona a destra, centrato */
 }
 
+/* Hover Effect */
+.swiper-button-prev-small:hover, .swiper-button-next-small:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}

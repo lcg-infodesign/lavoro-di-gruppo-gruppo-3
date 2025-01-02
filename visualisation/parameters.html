@@ -22,54 +22,61 @@
       <a href="parameters.html">Parameters</a>
     </nav>
   </header>
- <!-- Contenitore di testo con griglia -->
- <div class="text-container">
-  <div class="text">
-<p>These parameters reflect various aspects of gender equality and the status of women in society,  providing a multi dimensional view of women’s socioeconomic, cultural, and political status globally, helping identify areas where gender disparities persist and where progress has been made.  </p>
+  
+  <!-- Contenitore di testo con griglia -->
+  <div class="text-container">
+    <div class="text">
+      <p>These parameters reflect various aspects of gender equality and the status of women in society, providing a multi-dimensional view of women’s socioeconomic, cultural, and political status globally, helping identify areas where gender disparities persist and where progress has been made.</p>
+    </div>
   </div>
- </div>
-  <!-- Box centrale con swiper -->
+  
   <div class="center-box">
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-        Bank account ownership: tracks women's access to formal financial systems, essential for autonomy and participation in the economy.</div>
-        <div class="swiper-slide">Slide 2: Scopri di più</div>
-        <div class="swiper-slide">Slide 3: Personalizza i tuoi contenuti</div>
-        <div class="swiper-slide">Slide 4: Aggiungi ulteriori informazioni</div>
+        <div class="swiper-slide"> House ownership: measures the percentage of women who own a house, indicating women's access to assets and financial independence.</div>
+        <div class="swiper-slide">Land ownership: Indicates the proportion of women owning land, reflecting economic empowerment and inheritance rights.</div>
+        <div class="swiper-slide">Bank account ownership: tracks women's access to formal financial systems, essential for autonomy and participation in the economy.</div>
+        <div class="swiper-slide">Feeling of safety at night: indicates women’s perception of public safety, a key factor for mobility and freedom.</div>
+        <div class="swiper-slide">Confidence in the Court and Judicial System: indicates trust in legal institutions to protect women's rights and ensure justice.</div>
+        <div class="swiper-slide">Perception that men aren’t necessarily better political leaders than women: measures beliefs about women’s leadership capabilities, crucial for political representation.</div>
+        <div class="swiper-slide">Women who didn’t undergo child marriage: Shows the percentage of women married after the legal or socially accepted age, highlighting progress in protecting girls’ rights.</div>
+        <div class="swiper-slide">Perception that child marriage should stop: captures societal attitudes toward ending child marriage, an indicator of cultural shifts toward gender equity.</div>
+        <div class="swiper-slide">Women who didn’t undergo female genital mutilation (FGM): measures the prevalence of FGM avoidance, an important marker of bodily autonomy and health rights.</div>
+        <div class="swiper-slide">Perception that FGM should stop: reflects societal awareness and rejection of harmful traditional practices.</div>
       </div>
-      
-      <!-- Rimuovi la paginazione -->
-      <!-- <div class="swiper-pagination"></div> -->
-
-      <!-- Navigazione (bottoni di scorrimento) -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <!-- Bottoni di navigazione con frecce all'interno del box -->
+      <div class="swiper-button-prev-small">←</div>
+      <div class="swiper-button-next-small">→</div>
     </div>
   </div>
+  
 
   <!-- Footer -->
   <footer class="footer">
     <p>Laboratorio di Computer Grafica per l'Information Design - Politecnico di Milano</p>
   </footer>
 
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper-container', {
-      loop: true, // Abilita il loop
-      effect: 'fade', // Effetto di transizione graduale
-      fadeEffect: {
-        crossFade: true, // Passaggio morbido tra le slide
-      },
-      pagination: false, // Disabilita la paginazione (i pallini)
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  </script>
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    loop: true, // Abilita il loop
+    effect: 'fade', // Effetto di transizione graduale
+    fadeEffect: {
+      crossFade: true, // Passaggio morbido tra le slide
+    },
+    pagination: false, // Disabilita la paginazione (i pallini)
+    navigation: {
+      nextEl: '.swiper-button-next-small',
+      prevEl: '.swiper-button-prev-small',
+    },
+    slidesPerView: 1, // Mostra una slide per volta
+    spaceBetween: 0, // Non ci deve essere spazio tra le slide
+    touchAngle: 45, // Regola l'angolo di swipe
+    speed: 800, // Velocità della transizione
+  });
+</script>
+
 </body>
-</html>
 
 
