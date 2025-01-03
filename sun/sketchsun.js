@@ -26,7 +26,7 @@ function preload() {
   data = loadTable("../assets/data.csv", "csv", "header");
  // poppinsRegular = loadFont('assets/Poppins-Regular.ttf');
   inconsolataRegular = loadFont('../fonts/Inconsolata-Regular.ttf');
-  baskerville = loadFont ('../fonts/BaskervilleItalicBT.ttf')
+  baskerville = loadFont ('../fonts/LibreBaskervilleItalic.ttf')
 }
 
 function setup() {
@@ -416,23 +416,7 @@ function testoCurvoEconomic (x, y, size) {
   }
 
 
-  function percentuali(x, y, size, paese) {
-    push();
-      
-      rotate(90 / value.length * j); 
-      
-      fill ("white");
-      textAlign(CENTER, CENTER)
-      textSize (12);
-      text(-(spessore/2) + 5/7*size + 200 * fiume["length"]/6000, 0);
-      
-      pop();
-
-    
-    pop(); 
-
-    nomeOutflow (xPos, yPos, circleSize, outflow);
-  }
+  
 
   
   

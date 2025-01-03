@@ -47,7 +47,7 @@ function draw() {
     let paeseData = nazioni[paese];
     let lat = paeseData.lat;
     let lon = paeseData.lon;
-    let value = paeseData.average;
+    let myValue = paeseData.average;
     
     // Mappiamo le coordinate per il canvas
     let x = map(lon, -105, 130, 0, width);
@@ -55,12 +55,12 @@ function draw() {
     
     // Mappa il valore della media al diametro tra 10 e 20
     let size = windowWidth * 0.1;
-    let diameter = map(value, minAverage, maxAverage, size * 0.06, size * 0.13);
+    let diameter = map(myValue, minAverage, maxAverage, size * 0.06, size * 0.13);
     
     // Imposta il colore con opacità mappata (se vuoi mantenerlo uguale a prima)
-    let opacity = map(value, minAverage, maxAverage, 45, 255); // 115 è 45% di 255, 255 è 100% di opacità
+    let opacity = map(myValue, minAverage, maxAverage, 45, 255); // 115 è 45% di 255, 255 è 100% di opacità
     let c = color(253, 255, 160, opacity); // Usa il colore bianco con l'opacità mappata
-    drawHalo(x, y, value, diameter);
+    drawHalo(x, y, myValue, diameter);
     // Disegno il glifo con il colore e il diametro mappato
     drawGliph(x, y, c, diameter);
     
@@ -86,8 +86,8 @@ function draw() {
 }
 
 
-function drawHalo(x, y, value, diameter) {
-  let maxHaloSize = map(value, 0, 10, diameter * 0.1, diameter * 0.6); // Mappa la grandezza dell'alone in base al valore "average"
+function drawHalo(x, y, myValue, diameter) {
+  let maxHaloSize = map(myValue, 0, 10, diameter * 0.1, diameter * 0.6); // Mappa la grandezza dell'alone in base al valore "average"
   for (let i = 0; i < 5; i++) {
     let currentSize = maxHaloSize * (i + 1) * 0.2; // Aumenta la dimensione progressivamente
     let currentOpacity = map(i, 0, 4, 50, 10); // Decrescita dell'opacità
