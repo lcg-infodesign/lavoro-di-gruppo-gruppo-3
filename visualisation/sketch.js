@@ -4,7 +4,7 @@ let backgroundColor = '#06011e';
 
 
 function preload(){
-  data = loadTable("/assets/data.csv", "csv", "header");
+  data = loadTable("../assets/data.csv", "csv", "header");
 }
 
 function setup() {
