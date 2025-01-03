@@ -1,7 +1,7 @@
 /* Importazione del font personalizzato */
 @font-face {
   font-family: 'Baskerville';
-  src: url('../fonts/BaskerVilleRegular.ttf') format('truetype');
+  src: url('../fonts/LibreBaskervilleRegular.ttf') format('truetype');
 }
 
 /* Stile per il corpo */
