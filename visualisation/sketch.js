@@ -50,8 +50,8 @@ function draw() {
     let myValue = paeseData.average;
     
     // Mappiamo le coordinate per il canvas
-    let x = map(lon, -105, 130, 0, width);
-    let y = map(lat, -30, 65, height, 0);
+    let x = map(lon, -105, 120, 0, width);
+    let y = map(lat, -27, 68, height, 0);
     
     // Mappa il valore della media al diametro tra 10 e 20
     let size = windowWidth * 0.1;
@@ -84,7 +84,6 @@ function draw() {
     });
   }
 }
-
 
 function drawHalo(x, y, myValue, diameter) {
   let maxHaloSize = map(myValue, 0, 10, diameter * 0.1, diameter * 0.6); // Mappa la grandezza dell'alone in base al valore "average"
