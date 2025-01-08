@@ -23,60 +23,117 @@
     </nav>
   </header>
   
-  <!-- Contenitore di testo con griglia -->
-  <div class="text-container">
-    <div class="text">
-      <p>These parameters reflect various aspects of gender equality and the status of women in society, providing a multi-dimensional view of women’s socioeconomic, cultural, and political status globally, helping identify areas where gender disparities persist and where progress has been made.</p>
-    </div>
+  <!-- Box per il testo introduttivo -->
+  <div class="intro-box">
+    <p>
+      These parameters reflect various aspects of gender equality and the status of women in society,  providing a multi dimensional view of women’s socioeconomic, cultural, and political status globally, helping identify areas where gender disparities persist and where progress has been made.
+    </p>
   </div>
-  
+
+  <!-- Galleria Swiper -->
   <div class="center-box">
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"> House ownership: measures the percentage of women who own a house, indicating women's access to assets and financial independence.</div>
-        <div class="swiper-slide">Land ownership: Indicates the proportion of women owning land, reflecting economic empowerment and inheritance rights.</div>
-        <div class="swiper-slide">Bank account ownership: tracks women's access to formal financial systems, essential for autonomy and participation in the economy.</div>
-        <div class="swiper-slide">Feeling of safety at night: indicates women’s perception of public safety, a key factor for mobility and freedom.</div>
-        <div class="swiper-slide">Confidence in the Court and Judicial System: indicates trust in legal institutions to protect women's rights and ensure justice.</div>
-        <div class="swiper-slide">Perception that men aren’t necessarily better political leaders than women: measures beliefs about women’s leadership capabilities, crucial for political representation.</div>
-        <div class="swiper-slide">Women who didn’t undergo child marriage: Shows the percentage of women married after the legal or socially accepted age, highlighting progress in protecting girls’ rights.</div>
-        <div class="swiper-slide">Perception that child marriage should stop: captures societal attitudes toward ending child marriage, an indicator of cultural shifts toward gender equity.</div>
-        <div class="swiper-slide">Women who didn’t undergo female genital mutilation (FGM): measures the prevalence of FGM avoidance, an important marker of bodily autonomy and health rights.</div>
-        <div class="swiper-slide">Perception that FGM should stop: reflects societal awareness and rejection of harmful traditional practices.</div>
+        <!-- Economic Rights -->
+        <div class="swiper-slide">
+          <div class="category economic-rights">Economic Rights</div>
+          <span class="highlight">House ownership:</span> measures the percentage of women who own a house, indicating women's access to assets and financial independence.
+        </div>
+        <div class="swiper-slide">
+          <div class="category economic-rights">Economic Rights</div>
+          <span class="highlight">Land ownership:</span> Indicates the proportion of women owning land, reflecting economic empowerment and inheritance rights.
+        </div>
+        <div class="swiper-slide">
+          <div class="category economic-rights">Economic Rights</div>
+          <span class="highlight">Bank account ownership:</span> tracks women's access to formal financial systems, essential for autonomy and participation in the economy.
+        </div>
+  
+        <!-- Freedom & Justice -->
+        <div class="swiper-slide">
+          <div class="category freedom-justice">Freedom & Justice</div>
+          <span class="highlight">Feeling of safety at night:</span> indicates women’s perception of public safety, a key factor for mobility and freedom.
+        </div>
+        <div class="swiper-slide">
+          <div class="category freedom-justice">Freedom & Justice</div>
+          <span class="highlight">Confidence in the Court and Judicial System:</span> indicates trust in legal institutions to protect women's rights and ensure justice.
+        </div>
+        <div class="swiper-slide">
+          <div class="category freedom-justice">Freedom & Justice</div>
+          <span class="highlight">Perception that men aren’t necessarily better political leaders than women:</span> measures beliefs about women’s leadership capabilities, crucial for political representation.
+        </div>
+       <!-- General Violence -->
+        <div class="swiper-slide">
+          <div class="category general-violence">General Violence</div>
+          <span class="highlight">Women who didn’t undergo child marriage:</span> Shows the percentage of women married after the legal or socially accepted age, highlighting progress in protecting girls’ rights.
+        </div>
+        <div class="swiper-slide">
+          <div class="category general-violence">General Violence</div>
+          <span class="highlight">Women who didn’t undergo female genital mutilation (FGM):</span> measures the prevalence of FGM avoidance, an important marker of bodily autonomy and health rights.
+        </div>
+        <div class="swiper-slide">
+          <div class="category general-violence">General Violence</div>
+          <span class="highlight">Perception that FGM should stop:</span> reflects societal awareness and rejection of harmful traditional practices.
+        </div>
+        <div class="swiper-slide">
+          <div class="category general-violence">General Violence</div>
+          <span class="highlight">Perception that a husband not justified in hitting or beating his wife under any circumstances:</span> highlights attitudes toward domestic violence and gender-based abuse.
+        </div>
+       <!-- Social Rights -->
+        <div class="swiper-slide">
+          <div class="category social-rights">Social Rights</div>
+          <span class="highlight">Perception that children don’t necessarily suffer more if a mother works for pay:</span>reflects attitudes toward working mothers, challenging stereotypes about traditional gender roles.
+        </div>
+        <div class="swiper-slide">
+          <div class="category social-rights">Social Rights</div>
+          <span class="highlight">Perception that a woman earning more/the same as her husband doesn’t cause problems: </span> gauges societal acceptance of women's economic empowerment within households.
+        </div>
+        <div class="swiper-slide">
+          <div class="category social-rights">Social Rights</div>
+          <span class="highlight">Perception that men don't necessarily make better business executives than women:</span> captures gender biases in professional leadership and workplace equality. 
+        </div>
+        <div class="swiper-slide">
+          <div class="category social-rights">Social Rights</div>
+          <span class="highlight">Perception that men shouldn't have more right to a job than women:</span>highlights societal attitudes toward gender equality in employment. It reflects the belief that women should have equal opportunities in the workforce, challenging traditional norms that prioritise men’s employment.
+        </div>
       </div>
-      <!-- Bottoni di navigazione con frecce all'interno del box -->
+      <!-- Contenitore per la paginazione (numero della slide) -->
+      <div class="swiper-pagination"></div>
+      <!-- Bottoni di navigazione -->
       <div class="swiper-button-prev-small">←</div>
       <div class="swiper-button-next-small">→</div>
     </div>
   </div>
-  
 
   <!-- Footer -->
   <footer class="footer">
     <p>Laboratorio di Computer Grafica per l'Information Design - Politecnico di Milano</p>
   </footer>
 
-<!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  const swiper = new Swiper('.swiper-container', {
-    loop: true, // Abilita il loop
-    effect: 'fade', // Effetto di transizione graduale
-    fadeEffect: {
-      crossFade: true, // Passaggio morbido tra le slide
-    },
-    pagination: false, // Disabilita la paginazione (i pallini)
-    navigation: {
-      nextEl: '.swiper-button-next-small',
-      prevEl: '.swiper-button-prev-small',
-    },
-    slidesPerView: 1, // Mostra una slide per volta
-    spaceBetween: 0, // Non ci deve essere spazio tra le slide
-    touchAngle: 45, // Regola l'angolo di swipe
-    speed: 800, // Velocità della transizione
-  });
-</script>
-
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+        renderFraction: (currentClass) => {
+          return '<span class="' + currentClass + '"></span>';
+        },
+      },
+      navigation: {
+        nextEl: '.swiper-button-next-small',
+        prevEl: '.swiper-button-prev-small',
+      },
+      slidesPerView: 1,
+      spaceBetween: 0,
+      touchAngle: 45,
+      speed: 700,
+    });
+  </script>
 </body>
-
-
+</html>

@@ -14,21 +14,15 @@ body.project-page {
     font-family: 'Baskerville', serif;
 }
 
-/* Contenitore del testo sopra la galleria */
-.text-container {
-    text-align: center;
-    padding-bottom: 5%; /* Ridotto lo spazio sotto il testo */
-    width: 40%;
-    max-width: 50%;
-    padding-top:5%
-}
 
-.text-container .text {
+.intro-box {
     font-size: 0.9em;
     line-height: 1.6em;
     letter-spacing: 0.02em;
+    width: 50%;
     color: #F8FFB8; /* Colore giallo */
-    margin: 0;
+    margin-bottom: 5%;
+    margin-top: 2%;
     text-align: center;
 }
 
@@ -67,6 +61,7 @@ body.project-page {
     color: #F8FFB890;
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
+    padding-bottom: 7%;
 }
 
 .swiper-slide-active {
@@ -106,4 +101,51 @@ body.project-page {
 .swiper-button-prev-small:hover, .swiper-button-next-small:hover {
     opacity: 1;
     transform: scale(1.3);
+}
+.highlight {
+    color: #F8FFB8; /* Dark yellow (Goldenrod) */
+  font-weight: 500;
+}
+  /* Common styles for categories */
+.category {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    padding-bottom: 10%;
+  }
+  
+  /* Colors for each category */
+  .economic-rights {
+    color: #C48020; /* Gold */
+  }
+  
+  .freedom-justice {
+    color: #87538F; /* Deep Sky Blue */
+  }
+  
+  .general-violence {
+    color:#6969B7; /* Orange Red */
+  }
+  
+  .social-rights {
+    color: #B76263; /* Lime Green */
+  }
+  
+
+  /* Stile del numero di slide */
+.swiper-pagination {
+  position: absolute;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: 'Baskerville', serif;
+  font-size: 1em; /* Dimensione del testo */
+  color: #F8FFB8;
+}
+
+.swiper-pagination span {
+  display: inline-block;
+  background-color: transparent; /* Sfondo trasparente */
+  font-size: 0.9em; /* Dimensione leggermente ridotta */
+  color: #F8FFB8;
 }
