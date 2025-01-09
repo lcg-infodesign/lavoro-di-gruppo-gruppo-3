@@ -5,7 +5,7 @@
 }
 
 /* Stile per la pagina specifica */
-body.project-page {
+.project-page {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
