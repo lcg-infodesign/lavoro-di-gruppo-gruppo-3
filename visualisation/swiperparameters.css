@@ -1,151 +1,140 @@
 /* Importazione del font personalizzato */
 @font-face {
-    font-family: 'Baskerville';
-    src: url('../fonts/LibreBaskervilleRegular.ttf') format('truetype');
+  font-family: 'Baskerville';
+  src: url('../fonts/LibreBaskervilleRegular.ttf') format('truetype');
 }
 
-/* Stile per la pagina specifica */
+/* Stile per la pagina specifica (contenuto della classe .project-page) */
 .project-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0;
-    font-family: 'Baskerville', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Baskerville', serif;
 }
 
-
-.intro-box {
-    font-size: 0.9em;
-    line-height: 1.6em;
-    letter-spacing: 0.02em;
-    width: 50%;
-    color: #F8FFB8; /* Colore giallo */
-    margin-bottom: 5%;
-    margin-top: 2%;
-    text-align: center;
+/* Stile del box introduttivo */
+.project-page .intro-box {
+  font-size: 0.9em;
+  line-height: 1.6em;
+  letter-spacing: 0.02em;
+  width: 50%;
+  color: #F8FFB8;
+  margin-bottom: 5%;
+  margin-top: 2%;
+  text-align: center;
 }
 
 /* Box centrale per lo swiper */
-.center-box {
-    width: 30%;
-    max-width: 600px;
-    padding: 2%;
-    margin-bottom: 10%; /* Spazio extra sotto il box */
-    backdrop-filter: blur(10px);
-    border: 2px solid #F8FFB8;
-    box-shadow: 0 0 25px rgba(248, 255, 184, 0.7);
-    border-radius: 15px;
-    position: relative; /* Necessario per posizionare le frecce all'interno */
+.project-page .center-box {
+  width: 30%;
+  max-width: 600px;
+  padding: 2%;
+  margin-bottom: 10%;
+  backdrop-filter: blur(10px);
+  border: 2px solid #F8FFB8;
+  box-shadow: 0 0 25px rgba(248, 255, 184, 0.7);
+  border-radius: 15px;
+  position: relative;
 }
 
 /* Stile dello swiper */
-.swiper-container {
-    width: 100%;
-    padding: 5% 0; /* Ridotto padding */
-    position: relative;
-    margin-bottom: 10px; /* Spazio sotto il contenitore Swiper */
+.project-page .swiper-container {
+  width: 100%;
+  padding: 5% 0;
+  position: relative;
+  margin-bottom: 10px;
 }
 
-
-/* Slide della galleria */
-.swiper-slide {
-    font-size: 1rem;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    word-wrap: break-word;
-    line-height: 1.5em;
-    color: #F8FFB890;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-    padding-bottom: 7%;
+.project-page .swiper-slide {
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  word-wrap: break-word;
+  line-height: 1.5em;
+  color: #F8FFB890;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  padding-bottom: 7%;
 }
 
-.swiper-slide-active {
-    opacity: 1 !important;
-    z-index: 1;
+.project-page .swiper-slide-active {
+  opacity: 1 !important;
+  z-index: 1;
 }
 
-.swiper-slide-prev,
-.swiper-slide-next {
-    opacity: 0 !important;
+.project-page .swiper-slide-prev,
+.project-page .swiper-slide-next {
+  opacity: 0 !important;
 }
 
 /* Bottoni di navigazione dello swiper */
-.swiper-button-prev-small, .swiper-button-next-small {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1.8em;
-    color: #F8FFB8;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-    z-index: 10; /* Sopra le slide */
+.project-page .swiper-button-prev-small, 
+.project-page .swiper-button-next-small {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.8em;
+  color: #F8FFB8;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  z-index: 10;
 }
 
-/* Freccette centrate orizzontalmente */
-.swiper-button-prev-small {
-    left: calc(50% - 50%); /* Posiziona a sinistra, centrato */
+.project-page .swiper-button-prev-small:hover, 
+.project-page .swiper-button-next-small:hover {
+  opacity: 1;
+  transform: scale(1.3);
 }
 
-.swiper-button-next-small {
-    right: calc(50% - 50%); /* Posiziona a destra, centrato */
-}
-
-/* Hover Effect */
-.swiper-button-prev-small:hover, .swiper-button-next-small:hover {
-    opacity: 1;
-    transform: scale(1.3);
-}
-.highlight {
-    color: #F8FFB8; /* Dark yellow (Goldenrod) */
+/* Highlight e categorie */
+.project-page .highlight {
+  color: #F8FFB8;
   font-weight: 500;
 }
-  /* Common styles for categories */
-.category {
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
-    font-size: 1.2em;
-    padding-bottom: 10%;
-  }
-  
-  /* Colors for each category */
-  .economic-rights {
-    color: #C48020; /* Gold */
-  }
-  
-  .freedom-justice {
-    color: #87538F; /* Deep Sky Blue */
-  }
-  
-  .general-violence {
-    color:#6969B7; /* Orange Red */
-  }
-  
-  .social-rights {
-    color: #B76263; /* Lime Green */
-  }
-  
 
-  /* Stile del numero di slide */
-.swiper-pagination {
+.project-page .category {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  padding-bottom: 10%;
+}
+
+.project-page .economic-rights {
+  color: #C48020;
+}
+
+.project-page .freedom-justice {
+  color: #87538F;
+}
+
+.project-page .general-violence {
+  color: #6969B7;
+}
+
+.project-page .social-rights {
+  color: #B76263;
+}
+
+/* Stile del numero di slide */
+.project-page .swiper-pagination {
   position: absolute;
   transform: translateX(-50%);
   text-align: center;
   font-family: 'Baskerville', serif;
-  font-size: 1em; /* Dimensione del testo */
+  font-size: 1em;
   color: #F8FFB8;
 }
 
-.swiper-pagination span {
+.project-page .swiper-pagination span {
   display: inline-block;
-  background-color: transparent; /* Sfondo trasparente */
-  font-size: 0.9em; /* Dimensione leggermente ridotta */
+  background-color: transparent;
+  font-size: 0.9em;
   color: #F8FFB8;
 }
