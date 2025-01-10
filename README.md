@@ -27,6 +27,6 @@ Con questa iniziativa, miriamo a trasformare dati grezzi in una narrazione reali
 
 ## IL TEAM
 Siamo sei studentesse del Politecnico di Milano e, insieme, abbiamo sviluppato *A Thousand Splendid Suns*, un progetto di Information Design che trasforma dati complessi in una narrazione visiva significativa. Ognuna di noi ha contribuito con le proprie competenz: 
- - **Francesca e Syria** si sono occupate del design visivo e hanno sviluppato il codice HTML, CSS e JavaSript dell'intero sito web
+ - **Francesca e Syria** si sono occupate del design visivo e hanno sviluppato il codice HTML, CSS e JavaSript dell'intero sito web.
  - **Arianna e Marta** si sono occupate dell’elaborazione del dataset, della ricerca di contenuti e dello sviluppo del concept.  
  - **Giacinta e Chiara** hanno lavroato alla stesura dell codice, integrando lo sketch p5.js con HTML e contribuendo alla realizzazione grafica del progetto.  
