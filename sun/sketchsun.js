@@ -3,6 +3,7 @@ let dataObj;
 let poppinsRegular;
 let inconsolataRegular;
 let baskerville;
+let cambiamento = true;
 
 let activeRay = -1;  // Nessun raggio attivo inizialmente
 let spicchiText = [
@@ -68,38 +69,56 @@ function setup() {
 }
 
 function draw() {
-  background("#06011E");
+
+  
 
   // Recupera i parametri dall'URL
   let params = getURLParams();
   let country = params['country']; 
   
-  
-  disegnaCerchi(xPos, yPos, size);
+  // Seleziona il primo paese nel dataset
+  let paese = nazioni[country];  // Prendi il primo paese nel dataset
   
 
+
+  
+
+   
+  
   angleMode(RADIANS);
-
-  
-
-   // Seleziona il primo paese nel dataset
-   let paese = nazioni[country];  // Prendi il primo paese nel dataset
-  
-
    mouseOverReaction(xPos, totalHeight, paese, size)
-   // Passa il paese alla funzione disegnaSole
+
+   if (cambiamento){
+    
+    background("#06011E");  
+    angleMode(RADIANS);
+    disegnaCerchi(xPos, yPos, size);
+    angleMode(RADIANS);
+
+    if(indiceSpicchio >= 0){
+      // Mostriamo la scritta corrispondente
+    fill("white");
+    textSize (size *0.05)
+    textAlign(LEFT, BOTTOM);
+    text(spicchiText[indiceSpicchio]+"\n\n"+paese[spicchiText[indiceSpicchio]], xPos - 13/16*xPos, (totalHeight/2)-(8/16*size));
+    }
+    
+    // Passa il paese alla funzione disegnaSole
    disegnaSole(xPos, yPos, size, paese);
    
-  //disegnaSole (xPos,yPos, size, nazioni[nomeC]);
-
-  ilGrandeNome (xPos, totalHeight, size, paese, baskerville);
-
-  // ----------------------- testi curvi ---------------------------------
-  testoCurvoEconomic (xPos, yPos, size);
-  testoCurvoSocial (xPos, yPos, size);
-  testoCurvoFree (xPos, yPos, size);
-  testoCurvoViolence (xPos, yPos, size);
-  //---------------------------------------------------------------------
+   //disegnaSole (xPos,yPos, size, nazioni[nomeC]);
+ 
+   ilGrandeNome (xPos, totalHeight, size, paese, baskerville);
+ 
+   // ----------------------- testi curvi ---------------------------------
+   testoCurvoEconomic (xPos, yPos, size);
+   testoCurvoSocial (xPos, yPos, size);
+   testoCurvoFree (xPos, yPos, size);
+   testoCurvoViolence (xPos, yPos, size);
+   //--------------------------------------------------------------------- 
+   cambiamento = false
+  }
+   
 
 }
 
@@ -127,11 +146,7 @@ function mouseOverReaction(x, totalHeight, nazione, size) {
     angoloGradi = (angoloGradi + 360/28) % 360;  // Ruotiamo gli spicchi
     window.indiceSpicchio = floor(map(angoloGradi, 0, 360, 0, 14)) % 14;
 
-    // Mostriamo la scritta corrispondente
-    fill("white");
-    textSize (size *0.05)
-    textAlign(LEFT, BOTTOM);
-    text(spicchiText[indiceSpicchio]+"\n\n"+nazione[spicchiText[indiceSpicchio]], x - 13/16*x, (totalHeight/2)-(8/16*size));
+    cambiamento = true;
   }
   
 }
