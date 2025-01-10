@@ -86,7 +86,7 @@ function draw() {
    let paese = nazioni[country];  // Prendi il primo paese nel dataset
   
 
-   mouseOverReaction(paese, size)
+   mouseOverReaction(xPos, totalHeight, paese, size)
    // Passa il paese alla funzione disegnaSole
    disegnaSole(xPos, yPos, size, paese);
    
@@ -104,7 +104,7 @@ function draw() {
 }
 
 
-function mouseOverReaction(nazione, size) {
+function mouseOverReaction(x, totalHeight, nazione, size) {
   window.indiceSpicchio = -1;
 
   let distanza = dist(mouseX, mouseY, centerX, centerY);
@@ -131,7 +131,7 @@ function mouseOverReaction(nazione, size) {
     fill("white");
     textSize (size *0.05)
     textAlign(LEFT, BOTTOM);
-    text(spicchiText[indiceSpicchio]+"\n\n"+nazione[spicchiText[indiceSpicchio]], 100, 400);
+    text(spicchiText[indiceSpicchio]+"\n\n"+nazione[spicchiText[indiceSpicchio]], x - 13/16*x, (totalHeight/2)-(8/16*size));
   }
   
 }
@@ -583,7 +583,7 @@ function testoCurvoViolence (x, y, size) {
 
 function ilGrandeNome (x, totalHeight, size, nome, font){
   
-  textAlign(CENTER, TOP);
+  textAlign(LEFT, TOP);
   textSize (size *0.1)
   textFont (font);
   fill(248, 255, 184);
