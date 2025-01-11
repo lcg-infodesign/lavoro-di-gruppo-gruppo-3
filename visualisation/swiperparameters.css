@@ -1,52 +1,48 @@
-/* Importazione del font personalizzato */
-@font-face {
-  font-family: 'Baskerville';
-  src: url('../fonts/LibreBaskervilleRegular.ttf') format('truetype');
-}
-
-/* Stile per la pagina specifica (contenuto della classe .project-page) */
-.project-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  font-family: 'Baskerville', serif;
-}
-
-/* Stile del box introduttivo */
-.project-page .intro-box {
+/* Centrare il contenuto di .intro-box */
+.intro-box {
   font-size: 0.9em;
   line-height: 1.6em;
   letter-spacing: 0.02em;
-  width: 50%;
-  color: #F8FFB8;
+  color: #F8FFB8; /* Colore giallo */
   margin-bottom: 5%;
   margin-top: 2%;
   text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;  /* Centrato orizzontalmente */
 }
 
-/* Box centrale per lo swiper */
-.project-page .center-box {
+/* Centrare il contenuto di .center-box */
+.center-box {
   width: 30%;
   max-width: 600px;
   padding: 2%;
-  margin-bottom: 10%;
+  margin: 0 auto;  /* Centra orizzontalmente */
+  margin-bottom: 10%; /* Spazio extra sotto il box */
   backdrop-filter: blur(10px);
   border: 2px solid #F8FFB8;
   box-shadow: 0 0 25px rgba(248, 255, 184, 0.7);
   border-radius: 15px;
-  position: relative;
+  position: relative; /* Necessario per posizionare le frecce all'interno */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centra verticalmente */
+  flex-direction: column;
 }
 
-/* Stile dello swiper */
-.project-page .swiper-container {
+/* Centrare il contenuto dello swiper */
+.swiper-container {
   width: 100%;
-  padding: 5% 0;
+  padding: 5% 0; /* Ridotto padding */
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Spazio sotto il contenitore Swiper */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.project-page .swiper-slide {
+/* Slide della galleria */
+.swiper-slide {
   font-size: 1rem;
   text-align: center;
   display: flex;
@@ -61,20 +57,20 @@
   padding-bottom: 7%;
 }
 
-.project-page .swiper-slide-active {
+.swiper-slide-active {
   opacity: 1 !important;
   z-index: 1;
 }
 
-.project-page .swiper-slide-prev,
-.project-page .swiper-slide-next {
+.swiper-slide-prev,
+.swiper-slide-next {
   opacity: 0 !important;
 }
 
 /* Bottoni di navigazione dello swiper */
-.project-page .swiper-button-prev-small, 
-.project-page .swiper-button-next-small {
+.swiper-button-prev-small, .swiper-button-next-small {
   position: absolute;
+  bottom: 10px; /* Posiziona le frecce in basso */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,22 +79,33 @@
   color: #F8FFB8;
   opacity: 0.8;
   transition: all 0.3s ease;
-  z-index: 10;
+  z-index: 10; /* Sopra le slide */
 }
 
-.project-page .swiper-button-prev-small:hover, 
-.project-page .swiper-button-next-small:hover {
+/* Freccia sinistra */
+.swiper-button-prev-small {
+  left: 10px; /* Posiziona a sinistra */
+}
+
+/* Freccia destra */
+.swiper-button-next-small {
+  right: 10px; /* Posiziona a destra */
+}
+
+/* Hover Effect */
+.swiper-button-prev-small:hover, .swiper-button-next-small:hover {
   opacity: 1;
   transform: scale(1.3);
 }
 
-/* Highlight e categorie */
-.project-page .highlight {
-  color: #F8FFB8;
+/* Highlight per categorie */
+.highlight {
+  color: #F8FFB8; /* Dark yellow (Goldenrod) */
   font-weight: 500;
 }
 
-.project-page .category {
+/* Common styles for categories */
+.category {
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
@@ -106,35 +113,39 @@
   padding-bottom: 10%;
 }
 
-.project-page .economic-rights {
-  color: #C48020;
+/* Colors for each category */
+.economic-rights {
+  color: #C48020; /* Gold */
 }
 
-.project-page .freedom-justice {
-  color: #87538F;
+.freedom-justice {
+  color: #87538F; /* Deep Sky Blue */
 }
 
-.project-page .general-violence {
-  color: #6969B7;
+.general-violence {
+  color:#6969B7; /* Orange Red */
 }
 
-.project-page .social-rights {
-  color: #B76263;
+.social-rights {
+  color: #B76263; /* Lime Green */
 }
 
 /* Stile del numero di slide */
-.project-page .swiper-pagination {
+.swiper-pagination {
   position: absolute;
   transform: translateX(-50%);
   text-align: center;
   font-family: 'Baskerville', serif;
-  font-size: 1em;
+  font-size: 1em; /* Dimensione del testo */
   color: #F8FFB8;
+  width: 100%;
 }
 
-.project-page .swiper-pagination span {
+.swiper-pagination span {
   display: inline-block;
-  background-color: transparent;
-  font-size: 0.9em;
+  background-color: transparent; /* Sfondo trasparente */
+  font-size: 0.9em; /* Dimensione leggermente ridotta */
   color: #F8FFB8;
+  margin-top: 10px; /* Distanza dal contenuto */
 }
+
