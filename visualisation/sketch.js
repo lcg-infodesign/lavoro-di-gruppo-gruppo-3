@@ -50,8 +50,8 @@ function draw() {
     let myValue = paeseData.average;
     
     // Mappiamo le coordinate per il canvas
-    let x = map(lon, -105, 120, 0, width);
-    let y = map(lat, -27, 68, height, 0);
+    let x = map(lon, -94, 100, 0, width);
+    let y = map(lat, -23, 68, height, 0);
     
     // Mappa il valore della media al diametro tra 10 e 20
     let size = windowWidth * 0.1;
@@ -66,17 +66,18 @@ function draw() {
     
     let link = createA(`../sun/sun.html?country=${encodeURIComponent(paese)}`, paese);    
     // Posiziona il link sovrapposto il glifo
-    let linkYPosition = y + 110; // Posiziona il link sopra il centro del glifo
+    let linkYPosition = y + 100; // Posiziona il link sopra il centro del glifo
     let linkXPosition = x; // Centra il link orizzontalmente
     
     // Posiziona il link esattamente sopra il glifo
     link.position(linkXPosition - diameter / 2, linkYPosition - diameter / 2); 
     link.size(diameter, diameter); // Il link ha la stessa dimensione del glifo
+
     // Aggiungi uno stile visibile per il link (opzionale)
-    link.style('color', 'white');
-    link.style('font-size', '12px');
+    link.style('color', 'transparent');
+    link.style('font-size', '0px');
     link.style('text-decoration', 'none');
-    link.style('background', 'rgba(211, 39, 39, 0.5)'); // Aggiunge un fondo scuro al link
+    // link.style('background', 'rgba(211, 39, 39, 0.5)'); // Aggiunge un fondo scuro al link
     
     // Quando clicchi sul glifo, il link dovrebbe essere aperto
     link.mousePressed(() => {
