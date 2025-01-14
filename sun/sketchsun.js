@@ -92,16 +92,20 @@ function draw() {
     
     background("#06011E");  
     angleMode(RADIANS);
-    disegnaCerchi(xPos, yPos, size);
+    disegnaCerchi(xPos, yPos, size, paese);
     angleMode(RADIANS);
 
     if(indiceSpicchio >= 0){
       // Mostriamo la scritta corrispondente
-    fill("white");
+    fill("#F8FFB8");
+    noStroke();
+    textFont(baskerville);
     textSize (size *0.05)
-    textAlign(LEFT, BOTTOM);
-    text(spicchiText[indiceSpicchio]+"\n\n"+paese[spicchiText[indiceSpicchio]], xPos - 13/16*xPos, (totalHeight/2)-(8/16*size));
+    textAlign(LEFT, TOP);
+    //text(spicchiText[indiceSpicchio]+"\n\n"+paese[spicchiText[indiceSpicchio]], xPos - 13/16*xPos, (totalHeight/2)-(8/16*size));
+    text(spicchiText[indiceSpicchio], xPos - 13/16*xPos, (totalHeight/2));
     }
+  
     
     // Passa il paese alla funzione disegnaSole
    disegnaSole(xPos, yPos, size, paese);
@@ -238,7 +242,7 @@ function drawRay(index, rayLengthData, size) {
   let y1 = centerY + sin(angle) * size/10; // Aggiustiamo la distanza dal centro (partono più distanti)
   
   let minRadius = 0/500*size;  // Raggio minimo per il primo cerchio
-  let maxRadius = 6/500*size;  // Raggio massimo per l'ultimo cerchio
+  let maxRadius = 8/500*size;  // Raggio massimo per l'ultimo cerchio
   
   
   // Ciclo per disegnare i cerchi lungo il raggio
@@ -281,7 +285,7 @@ function drawSecondRay(index, rayLengthData, size) {
   let y1 = centerY + sin(angle) * size/10; // Aggiustiamo la distanza dal centro (partono più distanti)
   
   let minRadius = 2/500*size;  // Raggio minimo per il primo cerchio
-  let maxRadius = 12/500*size;  // Raggio massimo per l'ultimo cerchio
+  let maxRadius = 14/500*size;  // Raggio massimo per l'ultimo cerchio
   
   
   // Ciclo per disegnare i cerchi lungo il raggio
@@ -361,7 +365,7 @@ function mouseMoved() {
   }
 }
 
-function disegnaCerchi(x, y, size){
+function disegnaCerchi(x, y, size, paese){
   noFill();
   strokeWeight (2);
   stroke(214, 214, 156, 90);
@@ -374,14 +378,53 @@ function disegnaCerchi(x, y, size){
   
   drawingContext.setLineDash([0, 0]);
   angleMode(DEGREES)
+  let nuovaSize = 29/26* size
   stroke("#B1803C");
-  arc(x, y, size, size, arco*10.9, arco*13.2);
+  arc(x, y, nuovaSize, nuovaSize, arco*10.9, arco*13.2);
   stroke("#B76263");
-  arc(x, y, size, size, arco*13.9, arco*3.2);
+  arc(x, y, nuovaSize, nuovaSize, arco*13.9, arco*3.2);
   stroke("#87538F");
-  arc(x, y, size, size, arco*3.9, arco*6.2);
+  arc(x, y, nuovaSize, nuovaSize, arco*3.9, arco*6.2);
   stroke("#6969B7");
-  arc(x, y, size, size, arco*6.9, arco*10.2);
+  arc(x, y, nuovaSize, nuovaSize, arco*6.9, arco*10.2);
+
+  // Posizionamento del testo "99%" sopra il cerchio
+  let numRays = 14;  // Numero di raggi (settori)
+  let angleStep = 360 / numRays;  // Passo angolare tra ciascun "99%"
+
+  // Calcolo della posizione del testo sopra il cerchio
+  let textRadius = size * 12 / 26 ; // Raggio del cerchio esterno (dove posizioniamo il testo)
+  
+  // Aggiungi un offset per spostare il testo sopra il cerchio
+  let textOffset = 15;  // Aggiungi un offset maggiore per spostare il testo sopra il cerchio
+  
+  // Carica il font "Inconsolata Regular"
+  textFont('Inconsolata');  // Usa il font Inconsolata
+  
+  // Ciclo per posizionare il testo "99%" sopra il cerchio
+  for (let k = 0; k < numRays; k++) {
+    let angle = angleStep * k;  // Angolo per ciascun testo
+    let textX = x + cos(angle) * (textRadius + textOffset);  // Posizione X del testo
+    let textY = y + sin(angle) * (textRadius + textOffset);  // Posizione Y del testo (spostato sopra)
+
+    // Posiziona il testo in modo che rimanga orizzontale rispetto al piano
+    push();
+    translate(textX, textY); // Sposta il contesto alla posizione del testo
+
+    // Ruota il testo per mantenerlo orizzontale rispetto al piano
+    rotate(0); // Non applicare alcuna rotazione (mantieni il testo orizzontale)
+
+    let fontSize = 1/26 *size
+    noStroke();
+    textSize(fontSize);  // Imposta la dimensione del testo
+    textFont ('baskerville')
+    textAlign(CENTER, CENTER);  // Centra il testo
+    fill(255, 255, 191, 70)
+
+    
+    text(paese[spicchiText[indiceSpicchio]]+"%", 0, 0);  // Disegna il testo
+    pop();
+  }
 }
 
 function testoCurvoEconomic (x, y, size) {
@@ -394,7 +437,7 @@ function testoCurvoEconomic (x, y, size) {
   let angoloIniziale = arco*11.4; // Angolo iniziale (ad esempio -90 gradi)
   let angoloFinale = arco*12.7;    // Angolo finale (ad esempio 90 gradi)
 
-  let raggio = size * 14 / 26; // raggio della curva
+  let raggio = size * 16 / 26; // raggio della curva
   let testo = "Economic rights";
   
   // Calcolare la lunghezza dell'arco (differenza tra angolo finale e iniziale)
@@ -447,7 +490,7 @@ function testoCurvoSocial (x, y, size) {
   let angoloIniziale = arco*0.85; // Angolo iniziale (ad esempio -90 gradi)
   let angoloFinale = arco*2.15;    // Angolo finale (ad esempio 90 gradi)
 
-  let raggio = size * 14 / 26; // raggio della curva
+  let raggio = size * 16 / 26; // raggio della curva
   let testo = "Social rights";
   
   // Calcolare la lunghezza dell'arco (differenza tra angolo finale e iniziale)
@@ -500,7 +543,7 @@ function testoCurvoFree (x, y, size) {
   let angoloIniziale = arco*4.25; // Angolo iniziale (ad esempio -90 gradi)
   let angoloFinale = arco*5.85;    // Angolo finale (ad esempio 90 gradi)
 
-  let raggio = size * 14 / 26; // raggio della curva
+  let raggio = size * 16 / 26; // raggio della curva
   let testo = "Freedom and Justice";
   
   // Calcolare la lunghezza dell'arco (differenza tra angolo finale e iniziale)
@@ -553,7 +596,7 @@ function testoCurvoViolence (x, y, size) {
   let angoloIniziale = arco*7.7; // Angolo iniziale (ad esempio -90 gradi)
   let angoloFinale = arco*9.2;    // Angolo finale (ad esempio 90 gradi)
 
-  let raggio = size * 14 / 26; // raggio della curva
+  let raggio = size * 16 / 26; // raggio della curva
   let testo = "General Violence";
   
   // Calcolare la lunghezza dell'arco (differenza tra angolo finale e iniziale)
@@ -602,7 +645,14 @@ function ilGrandeNome (x, totalHeight, size, nome, font){
   textSize (size *0.1)
   textFont (font);
   fill(248, 255, 184);
-  text(nome["nome"], x - 13/16*x, (totalHeight/2)-(8/16*size))
+  // Sostituire i simboli "_" con uno spazio vuoto nella stringa "nome['nome']"
+  let myString = nome["nome"].replace(/_/g, " ");
+  
+  // Disegnare il testo sostituito
+  text(myString, x - 13/16 * x, (totalHeight / 2) - (8 / 16 * size));
+  
+  // Stampare il risultato per il debug
+  print(myString);  // Output: "United States of America"
 }
 
 function findCountryData(countryName) {
