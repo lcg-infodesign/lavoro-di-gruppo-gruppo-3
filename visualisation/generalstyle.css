@@ -24,6 +24,7 @@ body {
   height: 8vh;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
 /* Logo dentro l'header */
@@ -36,19 +37,19 @@ body {
 
 /* Menu di navigazione */
 nav {
-  position: relative;
+  position: absolute;  /* Posizione assoluta */
+  right: 2vw; /* Aggiunto per spostare il menu a 10vw dalla parte destra */
+  top: 1vh;  /* Distanza dall'alto */
   display: flex;
   justify-content: center;
   gap: 1.5vw;
-  margin-left: 45vw;
-  margin-top: 3vh;
 }
 
 /* Stile dei link nel menu */
 nav a {
   color: #F8FFB8;
   text-decoration: none !important; /* Rimuove ogni decorazione */
-  font-size: 1vw;
+  font-size: 0.8vw;
   transition: text-shadow 0.3s ease, transform 0.1s ease;
 }
 

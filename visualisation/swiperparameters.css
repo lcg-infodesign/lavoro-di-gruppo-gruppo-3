@@ -1,4 +1,83 @@
-/* Centrare il contenuto di .intro-box */
+/* Importazione del font personalizzato */
+@font-face {
+  font-family: 'Baskerville';
+  src: url('../fonts/LibreBaskervilleRegular.ttf') format('truetype');
+}
+
+/* Stile per il corpo */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #06011E; /* Sfondo blu scuro */
+  color: #F8FFB8; /* Colore del testo principale */
+  font-family: 'Baskerville', serif; /* Usa il font personalizzato */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Stile per l'header */
+.header {
+  background-color: #06011E; /* Sfondo dell'header */
+  text-align: left;
+  padding: 4vh 1vw;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Logo dentro l'header */
+.logo {
+  width: 30vw;
+  height: auto;
+  padding-left: 2vw;
+  padding-top: 2vh;
+}
+
+/* Menu di navigazione */
+nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 1.5vw;
+  margin-left: 50vw;
+  margin-top: 3vh;
+}
+
+/* Stile dei link nel menu */
+nav a {
+  color: #F8FFB8;
+  text-decoration: none !important; /* Rimuove ogni decorazione */
+  font-size: 0.8vw;
+  transition: text-shadow 0.3s ease, transform 0.1s ease;
+}
+
+nav a:hover {
+  text-shadow: 0 0 9px #F8FFB8, 0 0 8px rgba(248, 255, 184, 0.3), 0 0 10px rgba(248, 255, 184, 0.9);
+  text-decoration: none !important; /* Assicura che non appaia decorazione anche in hover */
+}
+
+/* Contenitore per lo sketch */
+#sketch-container {
+  flex: 1; /* Occupa tutto lo spazio disponibile tra header e footer */
+  position: relative;
+  background-color: #06011E; /* Mantiene lo sfondo blu scuro */
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2% 0;
+  font-size: 0.6vw;
+  color: #F8FFB8;
+}
+
+/* Reset per tutti i link (opzionale, per sicurezza) */
+a {
+  text-decoration: none !important;
+}
+
+/* Intro box */
 .intro-box {
   font-size: 0.9em;
   line-height: 1.6em;
@@ -14,9 +93,8 @@
 
 /* Centrare il contenuto di .center-box */
 .center-box {
-  width: 30%;
-  max-width: 600px;
-  padding: 2%;
+  width: 40%;
+  padding: 4%;
   margin: 0 auto;  /* Centra orizzontalmente */
   margin-bottom: 10%; /* Spazio extra sotto il box */
   backdrop-filter: blur(10px);
@@ -32,10 +110,10 @@
 
 /* Centrare il contenuto dello swiper */
 .swiper-container {
-  width: 100%;
-  padding: 5% 0; /* Ridotto padding */
+  width: 80%;
+  padding: 10%; /* Ridotto padding */
   position: relative;
-  margin-bottom: 10px; /* Spazio sotto il contenitore Swiper */
+  margin-bottom: 2%; /* Spazio sotto il contenitore Swiper */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +148,8 @@
 /* Bottoni di navigazione dello swiper */
 .swiper-button-prev-small, .swiper-button-next-small {
   position: absolute;
-  bottom: 10px; /* Posiziona le frecce in basso */
+  top: 50%; /* Posiziona verticalmente al centro */
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,22 +159,24 @@
   opacity: 0.8;
   transition: all 0.3s ease;
   z-index: 10; /* Sopra le slide */
+  padding: 10px; /* Distanza dal bordo della freccia */
 }
 
 /* Freccia sinistra */
 .swiper-button-prev-small {
-  left: 10px; /* Posiziona a sinistra */
+  left: -110px; /* Posiziona a sinistra fuori dal box */
 }
 
 /* Freccia destra */
 .swiper-button-next-small {
-  right: 10px; /* Posiziona a destra */
+  right: -110px; /* Posiziona a destra fuori dal box */
 }
 
-/* Hover Effect */
+/* Hover Effect - Bagliore direttamente sul contorno della freccia */
 .swiper-button-prev-small:hover, .swiper-button-next-small:hover {
   opacity: 1;
-  transform: scale(1.3);
+  filter: drop-shadow(0 0 15px #F8FFB8) drop-shadow(0 0 20px #F8FFB8) drop-shadow(0 0 35px #F8FFB8); /* Effetto di bagliore più forte e intenso */
+  transition: filter 0.3s ease;
 }
 
 /* Highlight per categorie */
