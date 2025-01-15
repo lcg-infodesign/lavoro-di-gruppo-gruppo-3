@@ -132,7 +132,7 @@ a {
   font-size: 0.8em;
   text-align: center;
   position: fixed; /* Posizione assoluta all'interno della slide */
-  top: 200px; /* Posiziona la categoria sopra il numero di paginazione */
+  top: 150px; /* Posiziona la categoria sopra il numero di paginazione */
   left: 50%; /* Centra il testo orizzontalmente */
   transform: translateX(-50%); /* Centra il testo */
   color: inherit; /* Mantiene il colore specifico della categoria */
