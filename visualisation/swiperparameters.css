@@ -34,7 +34,7 @@ a {
 /* Centrare il contenuto di .center-box */
 .center-box {
   width: 40%;
-  padding: 4%;
+  padding-top:3%;
   margin: 0 auto;  /* Centra orizzontalmente */
   margin-bottom: 10%; /* Spazio extra sotto il box */
   backdrop-filter: blur(10px);
@@ -51,7 +51,7 @@ a {
 /* Centrare il contenuto dello swiper */
 .swiper-container {
   width: 80%;
-  padding: 10%; /* Ridotto padding */
+  padding: 4%; /* Ridotto padding */
   position: relative;
   margin-bottom: 2%; /* Spazio sotto il contenitore Swiper */
   display: flex;
@@ -137,7 +137,7 @@ a {
   transform: translateX(-50%); /* Centra il testo */
   color: inherit; /* Mantiene il colore specifico della categoria */
   margin: 0; /* Rimuove eventuali spazi inutili */
-  padding: 0; /* Rimuove eventuali spazi inutili */
+  padding-top: 3%; /* Rimuove eventuali spazi inutili */
   z-index: 5; /* Assicura che la categoria sia sopra il resto del contenuto della slide */
 }
 
