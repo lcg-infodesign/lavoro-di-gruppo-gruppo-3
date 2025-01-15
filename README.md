@@ -3,7 +3,7 @@
 This repository is the starting point of the assignments given in the course [Computergrafica per l'Information Design](https://www11.ceda.polimi.it/schedaincarico/schedaincarico/controller/scheda_pubblica/SchedaPublic.do?&evn_default=evento&c_classe=834257&lang=IT&__pj0=0&__pj1=9c10fe379e96db59d55d49b6b4252c5e).
 
 # **A Thousand Splendid Suns**
-## **IL PROGETTO
+## IL PROGETTO
 *A Thousand Splendid Suns* è un progetto di Information Design che esplora come ambiente, famiglia, società e cultura plasmino opportunità e percezioni individuali, spesso alimentando le diseguaglianze, in particolare nelle società patriarcali, dove la discriminazione sistemica contro le donne persiste.
 
 Ispirato al romanzo di Khaled Hosseini *A Thousand Splendid Suns*, il progetto riflette le sfide universali che le donne affrontano nei diversi ambiti della vita quotidiana. Il romanzo racconta le vite di due donne afghane: due percorsi distinti, ma intrecciati dalla stessa lotta universale contro il controllo esercitato dalle aspettative sociali e familiari. Hosseini cattura questa dinamica dal punto di vista della forza e della resistenza femminile di fronte all’oppressione. Il titolo, ripreso dalla poesia del XVII secolo di Saib-e-Tabrizi, simboleggia tenacia, speranza e il valore intrinseco delle donne nella società.
@@ -17,7 +17,7 @@ Il progetto adotta un sistema di visualizzazione a due livelli per rappresentare
 Traducendo i dati in visualizzazioni intuitive, il progetto rende tangibili le disuguaglianze astratte e offre una chiave di lettura chiara e coinvolgente sulle sfide che le donne affrontano in tutto il mondo.
 
 
-## **IL DATASET
+## IL DATASET
 Il dataset , tratto dall’OECD Gender, Institutions and Development Database e da contributi del 2023 di SIGI, UNICEF, Nazioni Unite e Organizzazione Mondiale della Sanità, fornisce una panoramica globale delle condizioni femminili e la analizza su due aspetti:
 
 - **realtà pratiche:** accesso a servizi finanziari, sicurezza e diritti.
@@ -41,7 +41,7 @@ Modifiche apportate rispetto al dataset originale:
 - **Colonna Average**: la media in % dei 14 parametri di ogni paese, utile per la visualizzazione globale.
 - **Focalizzazione sui pareri femminili**: eliminazione di eventuali opinioni maschili (nella colonna SEX) presenti nel dataset originale per favorire un esercizio di autoconsapevolezza delle donne stesse.
 
-## **IL TEAM
+## IL TEAM
 Siamo sei studentesse del Politecnico di Milano e, insieme, abbiamo sviluppato *A Thousand Splendid Suns*, un progetto di Information Design che trasforma dati complessi in una narrazione visiva significativa. Ognuna di noi ha contribuito con le proprie competenze: 
 - **Francesca e Syria** si sono occupate del design visivo e hanno sviluppato il codice HTML, CSS e JavaScript del sito web del progetto.  
 - **Arianna e Marta** hanno gestito l'elaborazione dei dataset, la ricerca dei contenuti e lo sviluppo del concept.  
