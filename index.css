@@ -5,19 +5,6 @@ body {
     overflow: hidden; /* Impedisce lo scrolling */
     position: relative; /* Permette di posizionare gli elementi assoluti */
 }
-
-/* Imposta il canvas come sfondo */
-canvas {
-    position: fixed; /* Posiziona il canvas fisso */
-    top: 50%; /* Centra il canvas verticalmente */
-    left: 50%; /* Centra il canvas orizzontalmente */
-    width: 100vw; /* Imposta larghezza del canvas */
-    height: 100vh; /* Imposta altezza del canvas */
-    transform: translate(-20%, -50%) scale(1.8); /* Centra e ingrandisce il canvas */
-    z-index: -2; /* Mette il canvas dietro al contenuto */
-    pointer-events: none; /* Disabilita interazioni con il canvas */
-}
-
 /* Overlay per scurire il canvas */
 .overlay {
     position: fixed;
@@ -58,7 +45,7 @@ button {
     background-color: #06011E; /* Blu scuro */
     color: #F8FFB8; /* Giallo pallido */
     border: 0.2vw solid #F8FFB8; /* Bordo con dimensione relativa */
-    border-radius: 2vw; /* Arrotondamento degli angoli relativo */
+    border-radius: 1vw; /* Arrotondamento degli angoli relativo */
     padding: 1vw 3vw; /* Spaziatura interna relativa */
     font-size: 1.2vw; /* Dimensione del testo relativa alla larghezza dello schermo */
     cursor: pointer; /* Cambia il cursore */

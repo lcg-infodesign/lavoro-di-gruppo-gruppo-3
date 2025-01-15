@@ -4,66 +4,6 @@
   src: url('../fonts/LibreBaskervilleRegular.ttf') format('truetype');
 }
 
-/* Stile per il corpo */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #06011E; /* Sfondo blu scuro */
-  color: #F8FFB8; /* Colore del testo principale */
-  font-family: 'Baskerville', serif; /* Usa il font personalizzato */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Stile per l'header */
-.header {
-  background-color: #06011E; /* Sfondo dell'header */
-  text-align: left;
-  padding: 4vh 1vw;
-  height: 8vh;
-  display: flex;
-  align-items: center;
-}
-
-/* Logo dentro l'header */
-.logo {
-  width: 30vw;
-  height: auto;
-  padding-left: 2vw;
-  padding-top: 2vh;
-}
-
-/* Menu di navigazione */
-nav {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  gap: 1.5vw;
-  margin-left: 50vw;
-  margin-top: 3vh;
-}
-
-/* Stile dei link nel menu */
-nav a {
-  color: #F8FFB8;
-  text-decoration: none !important; /* Rimuove ogni decorazione */
-  font-size: 0.8vw;
-  transition: text-shadow 0.3s ease, transform 0.1s ease;
-}
-
-nav a:hover {
-  text-shadow: 0 0 9px #F8FFB8, 0 0 8px rgba(248, 255, 184, 0.3), 0 0 10px rgba(248, 255, 184, 0.9);
-  text-decoration: none !important; /* Assicura che non appaia decorazione anche in hover */
-}
-
-/* Contenitore per lo sketch */
-#sketch-container {
-  flex: 1; /* Occupa tutto lo spazio disponibile tra header e footer */
-  position: relative;
-  background-color: #06011E; /* Mantiene lo sfondo blu scuro */
-}
-
 /* Footer */
 .footer {
   text-align: center;
@@ -133,6 +73,7 @@ a {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
   padding-bottom: 7%;
+  position: relative; /* Necessario per posizionare gli elementi figli in modo assoluto */
 }
 
 .swiper-slide-active {
@@ -188,11 +129,18 @@ a {
 /* Common styles for categories */
 .category {
   font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 0.8em;
   text-align: center;
-  font-size: 1.2em;
-  padding-bottom: 10%;
+  position: fixed; /* Posizione assoluta all'interno della slide */
+  top: 200px; /* Posiziona la categoria sopra il numero di paginazione */
+  left: 50%; /* Centra il testo orizzontalmente */
+  transform: translateX(-50%); /* Centra il testo */
+  color: inherit; /* Mantiene il colore specifico della categoria */
+  margin: 0; /* Rimuove eventuali spazi inutili */
+  padding: 0; /* Rimuove eventuali spazi inutili */
+  z-index: 5; /* Assicura che la categoria sia sopra il resto del contenuto della slide */
 }
+
 
 /* Colors for each category */
 .economic-rights {
@@ -220,6 +168,7 @@ a {
   font-size: 1em; /* Dimensione del testo */
   color: #F8FFB8;
   width: 100%;
+  bottom: 10px; /* Posiziona il numero di paginazione sopra la base della slide */
 }
 
 .swiper-pagination span {
@@ -229,4 +178,3 @@ a {
   color: #F8FFB8;
   margin-top: 10px; /* Distanza dal contenuto */
 }
-

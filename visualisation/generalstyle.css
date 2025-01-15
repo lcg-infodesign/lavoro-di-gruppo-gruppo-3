@@ -38,8 +38,8 @@ body {
 /* Menu di navigazione */
 nav {
   position: absolute;  /* Posizione assoluta */
-  right: 2vw; /* Aggiunto per spostare il menu a 10vw dalla parte destra */
-  top: 1vh;  /* Distanza dall'alto */
+  right: 3vw; /* Aggiunto per spostare il menu a 10vw dalla parte destra */
+  top: 8vh;  /* Distanza dall'alto */
   display: flex;
   justify-content: center;
   gap: 1.5vw;
@@ -54,9 +54,10 @@ nav a {
 }
 
 nav a:hover {
-  text-shadow: 0 0 9px #F8FFB8, 0 0 8px rgba(248, 255, 184, 0.3), 0 0 10px rgba(248, 255, 184, 0.9);
+  text-shadow: 0 0 30px #F8FFB8, 0 0 15px rgba(248, 255, 184, 0.3), 0 0 25px rgba(248, 255, 184, 0.9); /* Bagliore più espanso */
   text-decoration: none !important; /* Assicura che non appaia decorazione anche in hover */
 }
+
 
 /* Contenitore per lo sketch */
 #sketch-container {
