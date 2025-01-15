@@ -26,7 +26,7 @@ a {
   margin-bottom: 5%;
   margin-top: 2%;
   text-align: center;
-  width: 50%;
+  width: 45%;
   margin-left: auto;
   margin-right: auto;  /* Centrato orizzontalmente */
 }
@@ -105,12 +105,12 @@ a {
 
 /* Freccia sinistra */
 .swiper-button-prev-small {
-  left: -110px; /* Posiziona a sinistra fuori dal box */
+  left: -120px; /* Posiziona a sinistra fuori dal box */
 }
 
 /* Freccia destra */
 .swiper-button-next-small {
-  right: -110px; /* Posiziona a destra fuori dal box */
+  right: -120px; /* Posiziona a destra fuori dal box */
 }
 
 /* Hover Effect - Bagliore direttamente sul contorno della freccia */
