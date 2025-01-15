@@ -18,7 +18,7 @@ Traducendo i dati in visualizzazioni intuitive, il progetto rende tangibili le d
 
 
 ## IL DATASET
-Il dataset , tratto dall’OECD Gender, Institutions and Development Database e da contributi del 2023 di SIGI, UNICEF, Nazioni Unite e Organizzazione Mondiale della Sanità, fornisce una panoramica globale delle condizioni femminili e la analizza su due aspetti:
+Il dataset , tratto dall’OECD Gender, Institutions and Development Database ( https://data-explorer.oecd.org/vis?lc=en&pg=0&snb=1&vw=tb&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_GID%40DF_GID_2023&df[ag]=OECD.DEV.NPG&df[vs]=&pd=2023%2C2023&dq=OECD ) e da contributi del 2023 di SIGI, UNICEF, Nazioni Unite e Organizzazione Mondiale della Sanità, fornisce una panoramica globale delle condizioni femminili e la analizza su due aspetti:
 
 - **realtà pratiche:** accesso a servizi finanziari, sicurezza e diritti.
 - **percezioni culturali**: atteggiamenti verso la violenza di genere, l’uguaglianza e il valore della donna nella società.
