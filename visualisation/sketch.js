@@ -56,7 +56,7 @@ function draw() {
     // Mappa il valore della media al diametro tra 10 e 20
     let size = windowWidth * 0.1;
     let diameter = map(myValue, minAverage, maxAverage, size * 0.06, size * 0.13);
-    
+
     // Imposta il colore con opacità mappata (se vuoi mantenerlo uguale a prima)
     let opacity = map(myValue, minAverage, maxAverage, 45, 255); // 115 è 45% di 255, 255 è 100% di opacità
     let c = color(253, 255, 160, opacity); // Usa il colore bianco con l'opacità mappata
@@ -67,11 +67,11 @@ function draw() {
     let link = createA(`../sun/sun.html?country=${encodeURIComponent(paese)}`, paese);    
     // Posiziona il link sovrapposto il glifo
     let linkYPosition = y + 100; // Posiziona il link sopra il centro del glifo
-    let linkXPosition = x; // Centra il link orizzontalmente
+    let linkXPosition = x - 5; // Centra il link orizzontalmente
     
     // Posiziona il link esattamente sopra il glifo
     link.position(linkXPosition - diameter / 2, linkYPosition - diameter / 2); 
-    link.size(diameter, diameter); // Il link ha la stessa dimensione del glifo
+    link.size(diameter*1.5, diameter*1.8); // Il link ha la stessa dimensione del glifo
 
     // Aggiungi uno stile visibile per il link (opzionale)
     link.style('color', 'transparent');
@@ -88,8 +88,8 @@ function draw() {
 
 function drawHalo(x, y, myValue, diameter) {
   let maxHaloSize = map(myValue, 0, 10, diameter * 0.1, diameter * 0.6); // Mappa la grandezza dell'alone in base al valore "average"
-  for (let i = 0; i < 5; i++) {
-    let currentSize = maxHaloSize * (i + 1) * 0.2; // Aumenta la dimensione progressivamente
+  for (let i = 0; i < 4; i++) {
+    let currentSize = maxHaloSize * (i + 1) * 0.18; // Aumenta la dimensione progressivamente
     let currentOpacity = map(i, 0, 4, 50, 10); // Decrescita dell'opacità
     let halo = color(253, 255, 140, currentOpacity);
     fill(halo);
