@@ -127,6 +127,11 @@
   <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
+    // Legge il parametro "slide" dalla query string
+    const urlParams = new URLSearchParams(window.location.search);
+    const slideParam = urlParams.get('slide'); // Esempio: ?slide=7
+    const initialSlide = slideParam ? parseInt(slideParam) - 1 : 0; // Calcola l'indice della slide
+
     const swiper = new Swiper('.swiper-container', {
       loop: true,
       effect: 'fade',
@@ -148,8 +153,10 @@
       spaceBetween: 0,
       touchAngle: 45,
       speed: 700,
+      initialSlide: initialSlide, // Imposta la slide iniziale in base al parametro
     });
   </script>
 </body>
 </html>
+
 
