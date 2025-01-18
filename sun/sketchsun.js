@@ -23,8 +23,8 @@ let spicchiText = [
   "Land ownership",
 ];
 let spicchiLink = [
-  "https://google.com",
-  "https://bing.com",
+   window.location.href = "../visualisation/parameters.html#slide-4",
+  "../visualisation/parameters.html#slide-5",
   "Perception that children sufference isn't|a consequence of a mother working for pay",
   "Perceptions that men don't necessarily make|better business executives than women",
   "Feeling of safety at night",
