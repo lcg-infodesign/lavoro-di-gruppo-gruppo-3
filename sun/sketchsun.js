@@ -7,17 +7,33 @@ let cambiamento = true;
 
 let activeRay = -1;  // Nessun raggio attivo inizialmente
 let spicchiText = [
-  "Perception that a woman earning more money than her husband doesn't cause any problems",
-  "Perception that men shouldn't have more right to a job than women",
-  "Perception that children sufference isn't a consequence of a mother working for pay",
-  "Perceptions that men don't necessarily make better business executives than women",
+  "Perception that a woman|earning more money than her husband|doesn't cause any problems",
+  "Perception that men shouldn't have|more right to a job than women",
+  "Perception that children sufference isn't|a consequence of a mother working for pay",
+  "Perceptions that men don't necessarily make|better business executives than women",
   "Feeling of safety at night",
-  "Confidence in the judicial system and courts",
-  "Perception that men don't necessarily make better political leaders than women",
+  "Confidence in the judicial|system and courts",
+  "Perception that men don't necessarily make|better political leaders than women",
   "Percentage of women not in a child marriage",
   "Non genital-mutilated women percentage",
-  "Perception that female genital mutilation should stop",
-  "Perception that a husband is not justified in hitting or beating his wife under any circumstances",
+  "Perception that female genital mutilation|should stop",
+  "Perception that a husband is not justified|in hitting or beating his wife under any circumstances",
+  "Bank account ownership",
+  "House ownership",
+  "Land ownership",
+];
+let spicchiLink = [
+  "https://google.com",
+  "https://bing.com",
+  "Perception that children sufference isn't|a consequence of a mother working for pay",
+  "Perceptions that men don't necessarily make|better business executives than women",
+  "Feeling of safety at night",
+  "Confidence in the judicial|system and courts",
+  "Perception that men don't necessarily make|better political leaders than women",
+  "Percentage of women not in a child marriage",
+  "Non genital-mutilated women percentage",
+  "Perception that female genital mutilation|should stop",
+  "Perception that a husband is not justified|in hitting or beating his wife under any circumstances",
   "Bank account ownership",
   "House ownership",
   "Land ownership",
@@ -67,26 +83,31 @@ function setup() {
     window.indiceSpicchio = -1;
    
 }
+function mouseClicked() {
+  
+  if(indiceSpicchio >= 0) {
+    window.location.href = spicchiLink[indiceSpicchio];
+  }
 
+}
 function draw() {
 
   
-
+  ////////////////// RECUPERO DATI ////////////////////
   // Recupera i parametri dall'URL
   let params = getURLParams();
   let country = params['country']; 
   
   // Seleziona il primo paese nel dataset
   let paese = nazioni[country];  // Prendi il primo paese nel dataset
-  
 
-
-  
-
-   
-  
   angleMode(RADIANS);
    mouseOverReaction(xPos, totalHeight, paese, size)
+
+ 
+   
+
+   ///////////////// DISEGNO ///////////////////
 
    if (cambiamento){
     
@@ -96,6 +117,7 @@ function draw() {
     angleMode(RADIANS);
 
     if(indiceSpicchio >= 0){
+      cursor("pointer");
       // Mostriamo la scritta corrispondente
     fill("#F8FFB8");
     noStroke();
@@ -104,6 +126,9 @@ function draw() {
     textAlign(LEFT, TOP);
     //text(spicchiText[indiceSpicchio]+"\n\n"+paese[spicchiText[indiceSpicchio]], xPos - 13/16*xPos, (totalHeight/2)-(8/16*size));
     text(spicchiText[indiceSpicchio], xPos - 13/16*xPos, (totalHeight/2));
+    }
+    else {
+      cursor("default");
     }
   
     
@@ -128,7 +153,7 @@ function draw() {
 
 
 function mouseOverReaction(x, totalHeight, nazione, size) {
-  window.indiceSpicchio = -1;
+  let nuovoValoreIndiceSpicchio = -1;
 
   let distanza = dist(mouseX, mouseY, centerX, centerY);
   console.log(size, distanza)
@@ -148,8 +173,13 @@ function mouseOverReaction(x, totalHeight, nazione, size) {
     
     // Aggiungiamo l'offset all'angolo e mappiamo l'angolo in gradi a uno degli spicchi (14 spicchi)
     angoloGradi = (angoloGradi + 360/28) % 360;  // Ruotiamo gli spicchi
-    window.indiceSpicchio = floor(map(angoloGradi, 0, 360, 0, 14)) % 14;
+    nuovoValoreIndiceSpicchio = floor(map(angoloGradi, 0, 360, 0, 14)) % 14;
 
+  } 
+
+  //imposta il valore se appena sopra è cambiato
+  if(nuovoValoreIndiceSpicchio != window.indiceSpicchio) {
+    window.indiceSpicchio = nuovoValoreIndiceSpicchio;
     cambiamento = true;
   }
   
@@ -165,36 +195,6 @@ function disegnaSole (x, y, size, nazione){
   ellipse(x, y, size/7, size/7);
   // fill(255, 255, 191, 16)
   // ellipse(x, y, size/6, size/6);
-
-  drawTRay (11, nazione["Bank account ownership"], size);
-  drawTRay(12, nazione["House ownership"], size);
-  drawTRay(13, nazione["Land ownership"], size);
-  drawTRay(0, nazione["Perception that a woman earning more money than her husband doesn't cause any problems"], size);
-  drawTRay(1, nazione["Perception that men shouldn't have more right to a job than women"], size);
-  drawTRay(2, nazione["Perception that children sufference isn't a consequence of a mother working for pay"], size);
-  drawTRay(3, nazione["Perceptions that men don't necessarily make better business executives than women"], size);
-  drawTRay(4, nazione["Feeling of safety at night"], size);
-  drawTRay(5, nazione["Confidence in the judicial system and courts"], size);
-  drawTRay(6, nazione["Perception that men don't necessarily make better political leaders than women"], size);
-  drawTRay(7, nazione["Percentage of women not in a child marriage"], size);
-  drawTRay(8, nazione["Non genital-mutilated women percentage"], size);
-  drawTRay(9, nazione["Perception that female genital mutilation should stop"], size);
-  drawTRay(10, nazione["Perception that a husband is not justified in hitting or beating his wife under any circumstances"], size);
-
-  drawSecondRay (11, nazione["Bank account ownership"], size);
-  drawSecondRay(12, nazione["House ownership"], size);
-  drawSecondRay(13, nazione["Land ownership"], size);
-  drawSecondRay(0, nazione["Perception that a woman earning more money than her husband doesn't cause any problems"], size);
-  drawSecondRay(1, nazione["Perception that men shouldn't have more right to a job than women"], size);
-  drawSecondRay(2, nazione["Perception that children sufference isn't a consequence of a mother working for pay"], size);
-  drawSecondRay(3, nazione["Perceptions that men don't necessarily make better business executives than women"], size);
-  drawSecondRay(4, nazione["Feeling of safety at night"], size);
-  drawSecondRay(5, nazione["Confidence in the judicial system and courts"], size);
-  drawSecondRay(6, nazione["Perception that men don't necessarily make better political leaders than women"], size);
-  drawSecondRay(7, nazione["Percentage of women not in a child marriage"], size);
-  drawSecondRay(8, nazione["Non genital-mutilated women percentage"], size);
-  drawSecondRay(9, nazione["Perception that female genital mutilation should stop"], size);
-  drawSecondRay(10, nazione["Perception that a husband is not justified in hitting or beating his wife under any circumstances"], size);
 
   // Disegnare ogni raggio separatamente
   drawRay(11, nazione["Bank account ownership"], size);
@@ -215,6 +215,8 @@ function disegnaSole (x, y, size, nazione){
 }
 
 function drawRay(index, rayLengthData, size) {
+
+  drawSecondRay(index, rayLengthData, size);
   
   noStroke();
   fill(255, 255, 191, 100)
@@ -257,9 +259,17 @@ function drawRay(index, rayLengthData, size) {
     
     ellipse(x, y, radius * 2, radius * 2); // Disegna il cerchio
   }
+
+  fill("white");
+  textAlign(CENTER,CENTER);
+  let maxx =  x1 + cos(angle) * size/1.6;
+  let maxy =  y1 + sin(angle) * size/1.6;
+  text(rayLengthData+"%", maxx, maxy);
 }
 
 function drawSecondRay(index, rayLengthData, size) {
+  drawTRay(index, rayLengthData, size);
+
   noStroke();
   fill(255, 255, 191, 4)
   //fill(248, 255, 184)
@@ -422,7 +432,7 @@ function disegnaCerchi(x, y, size, paese){
     fill(255, 255, 191, 70)
 
     
-    text(paese[spicchiText[indiceSpicchio]]+"%", 0, 0);  // Disegna il testo
+    text(paese["average"]+"%", 0, 0);  // Disegna il testo
     pop();
   }
 }
