@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Thousand Splendid Suns</title>
+    <title>A Thousand Splendid Suns</title> <!-- Modificato il titolo per corrispondere a "A Thousand Splendid Suns" -->
     <link rel="stylesheet" href="index.css">
     <style>
       /* Reset delle impostazioni base */
@@ -22,22 +22,23 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(6, 1, 30,); /* Blu scuro con opacità del 70% */
+        background-color: rgba(6, 1, 30, 0.7); /* Blu scuro con opacità del 70% */
         z-index: -1; /* Mette l'overlay sopra il canvas ma sotto il contenuto */
       }
 
       /* Stile della pagina Home */
       body.home {
-        background-image: url('logo/indexsfondo.jpg'); /* Aggiungi l'immagine di sfondo */
+        background-image: url('logo/indexsfondo.jpg'); /* La tua immagine di sfondo */
         background-size: 150%; /* Inizialmente molto più zoomata */
         background-position: center; /* Centra l'immagine */
         background-repeat: no-repeat; /* Evita che l'immagine si ripeta */
+        background-color: rgb(6, 1, 30); /* Colore di fallback per Firefox */
         color: #F8FFB8; /* Giallo pallido */
         display: flex;
         justify-content: flex-start;
         align-items: center;
         height: 100vh;
-        margin: 0; /* Rimuove margini di default */
+        margin: 0;
         transition: background-size 1s ease-in-out, opacity 1s ease-in-out; /* Transizione per l'effetto zoom e dissolvenza */
       }
 
