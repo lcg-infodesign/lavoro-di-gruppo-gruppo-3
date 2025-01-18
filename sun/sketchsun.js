@@ -676,3 +676,4 @@ function findCountryData(countryName) {
     console.log("Data not found for", countryName);  // Aggiungi un log per verificare
     return null; // Se il paese non viene trovato
 }
+
