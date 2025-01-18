@@ -3,15 +3,148 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>A Thousand Splendid Suns</title>
     <link rel="stylesheet" href="index.css">
+    <style>
+      /* Reset delle impostazioni base */
+      body {
+        margin: 0;
+        font-family: 'Baskerville', serif;
+        overflow: hidden; /* Impedisce lo scrolling */
+        position: relative; /* Permette di posizionare gli elementi assoluti */
+        transition: opacity 1s ease-in-out; /* Transizione di dissolvenza per l'intera pagina */
+      }
+
+      /* Overlay per scurire il canvas */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(6, 1, 30,); /* Blu scuro con opacità del 70% */
+        z-index: -1; /* Mette l'overlay sopra il canvas ma sotto il contenuto */
+      }
+
+      /* Stile della pagina Home */
+      body.home {
+        background-image: url('logo/indexsfondo.jpg'); /* Aggiungi l'immagine di sfondo */
+        background-size: 150%; /* Inizialmente molto più zoomata */
+        background-position: center; /* Centra l'immagine */
+        background-repeat: no-repeat; /* Evita che l'immagine si ripeta */
+        color: #F8FFB8; /* Giallo pallido */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100vh;
+        margin: 0; /* Rimuove margini di default */
+        transition: background-size 1s ease-in-out, opacity 1s ease-in-out; /* Transizione per l'effetto zoom e dissolvenza */
+      }
+
+      /* Animazione di dissolvenza e zoom molto ampio e più lento */
+      @keyframes zoomAndFade {
+        0% {
+          background-size: 150%; /* Iniziale molto più zoomato */
+          opacity: 0.3; /* Opacità iniziale bassa */
+        }
+        100% {
+          background-size: 3000%; /* Zoom molto ampio */
+          opacity: 0.2; /* Rimane leggermente visibile alla fine */
+        }
+      }
+
+      /* Sezione contenente il logo e il pulsante */
+      .home-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 5vw; /* Spaziatura dal bordo sinistro */
+        position: relative; /* Posiziona il contenuto sopra l'overlay */
+        z-index: 1;
+        transition: opacity 1s ease-in-out; /* Aggiunge una dissolvenza sul logo e sul bottone */
+      }
+
+      /* Stile del logo */
+      .logo {
+        width: 40%; /* Dimensione relativa alla larghezza dello schermo */
+        height: auto; /* Mantiene le proporzioni */
+        margin-bottom: 2vh; /* Spaziatura verticale tra logo e bottone */
+        z-index: 2; /* Assicura che il logo resti sopra l'immagine di sfondo */
+        transition: opacity 1s ease-in-out; /* Transizione per il logo */
+      }
+
+      /* Stile del pulsante */
+      button {
+        background-color: #06011E; /* Blu scuro */
+        color: #F8FFB8; /* Giallo pallido */
+        border: 0.2vw solid #F8FFB8; /* Bordo con dimensione relativa */
+        border-radius: 1vw; /* Arrotondamento degli angoli relativo */
+        padding: 1vw 3vw; /* Spaziatura interna relativa */
+        font-size: 1.2vw; /* Dimensione del testo relativa alla larghezza dello schermo */
+        cursor: pointer; /* Cambia il cursore */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aggiunge l'animazione */
+        margin-left: 11vw;
+        z-index: 2; /* Assicura che il bottone resti sopra l'immagine di sfondo */
+      }
+
+      /* Effetto hover sul pulsante */
+      button:hover {
+        transform: scale(1.1); /* Effetto ingrandimento */
+        box-shadow: 0 0 1vw #F8FFB8; /* Illumina il bottone al passaggio del mouse */
+      }
+
+      /* Effetto clic sul pulsante */
+      button:active {
+        box-shadow: 0 0 1.5vw #F8FFB8; /* Illumina il bottone */
+        transform: scale(1.05); /* Leggero rimpicciolimento durante il clic */
+      }
+
+      /* Classe per attivare l'animazione quando clicchi il pulsante */
+      body.zoom-animation {
+        animation: zoomAndFade 1s ease-in-out forwards; /* Animazione più lunga e ampio zoom */
+      }
+
+      /* Rimuovi il logo e il bottone al click */
+      .hide-elements {
+        opacity: 0; /* Rimuove la visibilità di logo e bottone */
+        transition: opacity 1s ease-in-out; /* Effetto morbido di dissolvenza */
+      }
+    </style>
+  </head>
+
   <body class="home">
     <div class="overlay"></div> <!-- Overlay per oscurare lo sfondo -->
     <div class="home-container">
       <!-- Aggiungi l'immagine come loghino -->
       <img src="logo/logoindex.png" alt="Logo" class="logo">
       <!-- Pulsante sotto il logo -->
-      <button class="btn" onclick="window.location.href='visualisation/visualisation.html'">Go to Visualisation</button>
+      <button class="btn" onclick="redirectToVisualisation()">Go to Visualisation</button>
     </div>
+
+    <script>
+      // Funzione per attivare l'animazione e fare il redirect dopo 1 secondo
+      function redirectToVisualisation() {
+        // Aggiungi la classe di animazione al body per zoomare l'immagine
+        document.body.classList.add("zoom-animation");
+
+        // Nasconde il logo e il bottone con effetto morbido di dissolvenza
+        document.querySelector('.home-container').classList.add("hide-elements");
+        document.querySelector('.logo').classList.add("hide-elements");
+        document.querySelector('button').classList.add("hide-elements");
+
+        // Imposta un timer per caricare la nuova pagina dopo 1 secondo (durata dell'animazione)
+        setTimeout(function() {
+          window.location.href = 'visualisation/visualisation.html';
+        }, 1000);  // 1000 ms = 1 secondo, che corrisponde alla durata dell'animazione
+      }
+    </script>
   </body>
 </html>
+
+
+
+
+
+
+
+

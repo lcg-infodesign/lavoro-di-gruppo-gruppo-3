@@ -5,6 +5,7 @@ body {
     overflow: hidden; /* Impedisce lo scrolling */
     position: relative; /* Permette di posizionare gli elementi assoluti */
 }
+
 /* Overlay per scurire il canvas */
 .overlay {
     position: fixed;
@@ -18,14 +19,19 @@ body {
 
 /* Stile della pagina Home */
 body.home {
-    background-color: transparent; /* Permette di vedere il canvas */
+    background-image: url('logo/indexsfondo.jpg');  /* Aggiungi l'immagine di sfondo */
+    background-size: cover;  /* L'immagine copre tutto lo schermo */
+    background-position: center;  /* Centra l'immagine */
+    background-repeat: no-repeat;  /* Evita che l'immagine si ripeta */
     color: #F8FFB8; /* Giallo pallido */
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
+    margin: 0;  /* Rimuove margini di default */
 }
 
+/* Sezione contenente il logo e il pulsante */
 .home-container {
     display: flex;
     flex-direction: column;
@@ -35,12 +41,14 @@ body.home {
     z-index: 1;
 }
 
+/* Stile del logo */
 .logo {
     width: 40%; /* Dimensione relativa alla larghezza dello schermo */
     height: auto; /* Mantiene le proporzioni */
     margin-bottom: 2vh; /* Spaziatura verticale tra logo e bottone */
 }
 
+/* Stile del pulsante */
 button {
     background-color: #06011E; /* Blu scuro */
     color: #F8FFB8; /* Giallo pallido */
@@ -53,13 +61,13 @@ button {
     margin-left: 11vw;
 }
 
-/* Effetto hover */
+/* Effetto hover sul pulsante */
 button:hover {
     transform: scale(1.1); /* Effetto ingrandimento */
     box-shadow: 0 0 1vw #F8FFB8; /* Illumina il bottone al passaggio del mouse */
 }
 
-/* Effetto clic */
+/* Effetto clic sul pulsante */
 button:active {
     box-shadow: 0 0 1.5vw #F8FFB8; /* Illumina il bottone */
     transform: scale(1.05); /* Leggero rimpicciolimento durante il clic */
