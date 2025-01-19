@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body class="project-page">
+  <!-- Freccia per tornare indietro -->
+  <a href="javascript:void(0);" class="back-arrow" onclick="goBack()">←</a>
+
   <!-- Header con logo centrato a sinistra -->
   <header class="header">
     <img src="../logo/logoheader.png" alt="Logo" class="logo">
@@ -50,27 +53,27 @@
           <div class="category economic-rights">Economic Rights</div>
         </div>
    
-       <!-- Social Rights -->
-       <div class="swiper-slide" id="slide-4">
-        <span class="highlight">Perception that children don’t necessarily suffer more if a mother works for pay</span>
-        <p>Reflects attitudes toward working mothers, challenging stereotypes about traditional gender roles.</p>
-        <div class="category social-rights">Social Rights</div>
-      </div>
-      <div class="swiper-slide" id="slide-5">
-        <span class="highlight">Perception that a woman earning more/the same as her husband doesn’t cause problems</span>
-        <p>Gauges societal acceptance of women's economic empowerment within households.</p>
-        <div class="category social-rights">Social Rights</div>
-      </div>
-      <div class="swiper-slide" id="slide-6">
-        <span class="highlight">Perception that men don't necessarily make better business executives than women</span>
-        <p>Captures gender biases in professional leadership and workplace equality.</p>
-        <div class="category social-rights">Social Rights</div>
-      </div>
-      <div class="swiper-slide" id="slide-7">
-        <span class="highlight">Perception that men shouldn't have more right to a job than women</span>
-        <p>Highlights societal attitudes toward gender equality in employment. It reflects the belief that women should have equal opportunities in the workforce, challenging traditional norms that prioritize men’s employment.</p>
-        <div class="category social-rights">Social Rights</div>
-      </div>
+        <!-- Social Rights -->
+        <div class="swiper-slide" id="slide-4">
+          <span class="highlight">Perception that children don’t necessarily suffer more if a mother works for pay</span>
+          <p>Reflects attitudes toward working mothers, challenging stereotypes about traditional gender roles.</p>
+          <div class="category social-rights">Social Rights</div>
+        </div>
+        <div class="swiper-slide" id="slide-5">
+          <span class="highlight">Perception that a woman earning more/the same as her husband doesn’t cause problems</span>
+          <p>Gauges societal acceptance of women's economic empowerment within households.</p>
+          <div class="category social-rights">Social Rights</div>
+        </div>
+        <div class="swiper-slide" id="slide-6">
+          <span class="highlight">Perception that men don't necessarily make better business executives than women</span>
+          <p>Captures gender biases in professional leadership and workplace equality.</p>
+          <div class="category social-rights">Social Rights</div>
+        </div>
+        <div class="swiper-slide" id="slide-7">
+          <span class="highlight">Perception that men shouldn't have more right to a job than women</span>
+          <p>Highlights societal attitudes toward gender equality in employment. It reflects the belief that women should have equal opportunities in the workforce, challenging traditional norms that prioritize men’s employment.</p>
+          <div class="category social-rights">Social Rights</div>
+        </div>
 
         <!-- General Violence -->
         <div class="swiper-slide" id="slide-8">
@@ -155,8 +158,14 @@
       speed: 700,
       initialSlide: initialSlide, // Imposta la slide iniziale in base al parametro
     });
+
+    // Funzione per tornare indietro
+    function goBack() {
+      history.back();
+    }
   </script>
 </body>
 </html>
+
 
 
