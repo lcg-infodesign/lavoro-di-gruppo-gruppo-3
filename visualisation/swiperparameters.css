@@ -105,12 +105,12 @@ a {
 
 /* Freccia sinistra */
 .swiper-button-prev-small {
-  left: -120px; /* Posiziona a sinistra fuori dal box */
+  left: -110px; /* Posiziona a sinistra fuori dal box */
 }
 
 /* Freccia destra */
 .swiper-button-next-small {
-  right: -120px; /* Posiziona a destra fuori dal box */
+  right: -110px; /* Posiziona a destra fuori dal box */
 }
 
 /* Hover Effect - Bagliore direttamente sul contorno della freccia */
@@ -123,7 +123,9 @@ a {
 /* Highlight per categorie */
 .highlight {
   color: #F8FFB8; /* Dark yellow (Goldenrod) */
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1.1em;
+  line-height: 1.6em;
 }
 
 /* Stile del contenitore della paginazione */
@@ -145,8 +147,8 @@ a {
 
 /* Stile delle categorie */
 .category {
-  font-weight: bold;
-  font-size: 1em; /* Dimensione della categoria */
+  font-weight: regular;
+  font-size: 0.7em; /* Dimensione della categoria */
   color: inherit; /* Mantiene il colore dinamico */
   text-align: center;
 }
@@ -178,7 +180,7 @@ a {
 .back-arrow {
   position: absolute; /* Posiziona la freccia in modo assoluto */
   top: 120px; /* Spazio dal bordo superiore */
-  left: 30px; /* Spazio dal bordo sinistro */
+  left: 35px; /* Spazio dal bordo sinistro */
   text-decoration: none; /* Rimuove la sottolineatura */
   font-size: 2rem; /* Dimensione del carattere */
   color: #F8FFB8; /* Colore della freccia */
