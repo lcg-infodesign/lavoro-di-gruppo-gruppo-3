@@ -1,10 +1,4 @@
-/* Reset delle impostazioni base */
-body {
-    margin: 0;
-    font-family: 'Baskerville', serif;
-    overflow: hidden; /* Impedisce lo scrolling */
-    position: relative; /* Permette di posizionare gli elementi assoluti */
-}
+/* File CSS che definisce lo stile degli elementi da visualizzare all'interno dell'index */
 
 /* Overlay per scurire il canvas */
 .overlay {
@@ -13,22 +7,22 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(6, 1, 30, 0.5); /* Blu scuro con opacità del 70% */
-    z-index: -1; /* Mette l'overlay sopra il canvas ma sotto il contenuto */
+    background-color: rgba(6, 1, 30, 0.7);
+    z-index: -1;
 }
 
 /* Stile della pagina Home */
 body.home {
-    background-image: url('logo/indexsfondo.jpg');  /* Aggiungi l'immagine di sfondo */
-    background-size: cover;  /* L'immagine copre tutto lo schermo */
-    background-position: center;  /* Centra l'immagine */
-    background-repeat: no-repeat;  /* Evita che l'immagine si ripeta */
-    color: #F8FFB8; /* Giallo pallido */
+    background-image: url('logo/indexsfondo.jpg');  /*immagine di sfondo */
+    background-size: cover;
+    background-position: center;  
+    background-repeat: no-repeat;
+    color: #F8FFB8;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-    margin: 0;  /* Rimuove margini di default */
+    margin: 0; 
 }
 
 /* Sezione contenente il logo e il pulsante */
@@ -36,26 +30,26 @@ body.home {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 5vw; /* Spaziatura dal bordo sinistro */
-    position: relative; /* Posiziona il contenuto sopra l'overlay */
+    margin-left: 5vw;
+    position: relative; 
     z-index: 1;
 }
 
 /* Stile del logo */
 .logo {
-    width: 40%; /* Dimensione relativa alla larghezza dello schermo */
-    height: auto; /* Mantiene le proporzioni */
-    margin-bottom: 2vh; /* Spaziatura verticale tra logo e bottone */
+    width: 40%;
+    height: auto;
+    margin-bottom: 2vh;
 }
 
 /* Stile del pulsante */
 button {
-    background-color: #06011E; /* Blu scuro */
-    color: #F8FFB8; /* Giallo pallido */
-    border: 0.2vw solid #F8FFB8; /* Bordo con dimensione relativa */
-    border-radius: 1vw; /* Arrotondamento degli angoli relativo */
-    padding: 1vw 3vw; /* Spaziatura interna relativa */
-    font-size: 1.2vw; /* Dimensione del testo relativa alla larghezza dello schermo */
+    background-color: #06011E;
+    color: #F8FFB8;
+    border: 0.2vw solid #F8FFB8; 
+    border-radius: 1vw;
+    padding: 1vw 3vw;
+    font-size: 1.2vw; 
     cursor: pointer; /* Cambia il cursore */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aggiunge l'animazione */
     margin-left: 11vw;
@@ -72,3 +66,23 @@ button:active {
     box-shadow: 0 0 1.5vw #F8FFB8; /* Illumina il bottone */
     transform: scale(1.05); /* Leggero rimpicciolimento durante il clic */
 }
+
+      @keyframes zoomAndFade {
+        0% {
+          background-size: 120%; /* Partenza dallo zoom iniziale più grande */
+          opacity: 1;
+        }
+        100% {
+          background-size: 3000%; /* Zoom finale più intenso */
+          opacity: 0.2;
+        }
+      }
+    
+      body.zoom-animation {
+        animation: zoomAndFade 1s ease-in-out forwards;
+      }
+
+      .hide-elements {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }

@@ -1,4 +1,6 @@
-/* Importazione del font personalizzato */
+/*File CSS che defnisce lo stile di tutti gli elementi generali dell'intero sito*/
+
+/*inserimento font*/
 @font-face {
   font-family: 'Baskerville';
   src: url('../fonts/LibreBaskervilleRegular.ttf') format('truetype');
@@ -8,9 +10,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #06011E; /* Sfondo blu scuro */
-  color: #F8FFB8; /* Colore del testo principale */
-  font-family: 'Baskerville', serif; /* Usa il font personalizzato */
+  background-color: #06011E; 
+  color: #F8FFB8;
+  font-family: 'Baskerville', serif; 
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -18,7 +20,7 @@ body {
 
 /* Stile per l'header */
 .header {
-  background-color: #06011E; /* Sfondo dell'header */
+  background-color: #06011E;
   text-align: left;
   padding: 4vh 1vw;
   height: 8vh;
@@ -37,27 +39,26 @@ body {
 
 /* Menu di navigazione */
 nav {
-  position: absolute;  /* Posizione assoluta */
-  right: 3vw; /* Aggiunto per spostare il menu a 10vw dalla parte destra */
-  top: 8vh;  /* Distanza dall'alto */
+  position: absolute; 
+  right: 3vw;
+  top: 8vh;  
   display: flex;
   justify-content: center;
   gap: 1.5vw;
 }
 
-/* Stile dei link nel menu */
+/* Stile dei link nel menù */
 nav a {
   color: #F8FFB8;
   text-decoration: none !important; /* Rimuove ogni decorazione */
   font-size: 0.9vw;
   transition: text-shadow 0.3s ease, transform 0.1s ease;
 }
-
+/*effetto bagliore quando si passa sopra alle voci del menù*/
 nav a:hover {
   text-shadow: 0 0 30px #F8FFB8, 0 0 15px rgba(248, 255, 184, 0.3), 0 0 25px rgba(248, 255, 184, 0.9); /* Bagliore più espanso */
   text-decoration: none !important; /* Assicura che non appaia decorazione anche in hover */
 }
-
 
 /* Contenitore per lo sketch */
 #sketch-container {

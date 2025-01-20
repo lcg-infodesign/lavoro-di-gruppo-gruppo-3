@@ -1,4 +1,6 @@
-/* Importazione del font personalizzato */
+/*File CSS che definisce lo stile degli elementi da visualizzare all'interno della pagina "Parameters"*/
+
+/*inserimento font*/
 @font-face {
   font-family: 'Baskerville';
   src: url('../fonts/LibreBaskervilleRegular.ttf') format('truetype');
@@ -12,12 +14,12 @@
   color: #F8FFB8;
 }
 
-/* Reset per tutti i link (opzionale, per sicurezza) */
+/* Reset per tutti i link (per sicurezza) */
 a {
   text-decoration: none !important;
 }
 
-/* Intro box */
+/* Box iniziale */
 .intro-box {
   font-size: 0.9em;
   line-height: 1.6em;
@@ -105,12 +107,12 @@ a {
 
 /* Freccia sinistra */
 .swiper-button-prev-small {
-  left: -110px; /* Posiziona a sinistra fuori dal box */
+  left: -110px; /* Posizione a sinistra fuori dal box */
 }
 
 /* Freccia destra */
 .swiper-button-next-small {
-  right: -110px; /* Posiziona a destra fuori dal box */
+  right: -110px; /* Posizione a destra fuori dal box */
 }
 
 /* Hover Effect - Bagliore direttamente sul contorno della freccia */
@@ -141,8 +143,8 @@ a {
 
 /* Contenitore per la categoria */
 .category-container {
-  position: relative; /* Necessario per allineare */
-  margin-bottom: 15px; /* Spazio tra la categoria e il numero */
+  position: relative; 
+  margin-bottom: 15px;
 }
 
 /* Stile delle categorie */

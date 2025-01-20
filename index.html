@@ -1,3 +1,5 @@
+ <!--File HTML che definisce il contenuto da visualizzare dell'index-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,107 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Thousand Splendid Suns</title>
     <link rel="stylesheet" href="index.css">
-    <style>
-      body {
-        margin: 0;
-        font-family: 'Baskerville', serif;
-        overflow: hidden;
-        position: relative;
-        transition: opacity 1s ease-in-out;
-        background-image: url('logo/indexsfondo.jpg');
-        background-size: 120%; /* Ingrandito il valore iniziale */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: rgb(6, 1, 30);
-        color: #F8FFB8;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        height: 100vh;
-        filter: brightness(0.85);
-      }
-
-      @keyframes zoomAndFade {
-        0% {
-          background-size: 120%; /* Partenza dallo zoom iniziale più grande */
-          opacity: 1;
-        }
-        100% {
-          background-size: 3000%; /* Zoom finale più intenso */
-          opacity: 0.2;
-        }
-      }
-
-      .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(6, 1, 30, 0.7);
-        z-index: -1;
-      }
-
-      .home-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 5vw;
-        position: relative;
-        z-index: 1;
-        transition: opacity 1s ease-in-out;
-      }
-
-      .logo {
-        width: 40%;
-        height: auto;
-        margin-bottom: 2vh;
-        z-index: 2;
-        transition: opacity 1s ease-in-out;
-      }
-
-      button {
-        background-color: #06011E;
-        color: #F8FFB8;
-        border: 0.2vw solid #F8FFB8;
-        border-radius: 1vw;
-        padding: 1vw 3vw;
-        font-size: 1.2vw;
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        margin-left: 11vw;
-        z-index: 2;
-      }
-
-      button:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 1vw #F8FFB8;
-      }
-
-      button:active {
-        box-shadow: 0 0 1.5vw #F8FFB8;
-        transform: scale(1.05);
-      }
-
-      body.zoom-animation {
-        animation: zoomAndFade 1s ease-in-out forwards;
-      }
-
-      .hide-elements {
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-      }
-    </style>
   </head>
 
   <body class="home">
     <div class="overlay"></div>
     <div class="home-container">
-      <img src="logo/logoindex.png" alt="Logo" class="logo">
-      <button class="btn" onclick="redirectToVisualisation()">Go to Visualisation</button>
+      <img src="logo/logoindex.png" alt="Logo" class="logo"> <!--logo index-->
+      <button class="btn" onclick="redirectToVisualisation()">Go to Visualisation</button> <!--bottone per aprire la pagina "visualisation"-->
     </div>
 
     <script>
+      //script per animazione effetto zoom una volta cliccato il bottone
       function redirectToVisualisation() {
         document.body.classList.add("zoom-animation");
         document.querySelector('.home-container').classList.add("hide-elements");

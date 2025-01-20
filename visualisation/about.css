@@ -1,4 +1,6 @@
-/* Importa i font dalla cartella del progetto */
+/*File CSS che defnisce lo stile di tutti gli elementi da visualizzare all'interno della pagina "About"*/
+
+/* Inserimento font */
 @font-face {
   font-family: 'LibreBaskerville';
   src: url('../fonts/LibreBaskervilleRegular.ttf') format('truetype');
@@ -23,22 +25,22 @@
 /* Stile per il testo in Libre Baskerville Italic */
 .libre-baskerville-italic {
   font-family: 'LibreBaskerville Italic', serif;
-  font-size: 1.1em; /* Imposta la dimensione desiderata */
+  font-size: 1.1em; 
 }
 
 /* Stile per il testo in Libre Baskerville Bold */
 .libre-baskerville-bold {
   font-family: 'LibreBaskerville Bold', serif;
-  font-size: 0.9em; /* Imposta la dimensione desiderata */
+  font-size: 0.9em;
 }
 
 
 /* Stile per il contenitore del testo */
 .text-container {
   display: flex;
-  flex-direction: column; /* Direzione colonna per separare le sezioni */
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: center; /* Centra il contenuto orizzontalmente */
+  align-items: center; 
   padding-top: 50px;
   height: auto;
 }
@@ -51,31 +53,31 @@
   color: #f8ffb890;
   font-size: 1.0em;
   line-height: 1.6em;
-  letter-spacing: 0.02em; /* Spazio leggero tra le lettere */
+  letter-spacing: 0.02em; 
   margin: 0;
 }
 
 /* Titolo della sezione con font maggiore e in italic */
 .title {
-  font-family: 'LibreBaskerville Italic', serif; /* Usa la versione Italic del font */
-  font-size: 1.5rem; /* Imposta una dimensione maggiore per i titoli */
-  margin-bottom: 20px; /* Spazio sotto il titolo */
-  color: #F8FFB8; /* Colore del titolo */
-  font-weight: 500; /* Mantieni il peso normale */
+  font-family: 'LibreBaskerville Italic', serif;
+  font-size: 1.5rem; 
+  margin-bottom: 20px; 
+  color: #F8FFB8; 
+  font-weight: 500; 
 }
 .subtitle {
-  font-family: 'LibreBaskerville Italic', serif; /* Usa la versione Italic del font */
-  font-size: 1.1rem; /* Imposta una dimensione maggiore per i titoli */
-  margin-bottom: 20px; /* Spazio sotto il titolo */
-  color: #F8FFB8; /* Colore del titolo */
-  font-weight: 500; /* Mantieni il peso normale */
+  font-family: 'LibreBaskerville Italic', serif;
+  font-size: 1.1rem;
+  margin-bottom: 20px; 
+  color: #F8FFB8; 
+  font-weight: 500; 
 }
-/* Stile per ogni sezione, aggiungi maggiore distanza tra le sezioni */
+/* Stile per ogni sezione*/
 .section {
   margin-bottom: 20%; /* Aggiunge distanza tra ogni sezione (puoi regolare il valore) */
 }
 
-/* Opzionale: distanza aggiuntiva per un po' più di separazione tra paragrafi */
+/* distanza aggiuntiva per un po' più di separazione tra paragrafi */
 .text p {
   margin-bottom: 6%; /* Spazio tra i paragrafi all'interno di ogni sezione */
 }
