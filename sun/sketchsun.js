@@ -7,16 +7,16 @@ let cambiamento = true;
 
 let activeRay = -1;  // Nessun raggio attivo inizialmente
 let spicchiText = [
-  "Perception that a woman|earning more money than her husband|doesn't cause any problems",
+  "Perception that a woman|earning more/have same as her husband|doesn't cause any problems",
   "Perception that men shouldn't have|more right to a job than women",
-  "Perception that children sufference isn't|a consequence of a mother working for pay",
+  "Perception that children don't necessearily suffer more if a mother works for pay",
   "Perceptions that men don't necessarily make|better business executives than women",
   "Feeling of safety at night",
   "Confidence in the judicial|system and courts",
-  "Perception that men don't necessarily make|better political leaders than women",
-  "Percentage of women not in a child marriage",
-  "Non genital-mutilated women percentage",
-  "Perception that female genital mutilation|should stop",
+  "Perception that men aren't necessarily|better political leaders than women",
+  "Women who didn't undergo child marriage",
+  "Women who didn't undergo FGM",
+  "Perception that FGM should stop",
   "Perception that a husband is not justified|in hitting or beating his wife under any circumstances",
   "Bank account ownership",
   "House ownership",
