@@ -125,7 +125,7 @@ a {
   color: #F8FFB8; /* Dark yellow (Goldenrod) */
   font-weight: 600;
   font-size: 1.1em;
-  line-height: 1.6em;
+  line-height: 1.7em;
 }
 
 /* Stile del contenitore della paginazione */
@@ -148,7 +148,7 @@ a {
 /* Stile delle categorie */
 .category {
   font-weight: regular;
-  font-size: 0.7em; /* Dimensione della categoria */
+  font-size: 0.8em; /* Dimensione della categoria */
   color: inherit; /* Mantiene il colore dinamico */
   text-align: center;
 }
