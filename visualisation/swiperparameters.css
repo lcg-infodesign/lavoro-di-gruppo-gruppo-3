@@ -180,7 +180,7 @@ a {
 .back-arrow {
   position: absolute; /* Posiziona la freccia in modo assoluto */
   top: 120px; /* Spazio dal bordo superiore */
-  left: 35px; /* Spazio dal bordo sinistro */
+  left: 42px; /* Spazio dal bordo sinistro */
   text-decoration: none; /* Rimuove la sottolineatura */
   font-size: 2rem; /* Dimensione del carattere */
   color: #F8FFB8; /* Colore della freccia */
