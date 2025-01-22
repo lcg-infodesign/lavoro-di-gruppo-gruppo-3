@@ -191,6 +191,6 @@ a {
 /* Effetto hover per la freccia */
 .back-arrow:hover {
   opacity: 1;
-  filter: drop-shadow(0 0 15px #F8FFB8) drop-shadow(0 0 20px #F8FFB8) drop-shadow(0 0 35px #F8FFB8); /* Effetto di bagliore più forte e intenso */
+  filter: drop-shadow(0 0 15px #F8FFB8) drop-shadow(0 0 20px #F8FFB8) drop-shadow(0 0 35px #F8FFB8);
   transition: filter 0.3s ease;
 }

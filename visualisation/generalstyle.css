@@ -56,7 +56,7 @@ nav a {
 }
 /*effetto bagliore quando si passa sopra alle voci del menù*/
 nav a:hover {
-  text-shadow: 0 0 30px #F8FFB8, 0 0 15px rgba(248, 255, 184, 0.3), 0 0 25px rgba(248, 255, 184, 0.9); /* Bagliore più espanso */
+  text-shadow: 0 0 50px #F8FFB8, 0 0 20px rgba(248, 255, 184, 0.3), 0 0 25px rgba(248, 255, 184, 0.8); /* Bagliore più espanso */
   text-decoration: none !important; /* Assicura che non appaia decorazione anche in hover */
 }
 
