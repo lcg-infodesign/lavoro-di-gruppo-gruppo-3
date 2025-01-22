@@ -51,7 +51,7 @@ nav {
 nav a {
   color: #F8FFB8;
   text-decoration: none !important; /* Rimuove ogni decorazione */
-  font-size: 0.9vw;
+  font-size: 0.8em;
   transition: text-shadow 0.3s ease, transform 0.1s ease;
 }
 /*effetto bagliore quando si passa sopra alle voci del menù*/

@@ -41,15 +41,13 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center; 
-  padding-top: 50px;
+  padding-top: 10%;
   height: auto;
 }
 
 /* Stile per la sezione del testo */
 .text {
   width: 40%;
-  padding: 20px;
-  border-radius: 20px;
   color: #f8ffb890;
   font-size: 1.0em;
   line-height: 1.6em;
@@ -61,20 +59,20 @@
 .title {
   font-family: 'LibreBaskerville Italic', serif;
   font-size: 1.5rem; 
-  margin-bottom: 20px; 
+  margin-bottom: 5%; 
   color: #F8FFB8; 
   font-weight: 500; 
 }
 .subtitle {
   font-family: 'LibreBaskerville Italic', serif;
   font-size: 1.1rem;
-  margin-bottom: 20px; 
+  margin-bottom: 3%; 
   color: #F8FFB8; 
   font-weight: 500; 
 }
 /* Stile per ogni sezione*/
 .section {
-  margin-bottom: 20%; /* Aggiunge distanza tra ogni sezione (puoi regolare il valore) */
+  margin-bottom: 15%; /* Aggiunge distanza tra ogni sezione (puoi regolare il valore) */
 }
 
 /* distanza aggiuntiva per un po' più di separazione tra paragrafi */
