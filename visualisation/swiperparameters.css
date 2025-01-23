@@ -183,7 +183,7 @@ a {
 .back-arrow {
   position: absolute; /* Posiziona la freccia in modo assoluto */
   top: 18%; /* Spazio dal bordo superiore */
-  left: 5%; /* Spazio dal bordo sinistro */
+  left: 3%; /* Spazio dal bordo sinistro */
   text-decoration: none; /* Rimuove la sottolineatura */
   font-size: 2rem; /* Dimensione del carattere */
   color: #F8FFB8; /* Colore della freccia */
