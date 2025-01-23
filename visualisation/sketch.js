@@ -1,7 +1,7 @@
 let data;
 let nazioni = {};
 let backgroundColor = '#06011e';
-
+// let hoveredGliph = null; // Variabile per tracciare il glifo sotto il mouse
 
 function preload(){
   data = loadTable("../assets/data.csv", "csv", "header");
@@ -11,7 +11,7 @@ function setup() {
   let totalWidth = windowWidth;
   let totalHeight = windowHeight*0.70;;
   createCanvas(totalWidth, totalHeight);
-  noLoop();
+  // noLoop();
 }
 
 function draw() {
@@ -57,11 +57,30 @@ function draw() {
     let size = windowWidth * 0.1;
     let diameter = map(myValue, minAverage, maxAverage, size * 0.06, size * 0.13);
 
-    // Imposta il colore con opacità mappata (se vuoi mantenerlo uguale a prima)
-    let opacity = map(myValue, minAverage, maxAverage, 45, 255); // 115 è 45% di 255, 255 è 100% di opacità
-    let c = color(253, 255, 160, opacity); // Usa il colore bianco con l'opacità mappata
+    // Verifica se il mouse è sopra il glifo
+    // let distToGliph = dist(mouseX, mouseY, x, y);
+    // let isHovered = distToGliph < diameter / 2;
+
+    // Se il mouse è sopra, incrementiamo la dimensione e luminosità
+    // if (isHovered) {
+    //   hoveredGliph = paese; // Memorizziamo il paese attualmente sotto il mouse
+    //   diameter *= 1.25; // Aumenta la dimensione
+    //   let opacity = 255; // Luminosità massima
+    //   let c = color(254, 255, 210, opacity); // Colore luminoso
+    //   drawHalo(x, y, myValue, diameter, true);
+    //   drawGliph(x, y, c, diameter);
+    // } else {
+    //   // Altrimenti, disegna il glifo normalmente
+    //   let opacity = map(myValue, minAverage, maxAverage, 45, 255);
+    //   let c = color(253, 255, 170, opacity);
+    //   drawHalo(x, y, myValue, diameter);
+    //   drawGliph(x, y, c, diameter);
+    // }
+
+    // //glifo normale senza ingrandimento con hover
+    let opacity = map(myValue, minAverage, maxAverage, 45, 255);
+    let c = color(253, 255, 170, opacity);
     drawHalo(x, y, myValue, diameter);
-    // Disegno il glifo con il colore e il diametro mappato
     drawGliph(x, y, c, diameter);
     
     let link = createA(`../sun/sun.html?country=${encodeURIComponent(paese)}`, paese);    
@@ -85,6 +104,11 @@ function draw() {
     });
   }
 }
+
+// Chiamata per ridisegnare solo quando il mouse si muove
+// function mouseMoved() {
+//   redraw(); // Forza il ridisegno ogni volta che il mouse si muove
+// }
 
 function drawHalo(x, y, myValue, diameter) {
   let maxHaloSize = map(myValue, 0, 10, diameter * 0.1, diameter * 0.6); // Mappa la grandezza dell'alone in base al valore "average"
