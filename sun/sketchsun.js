@@ -3,21 +3,22 @@ let dataObj;
 let poppinsRegular;
 let inconsolataRegular;
 let baskerville;
+let RegularBaskerville;
 let cambiamento = true;
 
 let activeRay = -1;  // Nessun raggio attivo inizialmente
 let spicchiText = [
-  "Perception that a woman|earning more/have same as her husband|doesn't cause any problems",
-  "Perception that men shouldn't have|more right to a job than women",
-  "Perception that children don't necessearily suffer more if a mother works for pay",
-  "Perceptions that men don't necessarily make|better business executives than women",
+  "Perception that a woman_earning more/have same as her husband_doesn't cause any problems",
+  "Perception that men shouldn't_have more right to a job than women",
+  "Perception that children don't necessearily_suffer more if a mother works for pay",
+  "Perceptions that men don't necessarily make_better business executives than women",
   "Feeling of safety at night",
-  "Confidence in the judicial|system and courts",
-  "Perception that men aren't necessarily|better political leaders than women",
+  "Confidence in the judicial_system and courts",
+  "Perception that men aren't necessarily_better political leaders than women",
   "Women who didn't undergo child marriage",
   "Women who didn't undergo FGM",
   "Perception that FGM should stop",
-  "Perception that a husband is not justified|in hitting or beating his wife under any circumstances",
+  "Perception that a husband_is not justified in hitting or beating his wife_under any circumstances",
   "Bank account ownership",
   "House ownership",
   "Land ownership",
@@ -44,6 +45,7 @@ function preload() {
  // poppinsRegular = loadFont('assets/Poppins-Regular.ttf');
   inconsolataRegular = loadFont('../fonts/Inconsolata-Regular.ttf');
   baskerville = loadFont ('../fonts/LibreBaskervilleItalic.ttf')
+  RegularBaskerville = loadFont ('../fonts/LibreBaskervilleRegular.ttf')
 }
 
 function setup() {
@@ -121,11 +123,12 @@ function draw() {
       // Mostriamo la scritta corrispondente
     fill("#F8FFB8");
     noStroke();
-    textFont(baskerville);
-    textSize (size *0.05)
+    textFont(RegularBaskerville);
+    textSize (size *0.04)
     textAlign(LEFT, TOP);
     //text(spicchiText[indiceSpicchio]+"\n\n"+paese[spicchiText[indiceSpicchio]], xPos - 13/16*xPos, (totalHeight/2)-(8/16*size));
-    text(spicchiText[indiceSpicchio], xPos - 13/16*xPos, (totalHeight/2));
+    let stringhetta = spicchiText[indiceSpicchio].replace(/_/g, '\n');
+    text(stringhetta, xPos - 13/16*xPos, (totalHeight/2));
     }
     else {
       cursor("default");
@@ -186,15 +189,16 @@ function mouseOverReaction(x, totalHeight, nazione, size) {
 }
 
 function disegnaSole (x, y, size, nazione){
+  
   noStroke();
   fill("#F8FFB8");
-  //ellipse(x, y, size/12, size/12);
-  // fill(255, 255, 191, 50)
-  // ellipse(x, y, size/9, size/9);
-  // fill(255, 255, 191, 25)
-  ellipse(x, y, size/7, size/7);
-  // fill(255, 255, 191, 16)
-  // ellipse(x, y, size/6, size/6);
+  //ellipse(x, y, size/7, size/7);
+
+   for (let e = size/7; e > 0; e -= 2) {
+    let alpha = map(e, size, 0,100, 70); // Gradiente di trasparenza
+    fill(248, 255, 184, alpha); // Colore giallo con opacità variabile
+    ellipse(x, y, e, e); // Cerchi concentrici
+  }
 
   // Disegnare ogni raggio separatamente
   drawRay(11, nazione["Bank account ownership"], size);
@@ -259,12 +263,22 @@ function drawRay(index, rayLengthData, size) {
     
     ellipse(x, y, radius * 2, radius * 2); // Disegna il cerchio
   }
-
-  fill("white");
+  
+  let fontSize = 1/36 *size
+  fill(255, 255, 191, 70)
   textAlign(CENTER,CENTER);
-  let maxx =  x1 + cos(angle) * size/1.6;
-  let maxy =  y1 + sin(angle) * size/1.6;
-  text(rayLengthData+"%", maxx, maxy);
+  textFont (RegularBaskerville);
+  textSize (fontSize)
+  let maxx =  x1 + cos(angle) * size/2.55;
+  let maxy =  y1 + sin(angle) * size/2.55;
+
+  if (rayLengthData !== null && rayLengthData !== "none") {
+    text(rayLengthData + "%", maxx, maxy);
+  } else {
+    text(rayLengthData, maxx, maxy); // Disegna solo il numero senza il simbolo %
+  }
+
+  //text(rayLengthData+"%", maxx, maxy);
 }
 
 function drawSecondRay(index, rayLengthData, size) {
@@ -316,7 +330,7 @@ function drawTRay(index, rayLengthData, size) {
   noStroke();
   fill(255, 255, 191, 0.6)
   if(index == indiceSpicchio) {
-    fill(200, 200, 200, 2);
+    fill(200, 200, 200, 4);
   }
   //fill(248, 255, 184)
   let rayLength = parseInt(rayLengthData);
@@ -398,43 +412,7 @@ function disegnaCerchi(x, y, size, paese){
   stroke("#6969B7");
   arc(x, y, nuovaSize, nuovaSize, arco*6.9, arco*10.2);
 
-  // Posizionamento del testo "99%" sopra il cerchio
-  let numRays = 14;  // Numero di raggi (settori)
-  let angleStep = 360 / numRays;  // Passo angolare tra ciascun "99%"
-
-  // Calcolo della posizione del testo sopra il cerchio
-  let textRadius = size * 12 / 26 ; // Raggio del cerchio esterno (dove posizioniamo il testo)
   
-  // Aggiungi un offset per spostare il testo sopra il cerchio
-  let textOffset = 15;  // Aggiungi un offset maggiore per spostare il testo sopra il cerchio
-  
-  // Carica il font "Inconsolata Regular"
-  textFont('Inconsolata');  // Usa il font Inconsolata
-  
-  // Ciclo per posizionare il testo "99%" sopra il cerchio
-  for (let k = 0; k < numRays; k++) {
-    let angle = angleStep * k;  // Angolo per ciascun testo
-    let textX = x + cos(angle) * (textRadius + textOffset);  // Posizione X del testo
-    let textY = y + sin(angle) * (textRadius + textOffset);  // Posizione Y del testo (spostato sopra)
-
-    // Posiziona il testo in modo che rimanga orizzontale rispetto al piano
-    push();
-    translate(textX, textY); // Sposta il contesto alla posizione del testo
-
-    // Ruota il testo per mantenerlo orizzontale rispetto al piano
-    rotate(0); // Non applicare alcuna rotazione (mantieni il testo orizzontale)
-
-    let fontSize = 1/26 *size
-    noStroke();
-    textSize(fontSize);  // Imposta la dimensione del testo
-    textFont ('baskerville')
-    textAlign(CENTER, CENTER);  // Centra il testo
-    fill(255, 255, 191, 70)
-
-    
-    text(paese["average"]+"%", 0, 0);  // Disegna il testo
-    pop();
-  }
 }
 
 function testoCurvoEconomic (x, y, size) {
