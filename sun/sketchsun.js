@@ -24,10 +24,10 @@ let spicchiText = [
   "Land ownership",
 ];
 let spicchiLink = [
-  "../visualisation/parameters.html?slide=5",
-  "../visualisation/parameters.html?slide=7",
   "../visualisation/parameters.html?slide=4",
+  "../visualisation/parameters.html?slide=5",
   "../visualisation/parameters.html?slide=6",
+  "../visualisation/parameters.html?slide=7",
   "../visualisation/parameters.html?slide=12",
   "../visualisation/parameters.html?slide=13",
   "../visualisation/parameters.html?slide=14",
@@ -35,9 +35,9 @@ let spicchiLink = [
   "../visualisation/parameters.html?slide=9",
   "../visualisation/parameters.html?slide=10",
   "../visualisation/parameters.html?slide=11",
-  "../visualisation/parameters.html?slide=3",
   "../visualisation/parameters.html?slide=1",
   "../visualisation/parameters.html?slide=2",
+  "../visualisation/parameters.html?slide=3",
 ];
 
 function preload() {
@@ -328,50 +328,58 @@ function drawSecondRay(index, rayLengthData, size) {
 
 function drawTRay(index, rayLengthData, size) {
   noStroke();
+<<<<<<< Updated upstream
   fill(255, 255, 191, 0.6)
   if(index == indiceSpicchio) {
     fill(200, 200, 200, 4);
+=======
+  fill(255, 255, 191, 0.6);
+  
+  if (index == indiceSpicchio) {
+    fill(200, 200, 200, 2);
+>>>>>>> Stashed changes
   }
-  //fill(248, 255, 184)
+
   let rayLength = parseInt(rayLengthData);
-  if(isNaN(rayLength)) {
-    
+  if (isNaN(rayLength)) {
     rayLength = 100;
-     // Crea il colore #F8FFB8 con trasparenza (ad esempio alpha = 128)
-  let c = color(248, 255, 184 ,0); // RGB (248, 255, 184) con alpha 128
- 
-  fill(c); // Applica il colore con trasparenza
-  
-    
-    
+    let c = color(248, 255, 184, 0);
+    fill(c);
   }
-   
-  let numRays = 14; 
-  let angleStep = TWO_PI / numRays; // Passo angolare per distribuire i raggi in modo uniforme
-  
-  let angle = angleStep * index; // Calcola l'angolo per il raggio corrente
 
-  // Posizione iniziale dei cerchi (i raggi partono da una distanza maggiore dal centro)
-  let x1 = centerX + cos(angle) * size/10; // Aggiustiamo la distanza dal centro (partono più distanti)
-  let y1 = centerY + sin(angle) * size/10; // Aggiustiamo la distanza dal centro (partono più distanti)
-  
-  let minRadius = 3/500*size;  // Raggio minimo per il primo cerchio
-  let maxRadius = 20/500*size;  // Raggio massimo per l'ultimo cerchio
-  
-  
-  // Ciclo per disegnare i cerchi lungo il raggio
-  for (let j = 0; j < rayLength * size/150; j++) {
-    //let radius = map(j, 0, rayLength, minRadius, maxRadius); // Raggio che cresce lungo il raggio
+  let numRays = 14;
+  let angleStep = TWO_PI / numRays;
+  let angle = angleStep * index;
+
+  let x1 = centerX + cos(angle) * size / 10;
+  let y1 = centerY + sin(angle) * size / 10;
+
+  let minRadius = 3 / 500 * size;
+  let maxRadius = 20 / 500 * size;
+
+  // Disegnamo i raggi
+  for (let j = 0; j < rayLength * size / 150; j++) {
     let radius = map(j, 0, rayLength * 17 / 4, minRadius, maxRadius);
-    let distance = j * 2 / 4; // La distanza tra i cerchi lungo il raggio
+    let distance = j * 2 / 4;
 
-    // Calcola la posizione di ogni cerchio lungo il raggio
     let x = x1 + cos(angle) * distance;
     let y = y1 + sin(angle) * distance;
-    
-    ellipse(x, y, radius * 2, radius * 2); // Disegna il cerchio
+
+    ellipse(x, y, radius * 2, radius * 2);
   }
+
+  // Disegna il cerchio tratteggiato
+  let pathRadius = size * 14 / 26;  // Raggio del cerchio su cui posizionare il testo
+  ellipse(centerX, centerY, pathRadius * 2, pathRadius * 2); // Disegniamo il cerchio
+
+  // Calcola la posizione del testo lungo il cerchio
+  let textAngle = angle + angleStep / 2; // Angolo centrale per il testo
+  let textX = centerX + cos(textAngle) * pathRadius;
+  let textY = centerY + sin(textAngle) * pathRadius;
+
 }
+
+
 
 function mouseMoved() {
 
@@ -389,18 +397,28 @@ function mouseMoved() {
   }
 }
 
+<<<<<<< Updated upstream
 function disegnaCerchi(x, y, size, paese){
+=======
+function disegnaCerchi(x, y, size) {
+>>>>>>> Stashed changes
   noFill();
-  strokeWeight (2);
+  strokeWeight(2);
   stroke(214, 214, 156, 90);
   drawingContext.setLineDash([0.5, 10.5]);
-  ellipse(x, y, size*22/26, size*22/26);
-  stroke(214, 214, 156, 70);
-  ellipse(x, y, size*14/26, size*14/26);
-
-  let arco = 360/14
   
+  // Disegna il cerchio tratteggiato esterno
+  ellipse(x, y, size * 22 / 26, size * 22 / 26);
+  stroke(214, 214, 156, 70);
+  // Disegna il cerchio tratteggiato interno
+  ellipse(x, y, size * 14 / 26, size * 14 / 26);
+
+  // Calcolo dell'angolo per ogni arco
+  let arco = 360 / 14;
+  
+  // Reset delle linee tratteggiate
   drawingContext.setLineDash([0, 0]);
+<<<<<<< Updated upstream
   angleMode(DEGREES)
   let nuovaSize = 29/26* size
   stroke("#B1803C");
@@ -413,7 +431,55 @@ function disegnaCerchi(x, y, size, paese){
   arc(x, y, nuovaSize, nuovaSize, arco*6.9, arco*10.2);
 
   
+=======
+  angleMode(DEGREES);
+  
+  // Disegna gli archi colorati
+  stroke("#B1803C");
+  arc(x, y, size, size, arco * 10.9, arco * 13.2);
+  stroke("#B76263");
+  arc(x, y, size, size, arco * 13.9, arco * 3.2);
+  stroke("#87538F");
+  arc(x, y, size, size, arco * 3.9, arco * 6.2);
+  stroke("#6969B7");
+  arc(x, y, size, size, arco * 6.9, arco * 10.2);
+  
+  // Posizionamento del testo "99%" sopra il cerchio
+  let numRays = 14;  // Numero di raggi (settori)
+  let angleStep = 360 / numRays;  // Passo angolare tra ciascun "99%"
+
+  // Calcolo della posizione del testo sopra il cerchio
+  let textRadius = size * 22 / 26 / 2; // Raggio del cerchio esterno (dove posizioniamo il testo)
+  
+  // Aggiungi un offset per spostare il testo sopra il cerchio
+  let textOffset = 15;  // Aggiungi un offset maggiore per spostare il testo sopra il cerchio
+  
+  // Carica il font "Inconsolata Regular"
+  textFont('Inconsolata');  // Usa il font Inconsolata
+  
+  // Ciclo per posizionare il testo "99%" sopra il cerchio
+  for (let i = 0; i < numRays; i++) {
+    let angle = angleStep * i;  // Angolo per ciascun testo
+    let textX = x + cos(angle) * (textRadius + textOffset);  // Posizione X del testo
+    let textY = y + sin(angle) * (textRadius + textOffset);  // Posizione Y del testo (spostato sopra)
+
+    // Posiziona il testo in modo che rimanga orizzontale rispetto al piano
+    push();
+    translate(textX, textY); // Sposta il contesto alla posizione del testo
+
+    // Ruota il testo per mantenerlo orizzontale rispetto al piano
+    rotate(0); // Non applicare alcuna rotazione (mantieni il testo orizzontale)
+
+    noStroke();
+    textSize(12);  // Imposta la dimensione del testo
+    textAlign(CENTER, CENTER);  // Centra il testo
+    fill(255, 255, 191);  // Colore del testo
+    text("99%", 0, 0);  // Disegna il testo
+    pop();
+  }
+>>>>>>> Stashed changes
 }
+
 
 function testoCurvoEconomic (x, y, size) {
   textSize(size * 0.04);
