@@ -5,6 +5,7 @@ let hoveredGliph = null; // Variabile per tracciare il glifo sotto il mouse
 
 function preload(){
   data = loadTable("../assets/data.csv", "csv", "header");
+  continenti = loadImage("../assets/continenti.png");
 }
 
 function setup() {
@@ -16,6 +17,11 @@ function setup() {
 
 function draw() {
   background(backgroundColor);
+  let scaleFactor = 0.39;  // Fattore di scala (0.5 la riduce del 50%)
+let scaledWidth = continenti.width * scaleFactor;
+let scaledHeight = continenti.height * scaleFactor;
+
+image(continenti, 140, 50, scaledWidth, scaledHeight);
   
   let minAverage = Infinity;
   let maxAverage = -Infinity;
