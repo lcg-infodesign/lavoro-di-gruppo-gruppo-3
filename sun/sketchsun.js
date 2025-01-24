@@ -46,7 +46,7 @@ function preload() {
   inconsolataRegular = loadFont('../fonts/Inconsolata-Regular.ttf');
   baskerville = loadFont ('../fonts/LibreBaskervilleItalic.ttf');
   RegularBaskerville = loadFont ('../fonts/LibreBaskervilleRegular.ttf');
-  legendaUno = loadImage("../assets/legendaSoleSingolo1.png");
+  legendaUno = loadImage("../assets/legendaSemiDefinitiva.png");
 }
 
 function setup() {
@@ -129,7 +129,7 @@ function draw() {
     textAlign(LEFT, TOP);
     //text(spicchiText[indiceSpicchio]+"\n\n"+paese[spicchiText[indiceSpicchio]], xPos - 13/16*xPos, (totalHeight/2)-(8/16*size));
     let stringhetta = spicchiText[indiceSpicchio].replace(/_/g, '\n');
-    text(stringhetta, xPos - 13/16*xPos, (totalHeight/2));
+    text(stringhetta, xPos - 13/16*xPos, (totalHeight/2 - 8/50*size));
     }
     else {
       cursor("default");
@@ -144,10 +144,10 @@ function draw() {
    ilGrandeNome (xPos, totalHeight, size, paese, baskerville);
 
    
-   let scaleFactor = 0.001*size;
+   let scaleFactor = 0.00155*size;
    let scaledWidth = legendaUno.width * scaleFactor;
    let scaledHeight = legendaUno.height * scaleFactor;
-   image(legendaUno, 5, 5, scaledWidth, scaledHeight);
+   image(legendaUno, xPos-13/16*xPos, 1/2*windowHeight + 2/50*size , scaledWidth, scaledHeight);
  
    // ----------------------- testi curvi ---------------------------------
    testoCurvoEconomic (xPos, yPos, size);
