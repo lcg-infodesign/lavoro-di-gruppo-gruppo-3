@@ -28,33 +28,50 @@ body.home {
 
 /* Sezione contenente il logo e il pulsante */
 .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 5vw;
-    position: relative; 
-    z-index: 1;
+  display: flex; /* Usa flexbox */
+  flex-direction: column; /* Allinea gli elementi in colonna */
+  align-items: center; /* Centra gli elementi orizzontalmente */
+  justify-content: center; /* Centra gli elementi verticalmente (se necessario) */
+  text-align: center; /* Centra il testo */
+  width: 100%; /* Imposta la larghezza al 100% */
 }
 
 /* Stile del logo */
 .logo {
-    width: 40%;
-    height: auto;
-    margin-bottom: 2vh;
+  width: 40%; /* Imposta la larghezza del logo */
+  height: auto; /* Mantieni l'aspetto corretto del logo */
+  margin-bottom: 2vh; /* Distanza tra il logo e il testo */
 }
+
+/* Stile del testo */
+.subtitle {
+  font-size: 2.1vw; /* Dimensione del testo */
+  color: #F8FFB8; /* Colore del testo */
+  margin-bottom: 2vh; /* Spaziatura sotto la scritta */
+  margin-left: 0.5vw; /* Allinea il testo al logo */
+  font-weight: 300; /* Peso del font leggero */
+  text-align: center; /* Allinea il testo al centro */
+  padding-top: 2vh; /* Aggiungi spazio sopra la scritta */
+}
+
+
 
 /* Stile del pulsante */
 button {
-    background-color: #06011E;
-    color: #F8FFB8;
-    border: 0.2vw solid #F8FFB8; 
-    border-radius: 1vw;
-    padding: 1vw 3vw;
-    font-size: 1.2vw; 
-    cursor: pointer; /* Cambia il cursore */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aggiunge l'animazione */
-    margin-left: 11vw;
+  background-color: #06011E;
+  color: #F8FFB8;
+  border: 0.2vw solid #F8FFB8; 
+  border-radius: 1vw;
+  padding: 1vw 3vw;
+  font-size: 1.2vw; 
+  cursor: pointer; /* Cambia il cursore */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aggiunge l'animazione */
+  margin-top: 4vw; /* spazio sopra al pulsante */
+  display: block; /* Rende il pulsante un blocco (elimina il margine sinistro) */
+  margin-left: auto; /* Allinea il margine sinistro automaticamente */
+  margin-right: auto; /* Allinea il margine destro automaticamente */
 }
+
 
 /* Effetto hover sul pulsante */
 button:hover {
