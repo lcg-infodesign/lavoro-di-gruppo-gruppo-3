@@ -7,7 +7,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(6, 1, 30, 0.7);
+    background-color: rgba(6, 1, 30, 0.8);
     z-index: -1;
 }
 
@@ -38,20 +38,20 @@ body.home {
 
 /* Stile del logo */
 .logo {
-  width: 40%; /* Imposta la larghezza del logo */
+  width: 60%; /* Imposta la larghezza del logo */
   height: auto; /* Mantieni l'aspetto corretto del logo */
-  margin-bottom: 2vh; /* Distanza tra il logo e il testo */
+  margin-bottom: 1vh; /* Distanza tra il logo e il testo */
 }
 
 /* Stile del testo */
 .subtitle {
-  font-size: 2.1vw; /* Dimensione del testo */
+  font-size: 1.5vw; /* Dimensione del testo */
   color: #F8FFB8; /* Colore del testo */
-  margin-bottom: 2vh; /* Spaziatura sotto la scritta */
+  padding-bottom: 3vh; /* Spaziatura sotto la scritta */
   margin-left: 0.5vw; /* Allinea il testo al logo */
   font-weight: 300; /* Peso del font leggero */
   text-align: center; /* Allinea il testo al centro */
-  padding-top: 2vh; /* Aggiungi spazio sopra la scritta */
+  padding-top: 4vh; /* Aggiungi spazio sopra la scritta */
 }
 
 
@@ -66,7 +66,7 @@ button {
   font-size: 1.2vw; 
   cursor: pointer; /* Cambia il cursore */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aggiunge l'animazione */
-  margin-top: 4vw; /* spazio sopra al pulsante */
+  margin-top: 2vw; /* spazio sopra al pulsante */
   display: block; /* Rende il pulsante un blocco (elimina il margine sinistro) */
   margin-left: auto; /* Allinea il margine sinistro automaticamente */
   margin-right: auto; /* Allinea il margine destro automaticamente */
