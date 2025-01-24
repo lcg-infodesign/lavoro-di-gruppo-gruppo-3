@@ -24,10 +24,10 @@ let spicchiText = [
   "Land ownership",
 ];
 let spicchiLink = [
-  "../visualisation/parameters.html?slide=5",
-  "../visualisation/parameters.html?slide=7",
   "../visualisation/parameters.html?slide=4",
+  "../visualisation/parameters.html?slide=5",
   "../visualisation/parameters.html?slide=6",
+  "../visualisation/parameters.html?slide=7",
   "../visualisation/parameters.html?slide=12",
   "../visualisation/parameters.html?slide=13",
   "../visualisation/parameters.html?slide=14",
@@ -35,9 +35,9 @@ let spicchiLink = [
   "../visualisation/parameters.html?slide=9",
   "../visualisation/parameters.html?slide=10",
   "../visualisation/parameters.html?slide=11",
-  "../visualisation/parameters.html?slide=3",
   "../visualisation/parameters.html?slide=1",
   "../visualisation/parameters.html?slide=2",
+  "../visualisation/parameters.html?slide=3",
 ];
 
 function preload() {
