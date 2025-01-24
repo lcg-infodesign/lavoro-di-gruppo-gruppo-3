@@ -44,8 +44,9 @@ function preload() {
   data = loadTable("../assets/data.csv", "csv", "header");
  // poppinsRegular = loadFont('assets/Poppins-Regular.ttf');
   inconsolataRegular = loadFont('../fonts/Inconsolata-Regular.ttf');
-  baskerville = loadFont ('../fonts/LibreBaskervilleItalic.ttf')
-  RegularBaskerville = loadFont ('../fonts/LibreBaskervilleRegular.ttf')
+  baskerville = loadFont ('../fonts/LibreBaskervilleItalic.ttf');
+  RegularBaskerville = loadFont ('../fonts/LibreBaskervilleRegular.ttf');
+  legendaUno = loadImage("../assets/legendaSoleSingolo1.png");
 }
 
 function setup() {
@@ -141,6 +142,12 @@ function draw() {
    //disegnaSole (xPos,yPos, size, nazioni[nomeC]);
  
    ilGrandeNome (xPos, totalHeight, size, paese, baskerville);
+
+   
+   let scaleFactor = 0.001*size;
+   let scaledWidth = legendaUno.width * scaleFactor;
+   let scaledHeight = legendaUno.height * scaleFactor;
+   image(legendaUno, 5, 5, scaledWidth, scaledHeight);
  
    // ----------------------- testi curvi ---------------------------------
    testoCurvoEconomic (xPos, yPos, size);
@@ -620,8 +627,6 @@ function testoCurvoViolence (x, y, size) {
     pop();
   }
 
-
-  
 
   
   
