@@ -1,7 +1,7 @@
 let data;
 let nazioni = {};
 let backgroundColor = '#06011e';
-let hoveredGliph = null; // Variabile per tracciare il glifo sotto il mouse
+// let hoveredGliph = null; // Variabile per tracciare il glifo sotto il mouse
 
 function preload(){
   data = loadTable("../assets/data.csv", "csv", "header");
@@ -17,11 +17,10 @@ function setup() {
 
 function draw() {
   background(backgroundColor);
-  let scaleFactor = 0.39;  // Fattore di scala (0.5 la riduce del 50%)
-let scaledWidth = continenti.width * scaleFactor;
-let scaledHeight = continenti.height * scaleFactor;
-
-image(continenti, 140, 50, scaledWidth, scaledHeight);
+  let scaleFactor = 0.39;
+  let scaledWidth = continenti.width * scaleFactor;
+  let scaledHeight = continenti.height * scaleFactor;
+  image(continenti, 140, 50, scaledWidth, scaledHeight);
   
   let minAverage = Infinity;
   let maxAverage = -Infinity;
@@ -64,30 +63,33 @@ image(continenti, 140, 50, scaledWidth, scaledHeight);
     let diameter = map(myValue, minAverage, maxAverage, size * 0.06, size * 0.13);
 
     // Verifica se il mouse è sopra il glifo
-    let distToGliph = dist(mouseX, mouseY, x, y);
-    let isHovered = distToGliph < diameter / 2;
+    // let distToGliph = dist(mouseX, mouseY, x, y);
+    // let isHovered = distToGliph < diameter / 2;
+
+    //scritte continenti
+
 
     // Se il mouse è sopra, incrementiamo la dimensione e luminosità
-    if (isHovered) {
-      hoveredGliph = paese; // Memorizziamo il paese attualmente sotto il mouse
-      diameter *= 1.25; // Aumenta la dimensione
-      let opacity = 255; // Luminosità massima
-      let c = color(253, 255, 170, opacity); // Colore luminoso
-      drawHalo(x, y, myValue, diameter, true);
-      drawGliph(x, y, c, diameter);
-    } else {
-      // Altrimenti, disegna il glifo normalmente
-      let opacity = map(myValue, minAverage, maxAverage, 45, 255);
-      let c = color(253, 255, 170, opacity);
-      drawHalo(x, y, myValue, diameter);
-      drawGliph(x, y, c, diameter);
-    }
+    // if (isHovered) {
+    //   hoveredGliph = paese; // Memorizziamo il paese attualmente sotto il mouse
+    //   diameter *= 1.25; // Aumenta la dimensione
+    //   let opacity = 255; // Luminosità massima
+    //   let c = color(253, 255, 170, opacity); // Colore luminoso
+    //   drawHalo(x, y, myValue, diameter, true);
+    //   drawGliph(x, y, c, diameter);
+    // } else {
+    //   // Altrimenti, disegna il glifo normalmente
+    //   let opacity = map(myValue, minAverage, maxAverage, 45, 255);
+    //   let c = color(253, 255, 170, opacity);
+    //   drawHalo(x, y, myValue, diameter);
+    //   drawGliph(x, y, c, diameter);
+    // }
 
     // //glifo normale senza ingrandimento con hover
-    // let opacity = map(myValue, minAverage, maxAverage, 45, 255);
-    // let c = color(253, 255, 170, opacity);
-    // drawHalo(x, y, myValue, diameter);
-    // drawGliph(x, y, c, diameter);
+    let opacity = map(myValue, minAverage, maxAverage, 45, 255);
+    let c = color(253, 255, 170, opacity);
+    drawHalo(x, y, myValue, diameter);
+    drawGliph(x, y, c, diameter);
     
     let link = createA(`../sun/sun.html?country=${encodeURIComponent(paese)}`, paese);    
     // Posiziona il link sovrapposto il glifo
@@ -133,3 +135,5 @@ function drawGliph(x, y, c, diameter){
   noStroke();
   ellipse(x, y, diameter); // Usa il diametro mappato per il pallino
 }
+
+
