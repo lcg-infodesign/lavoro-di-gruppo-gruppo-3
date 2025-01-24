@@ -72,7 +72,7 @@ image(continenti, 140, 50, scaledWidth, scaledHeight);
       hoveredGliph = paese; // Memorizziamo il paese attualmente sotto il mouse
       diameter *= 1.25; // Aumenta la dimensione
       let opacity = 255; // Luminosità massima
-      let c = color(254, 255, 210, opacity); // Colore luminoso
+      let c = color(253, 255, 170, opacity); // Colore luminoso
       drawHalo(x, y, myValue, diameter, true);
       drawGliph(x, y, c, diameter);
     } else {
