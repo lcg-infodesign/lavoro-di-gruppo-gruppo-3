@@ -8,21 +8,22 @@ let cambiamento = true;
 
 let activeRay = -1;  // Nessun raggio attivo inizialmente
 let spicchiText = [
-  "Perception that a woman_earning more/have same as her husband_doesn't cause any problems",
-  "Perception that men shouldn't_have more right to a job than women",
-  "Perception that children don't necessearily_suffer more if a mother works for pay",
+  "Perception that a woman earning_more or the same as her husband_doesn't cause any problems",
+  "Perception that men shouldn't have_more right to a job than women",
+  "Perception that children don't necessarily_suffer more if a mother works for pay",
   "Perceptions that men don't necessarily make_better business executives than women",
   "Feeling of safety at night",
-  "Confidence in the judicial_system and courts",
+  "Confidence in the judicial system and courts",
   "Perception that men aren't necessarily_better political leaders than women",
   "Women who didn't undergo child marriage",
   "Women who didn't undergo FGM",
   "Perception that FGM should stop",
-  "Perception that a husband_is not justified in hitting or beating his wife_under any circumstances",
+  "Perception that a husband is not justified_in hitting or beating his wife under any_circumstances",
   "Bank account ownership",
   "House ownership",
   "Land ownership",
 ];
+
 let spicchiLink = [
   "../visualisation/parameters.html?slide=4",
   "../visualisation/parameters.html?slide=5",
@@ -137,7 +138,7 @@ function draw() {
       textFont(RegularBaskerville);
       textSize (size *0.04)
       textAlign(LEFT, TOP);
-      let scrittaInizio = "Hover over the rays with your mouse_to view the parameters names.Click on the rays to learn more.".replace(/_/g, '\n');
+      let scrittaInizio = "Hover over the rays with your mouse_to view the parameters names._Click on the rays to learn more.".replace(/_/g, '\n');
       text(scrittaInizio, xPos - 13/16*xPos, (totalHeight/2 - 8/50*size));
       cursor("default");
     }
