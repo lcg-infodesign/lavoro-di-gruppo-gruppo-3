@@ -6,7 +6,6 @@ let backgroundColor = '#06011e';
 
 function preload(){
   data = loadTable("../assets/data.csv", "csv", "header");
-  continenti = loadImage("../assets/continenti.png");
   baskerville = loadFont ('../fonts/LibreBaskervilleRegular.ttf');
 }
 
@@ -19,10 +18,6 @@ function setup() {
 
 function draw() {
   background(backgroundColor);
-  // let scaleFactor = 0.39;
-  // let scaledWidth = continenti.width * scaleFactor;
-  // let scaledHeight = continenti.height * scaleFactor;
-  // image(continenti, 140, 50, scaledWidth, scaledHeight);
   
   let minAverage = Infinity;
   let maxAverage = -Infinity;
@@ -68,31 +63,7 @@ function draw() {
     // let distToGliph = dist(mouseX, mouseY, x, y);
     // let isHovered = distToGliph < diameter / 2;
 
-    //scritte continenti
-    fill(253, 255, 200, 0.51);
-    noStroke();
-    textSize(20);
-    textFont (baskerville);
-    push();
-    translate(size * 3.2, size * 2);
-    text("Africa", 50, 100);
-    pop();
-    push();
-    translate(size * 2.5, size * 0.2);
-    text("Europe", 50, 100);
-    pop();
-    push();
-    translate(size * 6.5, size * -0.2);
-    text("Asia", 50, 100);
-    pop();
-    push();
-    translate(size * 1, size * 0.1);
-    text("America", 50, 100);
-    pop();
-    push();
-    translate(size * 7, size * 2.2);
-    text("Oceania", 50, 100);
-    pop();
+    
 
     // Se il mouse è sopra, incrementiamo la dimensione e luminosità
     // if (isHovered) {
@@ -115,6 +86,32 @@ function draw() {
     let c = color(253, 255, 170, opacity);
     drawHalo(x, y, myValue, diameter);
     drawGliph(x, y, c, diameter);
+    
+    //scritte continenti fare un array
+    fill(253, 255, 200, 0.51);
+    noStroke();
+    textSize(20);
+    textFont (baskerville);
+    push();
+    translate(size * 3.2, size * 2.2);
+    text("Africa", 50, 100);
+    pop();
+    push();
+    translate(size * 2.5, size * 0.2);
+    text("Europe", 50, 100);
+    pop();
+    push();
+    translate(size * 6.5, size * -0.2);
+    text("Asia", 50, 100);
+    pop();
+    push();
+    translate(size * 1, size * 0.1);
+    text("America", 50, 100);
+    pop();
+    push();
+    translate(size * 7, size * 2.3);
+    text("Oceania", 50, 100);
+    pop();
     
     let link = createA(`../sun/sun.html?country=${encodeURIComponent(paese)}`, paese);    
     // Posiziona il link sovrapposto il glifo

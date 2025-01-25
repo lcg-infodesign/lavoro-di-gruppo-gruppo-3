@@ -23,6 +23,7 @@ let spicchiText = [
   "House ownership",
   "Land ownership",
 ];
+
 let spicchiLink = [
   "../visualisation/parameters.html?slide=4",
   "../visualisation/parameters.html?slide=5",
@@ -46,7 +47,7 @@ function preload() {
   inconsolataRegular = loadFont('../fonts/Inconsolata-Regular.ttf');
   baskerville = loadFont ('../fonts/LibreBaskervilleItalic.ttf');
   RegularBaskerville = loadFont ('../fonts/LibreBaskervilleRegular.ttf');
-  legendaUno = loadImage("../assets/legendaSistemataMeglio.png");
+  legendaUno = loadImage("../assets/LegendaSistemataMeglio.png");
 }
 
 function setup() {
@@ -105,7 +106,7 @@ function draw() {
   let paese = nazioni[country];  // Prendi il primo paese nel dataset
 
   angleMode(RADIANS);
-   mouseOverReaction(xPos, totalHeight, paese, size)
+   mouseOverReaction(size);
 
  
    
@@ -138,7 +139,7 @@ function draw() {
       textSize (size *0.04)
       textAlign(LEFT, TOP);
       let scrittaInizio = "Hover over the rays with your mouse_to view the parameters names._Click on the rays to learn more.".replace(/_/g, '\n');
-      text(scrittaInizio, xPos - 13/16*xPos, (totalHeight/2 - 8/50*size))
+      text(scrittaInizio, xPos - 13/16*xPos, (totalHeight/2 - 8/50*size));
       cursor("default");
     }
   
@@ -169,7 +170,7 @@ function draw() {
 }
 
 
-function mouseOverReaction(x, totalHeight, nazione, size) {
+function mouseOverReaction(size) {
   let nuovoValoreIndiceSpicchio = -1;
 
   let distanza = dist(mouseX, mouseY, centerX, centerY);
@@ -388,7 +389,6 @@ function drawTRay(index, rayLengthData, size) {
 }
 
 function mouseMoved() {
-
   let mouseDist = dist(mouseX, mouseY, centerX, centerY);
   if (mouseDist < size / 2) {  // Controlla se il mouse è dentro il cerchio
     let numRays = 14;
