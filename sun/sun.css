@@ -7,8 +7,8 @@ body {
 /* Stile per la freccia */
 .back-arrow {
   position: absolute; 
-  top: 8%; 
-  left: 5%;
+  top: 18%; /* Spazio dal bordo superiore */
+  left: 3%; /* Spazio dal bordo sinistro */
   text-decoration: none; 
   font-size: 2rem; 
   color: #F8FFB8; 
