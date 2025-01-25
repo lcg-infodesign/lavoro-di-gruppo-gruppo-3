@@ -6,6 +6,7 @@ let backgroundColor = '#06011e';
 
 function preload(){
   data = loadTable("../assets/data.csv", "csv", "header");
+  legenda = loadImage("../assets/LegendaGenerale.png");
   baskerville = loadFont ('../fonts/LibreBaskervilleRegular.ttf');
 }
 
@@ -86,6 +87,13 @@ function draw() {
     let c = color(253, 255, 170, opacity);
     drawHalo(x, y, myValue, diameter);
     drawGliph(x, y, c, diameter);
+
+    let x1 = size;
+    let y1 = 0;
+    let scaleFactor = 0.00128*size;
+    let scaledWidth = legenda.width * scaleFactor;
+    let scaledHeight = legenda.height * scaleFactor;
+    image(legenda, x1 * 8.5, y1, scaledWidth, scaledHeight);
     
     //scritte continenti fare un array
     fill(253, 255, 200, 0.51);
