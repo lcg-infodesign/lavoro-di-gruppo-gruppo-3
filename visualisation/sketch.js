@@ -4,8 +4,6 @@ let nazioni = {};
 let backgroundColor = '#06011e';
 // let hoveredGliph = null; // Variabile per tracciare il glifo sotto il mouse
 
-let scrittePos = [];
-
 function preload(){
   data = loadTable("../assets/data.csv", "csv", "header");
   legenda = loadImage("../assets/LegendaGenerale.png");
@@ -65,8 +63,6 @@ function draw() {
     // Verifica se il mouse è sopra il glifo
     // let distToGliph = dist(mouseX, mouseY, x, y);
     // let isHovered = distToGliph < diameter / 2;
-
-    
 
     // Se il mouse è sopra, incrementiamo la dimensione e luminosità
     // if (isHovered) {
@@ -144,11 +140,6 @@ function draw() {
     });
   }
 }
-
-// Chiamata per ridisegnare solo quando il mouse si muove
-// function mouseMoved() {
-//   redraw(); // Forza il ridisegno ogni volta che il mouse si muove
-// }
 
 function drawHalo(x, y, myValue, diameter) {
   let maxHaloSize = map(myValue, 0, 10, diameter * 0.1, diameter * 0.6); // Mappa la grandezza dell'alone in base al valore "average"
