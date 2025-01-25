@@ -105,7 +105,7 @@ function draw() {
   let paese = nazioni[country];  // Prendi il primo paese nel dataset
 
   angleMode(RADIANS);
-   mouseOverReaction(xPos, totalHeight, paese, size)
+   mouseOverReaction(size);
 
  
    
@@ -132,13 +132,13 @@ function draw() {
     text(stringhetta, xPos - 13/16*xPos, (totalHeight/2 - 8/50*size));
     }
     else {
-      fill(255, 255, 191, 70);
-      noStroke();
-      textFont(RegularBaskerville);
-      textSize (size *0.04)
-      textAlign(LEFT, TOP);
-      let scrittaInizio = "Hover with your mouse to view the parameters._Click to learn more about each one.".replace(/_/g, '\n');
-      text(scrittaInizio, xPos - 13/16*xPos, (totalHeight/2 - 8/50*size))
+      // fill(255, 255, 191, 70);
+      // noStroke();
+      // textFont(RegularBaskerville);
+      // textSize (size *0.04)
+      // textAlign(LEFT, TOP);
+      // let scrittaInizio = "Hover with your mouse to view the parameters._Click to learn more about each one.".replace(/_/g, '\n');
+      // text(scrittaInizio, xPos - 13/16*xPos, (totalHeight/2 - 8/50*size))
       cursor("default");
     }
   
@@ -169,7 +169,7 @@ function draw() {
 }
 
 
-function mouseOverReaction(x, totalHeight, nazione, size) {
+function mouseOverReaction(size) {
   let nuovoValoreIndiceSpicchio = -1;
 
   let distanza = dist(mouseX, mouseY, centerX, centerY);
