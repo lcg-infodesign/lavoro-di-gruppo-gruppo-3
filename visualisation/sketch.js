@@ -88,10 +88,10 @@ function draw() {
 
     let x1 = size;
     let y1 = 0;
-    let scaleFactor = 0.00167*size;
+    let scaleFactor = 0.00169*size;
     let scaledWidth = legenda.width * scaleFactor;
     let scaledHeight = legenda.height * scaleFactor;
-    image(legenda, x1 * 8.1, y1, scaledWidth, scaledHeight);
+    image(legenda, x1 * 7.7, y1, scaledWidth, scaledHeight);
     
     //scritte continenti fare un array
     fill(253, 255, 200, 0.51);
