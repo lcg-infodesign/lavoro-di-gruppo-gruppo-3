@@ -7,6 +7,9 @@ let RegularBaskerville;
 let cambiamento = true;
 
 let activeRay = -1;  // Nessun raggio attivo inizialmente
+
+//testi che ritroviamo a sinistra quando si fa il mouseover
+
 let spicchiText = [
   "Perception that a woman earning_more or the same as her husband_doesn't cause any problems",
   "Perception that men shouldn't have_more right to a job than women",
@@ -23,6 +26,8 @@ let spicchiText = [
   "House ownership",
   "Land ownership",
 ];
+
+//collegamento alle slide con le spiegazioni dei paramentri
 
 let spicchiLink = [
   "../visualisation/parameters.html?slide=4",
@@ -87,6 +92,8 @@ function setup() {
     window.indiceSpicchio = -1;
    
 }
+
+//funzione che mi permette di andare alle spiegazioni più approfondite dei parametri
 function mouseClicked() {
   
   if(indiceSpicchio >= 0) {
@@ -94,6 +101,7 @@ function mouseClicked() {
   }
 
 }
+
 function draw() {
 
   
@@ -130,7 +138,7 @@ function draw() {
     textAlign(LEFT, TOP);
     //text(spicchiText[indiceSpicchio]+"\n\n"+paese[spicchiText[indiceSpicchio]], xPos - 13/16*xPos, (totalHeight/2)-(8/16*size));
     let stringhetta = spicchiText[indiceSpicchio].replace(/_/g, '\n');
-    text(stringhetta, xPos - 13/16*xPos, (totalHeight/2 - 8/50*size));
+    text(stringhetta, xPos - 12.8/16*xPos, (totalHeight/2 - 8/50*size));
     }
     else {
       fill(255, 255, 191, 70);
@@ -139,7 +147,7 @@ function draw() {
       textSize (size *0.04)
       textAlign(LEFT, TOP);
       let scrittaInizio = "Hover over the rays with your mouse_to view the parameters names._Click on the rays to learn more.".replace(/_/g, '\n');
-      text(scrittaInizio, xPos - 13/16*xPos, (totalHeight/2 - 8/50*size));
+      text(scrittaInizio, xPos - 12.8/16*xPos, (totalHeight/2 - 8/50*size));
       cursor("default");
     }
   
@@ -155,7 +163,7 @@ function draw() {
    let scaleFactor = 0.00155*size;
    let scaledWidth = legendaUno.width * scaleFactor;
    let scaledHeight = legendaUno.height * scaleFactor;
-   image(legendaUno, xPos-13/16*xPos, windowHeight - 21.6/16*legendaUno.height, scaledWidth, scaledHeight);
+   image(legendaUno, xPos-12.8/16*xPos, windowHeight - 21.6/16*legendaUno.height, scaledWidth, scaledHeight);
  
    // ----------------------- testi curvi ---------------------------------
    testoCurvoEconomic (xPos, yPos, size);
@@ -170,6 +178,7 @@ function draw() {
 }
 
 
+//funzione per far funzionare il mouseover
 function mouseOverReaction(size) {
   let nuovoValoreIndiceSpicchio = -1;
 
@@ -203,6 +212,7 @@ function mouseOverReaction(size) {
   
 }
 
+//funzione che disegna il pallino centrale e imposta i raggi
 function disegnaSole (x, y, size, nazione){
   
   noStroke();
@@ -233,6 +243,7 @@ function disegnaSole (x, y, size, nazione){
 
 }
 
+//funzione che disegna i raggi base (quindi non gli aloni) e scrive le percentuali
 function drawRay(index, rayLengthData, size) {
 
   drawSecondRay(index, rayLengthData, size);
@@ -296,6 +307,7 @@ function drawRay(index, rayLengthData, size) {
   //text(rayLengthData+"%", maxx, maxy);
 }
 
+//funzione per i raggi alone (1)
 function drawSecondRay(index, rayLengthData, size) {
   drawTRay(index, rayLengthData, size);
 
@@ -341,6 +353,7 @@ function drawSecondRay(index, rayLengthData, size) {
   }
 }
 
+//funzione per i raggi alone (2)
 function drawTRay(index, rayLengthData, size) {
   noStroke();
   fill(255, 255, 191, 0.6)
@@ -403,6 +416,7 @@ function mouseMoved() {
   }
 }
 
+//funzione per i cerchi del 50% e 100%
 function disegnaCerchi(x, y, size, paese){
   noFill();
   strokeWeight (2);
@@ -429,6 +443,8 @@ function disegnaCerchi(x, y, size, paese){
   
 }
 
+
+///////////Testi curvi///////////////// (fino a riga 656)
 function testoCurvoEconomic (x, y, size) {
   textSize(size * 0.04);
   textAlign(CENTER, CENTER);
@@ -639,6 +655,8 @@ function testoCurvoViolence (x, y, size) {
   
 }
 
+
+//funzione per il nome del paese
 function ilGrandeNome (x, totalHeight, size, nome, font){
   
   textAlign(LEFT, TOP);
@@ -649,7 +667,7 @@ function ilGrandeNome (x, totalHeight, size, nome, font){
   let myString = nome["nome"].replace(/_/g, " ");
   
   // Disegnare il testo sostituito
-  text(myString, x - 13/16 * x, (totalHeight / 2) - (8 / 16 * size));
+  text(myString, x - 12.8/16 * x, (totalHeight / 2) - (8 / 16 * size));
   
   // Stampare il risultato per il debug
   print(myString);  // Output: "United States of America"
