@@ -46,7 +46,7 @@ function preload() {
   inconsolataRegular = loadFont('../fonts/Inconsolata-Regular.ttf');
   baskerville = loadFont ('../fonts/LibreBaskervilleItalic.ttf');
   RegularBaskerville = loadFont ('../fonts/LibreBaskervilleRegular.ttf');
-  legendaUno = loadImage("../assets/legendaSemiDefinitiva.png");
+  legendaUno = loadImage("../assets/legendaSistemataMeglio.png");
 }
 
 function setup() {
