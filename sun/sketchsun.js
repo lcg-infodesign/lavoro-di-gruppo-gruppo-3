@@ -431,13 +431,13 @@ function disegnaCerchi(x, y, size, paese){
   drawingContext.setLineDash([0, 0]);
   angleMode(DEGREES)
   let nuovaSize = 29/26* size
-  stroke("#B1803C");
+  stroke("#B1803C75");
   arc(x, y, nuovaSize, nuovaSize, arco*10.9, arco*13.2);
-  stroke("#B76263");
+  stroke("#B7626375");
   arc(x, y, nuovaSize, nuovaSize, arco*13.9, arco*3.2);
-  stroke("#87538F");
+  stroke("#87538F75");
   arc(x, y, nuovaSize, nuovaSize, arco*3.9, arco*6.2);
-  stroke("#6969B7");
+  stroke("#6969B775");
   arc(x, y, nuovaSize, nuovaSize, arco*6.9, arco*10.2);
 
   
@@ -481,7 +481,7 @@ function testoCurvoEconomic (x, y, size) {
     
     // Impostazioni per il colore
     noStroke();
-    fill("#c48020"); // Imposta il colore del testo
+    fill("#c4802075"); // Imposta il colore del testo
     
     // Ruotare il testo in modo che sia orientato lungo la curva
     push();
@@ -534,7 +534,7 @@ function testoCurvoSocial (x, y, size) {
     
     // Impostazioni per il colore
     noStroke();
-    fill("#B76263"); // Imposta il colore del testo
+    fill("#B7626375"); // Imposta il colore del testo
     
     // Ruotare il testo in modo che sia orientato lungo la curva
     push();
@@ -587,7 +587,7 @@ function testoCurvoFree (x, y, size) {
     
     // Impostazioni per il colore
     noStroke();
-    fill("#87538F"); // Imposta il colore del testo
+    fill("#87538F75"); // Imposta il colore del testo
     
     // Ruotare il testo in modo che sia orientato lungo la curva
     push();
@@ -640,7 +640,7 @@ function testoCurvoViolence (x, y, size) {
     
     // Impostazioni per il colore
     noStroke();
-    fill("#6969B7"); // Imposta il colore del testo
+    fill("#6969B775"); // Imposta il colore del testo
     
     // Ruotare il testo in modo che sia orientato lungo la curva
     push();
