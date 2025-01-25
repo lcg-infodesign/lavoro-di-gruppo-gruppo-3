@@ -46,7 +46,7 @@ function preload() {
   inconsolataRegular = loadFont('../fonts/Inconsolata-Regular.ttf');
   baskerville = loadFont ('../fonts/LibreBaskervilleItalic.ttf');
   RegularBaskerville = loadFont ('../fonts/LibreBaskervilleRegular.ttf');
-  legendaUno = loadImage("../assets/legendaSistemataMeglio.png");
+  legendaUno = loadImage("../assets/LegendaSistemataMeglio.png");
 }
 
 function setup() {
@@ -388,8 +388,6 @@ function drawTRay(index, rayLengthData, size) {
 }
 
 function mouseMoved() {
-  let centerX;
-  let centerY;
   let mouseDist = dist(mouseX, mouseY, centerX, centerY);
   if (mouseDist < size / 2) {  // Controlla se il mouse è dentro il cerchio
     let numRays = 14;
