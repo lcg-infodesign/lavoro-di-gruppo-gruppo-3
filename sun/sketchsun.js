@@ -388,7 +388,8 @@ function drawTRay(index, rayLengthData, size) {
 }
 
 function mouseMoved() {
-
+  let centerX;
+  let centerY;
   let mouseDist = dist(mouseX, mouseY, centerX, centerY);
   if (mouseDist < size / 2) {  // Controlla se il mouse è dentro il cerchio
     let numRays = 14;
