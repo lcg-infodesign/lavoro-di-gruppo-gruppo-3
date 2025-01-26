@@ -14,48 +14,43 @@
   color: #F8FFB8;
 }
 
-/* Reset per tutti i link (per sicurezza) */
-a {
-  text-decoration: none !important;
-}
 
 /* Box iniziale */
 .intro-box {
   font-size: 0.9em;
   line-height: 1.6em;
   letter-spacing: 0.02em;
-  color: #F8FFB8; /* Colore giallo */
+  color: #F8FFB8;
   margin-bottom: 5%;
   margin-top: 2%;
   text-align: center;
   width: 45%;
   margin-left: auto;
-  margin-right: auto;  /* Centrato orizzontalmente */
+  margin-right: auto;  
 }
 
-/* Centrare il contenuto di .center-box */
 .center-box {
   width: 40%;
   padding-top:3%;
-  margin: 0 auto;  /* Centra orizzontalmente */
-  margin-bottom: 10%; /* Spazio extra sotto il box */
+  margin: 0 auto;  
+  margin-bottom: 10%; 
   backdrop-filter: blur(10px);
   border: 2px solid #F8FFB8;
   box-shadow: 0 0 25px rgba(248, 255, 184, 0.7);
   border-radius: 15px;
-  position: relative; /* Necessario per posizionare le frecce all'interno */
+  position: relative; 
   display: flex;
   justify-content: center;
-  align-items: center; /* Centra verticalmente */
+  align-items: center;
   flex-direction: column;
 }
 
 /* Centrare il contenuto dello swiper */
 .swiper-container {
   width: 80%;
-  padding: 4%; /* Ridotto padding */
+  padding: 4%; 
   position: relative;
-  margin-bottom: 2%; /* Spazio sotto il contenitore Swiper */
+  margin-bottom: 2%; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +70,7 @@ a {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
   padding-bottom: 7%;
-  position: relative; /* Necessario per posizionare gli elementi figli in modo assoluto */
+  position: relative;
 }
 
 .swiper-slide-active {
@@ -91,7 +86,7 @@ a {
 /* Bottoni di navigazione dello swiper */
 .swiper-button-prev-small, .swiper-button-next-small {
   position: absolute;
-  top: 50%; /* Posiziona verticalmente al centro */
+  top: 50%; /* Posizione verticale al centro */
   transform: translateY(-50%);
   display: flex;
   align-items: center;
@@ -102,7 +97,7 @@ a {
   opacity: 0.8;
   transition: all 0.3s ease;
   z-index: 10; /* Sopra le slide */
-  padding: 10px; /* Distanza dal bordo della freccia */
+  padding: 10px;
 }
 
 /* Freccia sinistra */
@@ -124,18 +119,18 @@ a {
 
 /* Highlight per categorie */
 .highlight {
-  color: #F8FFB8; /* Dark yellow (Goldenrod) */
+  color: #F8FFB8; 
   font-weight: 600;
   font-size: 1.1em;
-  line-height: 1.7em;
-  letter-spacing: 0.06em;
+  line-height: 1em;
+  letter-spacing: 0.05em;
 }
 
 /* Stile del contenitore della paginazione */
 .swiper-pagination {
   position: absolute;
   width: 100%;
-  bottom: 10px; /* Posiziona il contenitore in basso */
+  bottom: 10px; 
   text-align: center;
   z-index: 10; /* Sopra tutto il resto */
   color: #F8FFB8;
@@ -151,42 +146,42 @@ a {
 /* Stile delle categorie */
 .category {
   font-weight: regular;
-  font-size: 0.8em; /* Dimensione della categoria */
-  color: inherit; /* Mantiene il colore dinamico */
+  font-size: 0.8em; 
+  color: inherit;
   text-align: center;
 }
 
 /* Colori specifici per ogni categoria */
 .economic-rights {
-  color: #C4802075; /* Gold */
+  color: #C4802075; 
 }
 
 .freedom-justice {
-  color: #87538F75; /* Deep Sky Blue */
+  color: #87538F75;
 }
 
 .general-violence {
-  color: #6969B775; /* Orange Red */
+  color: #6969B775; 
 }
 
 .social-rights {
-  color: #B7626375; /* Lime Green */
+  color: #B7626375; 
 }
 
 /* Stile del numero di paginazione */
 .swiper-pagination span {
-  font-size: 0.9em; /* Dimensione del numero */
-  background-color: transparent; /* Sfondo trasparente */
-  color: inherit; /* Colore coerente */
+  font-size: 0.9em; 
+  background-color: transparent; 
+  color: inherit; 
 }
 /* Stile per la freccia */
 .back-arrow {
-  position: absolute; /* Posiziona la freccia in modo assoluto */
-  top: 18%; /* Spazio dal bordo superiore */
-  left: 3%; /* Spazio dal bordo sinistro */
-  text-decoration: none; /* Rimuove la sottolineatura */
-  font-size: 2rem; /* Dimensione del carattere */
-  color: #F8FFB8; /* Colore della freccia */
+  position: absolute; 
+  top: 18%; 
+  left: 3%; 
+  text-decoration: none; 
+  font-size: 2rem; 
+  color: #F8FFB8; 
 }
 
 /* Effetto hover per la freccia */

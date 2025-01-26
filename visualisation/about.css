@@ -55,7 +55,7 @@
   margin: 0;
 }
 
-/* Titolo della sezione con font maggiore e in italic */
+
 .title {
   font-family: 'LibreBaskerville Italic', serif;
   font-size: 1.5rem; 
@@ -70,12 +70,12 @@
   color: #F8FFB8; 
   font-weight: 500; 
 }
-/* Stile per ogni sezione*/
+
 .section {
-  margin-bottom: 15%; /* Aggiunge distanza tra ogni sezione (puoi regolare il valore) */
+  margin-bottom: 15%; /* Aggiunge distanza tra ogni sezione */
 }
 
-/* distanza aggiuntiva per un po' più di separazione tra paragrafi */
+
 .text p {
   margin-bottom: 6%; /* Spazio tra i paragrafi all'interno di ogni sezione */
 }

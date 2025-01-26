@@ -7,8 +7,8 @@ body {
 /* Stile per la freccia */
 .back-arrow {
   position: absolute; 
-  top: 18%; /* Spazio dal bordo superiore */
-  left: 3%; /* Spazio dal bordo sinistro */
+  top: 18%;
+  left: 3%; 
   text-decoration: none; 
   font-size: 2rem; 
   color: #F8FFB8; 
@@ -18,7 +18,7 @@ body {
 .back-arrow:hover {
 
   opacity: 1;
-  filter: drop-shadow(0 0 15px #F8FFB8) drop-shadow(0 0 20px #F8FFB8) drop-shadow(0 0 35px #F8FFB8); /* Effetto di bagliore più forte e intenso */
+  filter: drop-shadow(0 0 15px #F8FFB8) drop-shadow(0 0 20px #F8FFB8) drop-shadow(0 0 35px #F8FFB8); /* Effetto di bagliore per la freccia*/
   transition: filter 0.3s ease;
 }
 

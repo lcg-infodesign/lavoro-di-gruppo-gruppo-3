@@ -1,65 +1,59 @@
 /* File CSS che definisce lo stile degli elementi da visualizzare all'interno dell'index */
 
-/* Overlay per scurire il canvas */
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 160%; /* Adatta sempre alla larghezza dello schermo */
-  height: 160%; /* Adatta sempre all'altezza dello schermo */
+  width: 160%;
+  height: 160%;
   background-color: rgba(6, 1, 30, 0.83);
   z-index: -1;
-  pointer-events: none; /* Assicura che non interferisca con gli elementi interattivi */
+  pointer-events: none;
 }
 
-/* Stile della pagina Home */
 body.home {
-  background-image: url('logo/indexsfondo.jpg'); /* Immagine di sfondo */
-  background-size: cover; /* Adatta lo sfondo per coprire l'intero schermo */
-  background-position: center; /* Mantieni l'immagine centrata */
+  background-image: url('logo/indexsfondo.jpg'); /*immagine di sfondo */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   color: #F8FFB8;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra verticalmente gli elementi */
-  align-items: center; /* Centra orizzontalmente gli elementi */
-  height: 100vh; /* Copre l'intera altezza dello schermo */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  padding-top: 5vh; /* Sposta leggermente gli elementi verso il basso */
-  overflow: hidden; /* Rimuove le barre di scorrimento */
+  padding-top: 5vh;
+  overflow: hidden;
 }
 
-
-/* Sezione contenente il logo e il pulsante */
 .home-container {
-  display: flex; /* Usa flexbox */
-  flex-direction: column; /* Allinea gli elementi in colonna */
-  align-items: center; /* Centra gli elementi orizzontalmente */
-  justify-content: center; /* Centra gli elementi verticalmente */
-  text-align: center; /* Centra il testo */
-  width: 100%; /* Imposta la larghezza al 100% */
-  margin-top: 2vh; /* Sposta leggermente la sezione verso il basso */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 2vh;
 }
 
-/* Stile del logo */
 .logo {
-  width: 60%; /* Imposta la larghezza del logo */
-  height: auto; /* Mantieni l'aspetto corretto del logo */
-  margin-bottom: 0.5vh; /* Riduce la distanza tra il logo e il testo */
+  width: 60%;
+  height: auto;
+  margin-bottom: 0.5vh;
 }
 
-/* Stile del testo */
 .subtitle {
-  font-size: 1.5vw; /* Dimensione del testo */
-  color: #F8FFB8; /* Colore del testo */
-  padding-bottom: 1vh; /* Riduce la spaziatura sotto la scritta */
-  margin-left: 0.5vw; /* Allinea il testo al logo */
-  font-weight: 300; /* Peso del font leggero */
-  text-align: center; /* Allinea il testo al centro */
-  padding-top: 4vh; /* Riduce lo spazio sopra la scritta */
+  font-size: 1.5vw;
+  color: #F8FFB8;
+  padding-bottom: 1vh;
+  margin-left: 0.5vw;
+  font-weight: 300;
+  text-align: center;
+  padding-top: 4vh;
 }
 
-/* Stile del pulsante */
 button {
   background-color: #06011E;
   color: #F8FFB8;
@@ -67,35 +61,32 @@ button {
   border-radius: 1vw;
   padding: 1vw 3vw;
   font-size: 1.2vw; 
-  cursor: pointer; /* Cambia il cursore */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aggiunge l'animazione */
-  margin-top: 2vw; /* Riduce lo spazio sopra il pulsante */
-  display: block; /* Rende il pulsante un blocco (elimina il margine sinistro) */
-  margin-left: auto; /* Allinea il margine sinistro automaticamente */
-  margin-right: auto; /* Allinea il margine destro automaticamente */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 2vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'LibreBaskerville Regular', serif;
 }
 
-/* Effetto hover sul pulsante */
 button:hover {
-  transform: scale(1.1); /* Effetto ingrandimento */
-  box-shadow: 0 0 1vw #F8FFB8; /* Illumina il bottone al passaggio del mouse */
+  transform: scale(1.1);
+  box-shadow: 0 0 1vw #F8FFB8;
 }
 
-/* Effetto clic sul pulsante */
 button:active {
-  box-shadow: 0 0 1.5vw #F8FFB8; /* Illumina il bottone */
-  transform: scale(1.05); /* Leggero rimpicciolimento durante il clic */
+  box-shadow: 0 0 1.5vw #F8FFB8;
+  transform: scale(1.05);
 }
-
-/* Animazione per lo zoom dello sfondo */
+/*animazione zoom e opacità*/
 @keyframes zoomAndFade {
   0% {
-    background-size: 140%; /* Partenza dallo zoom iniziale più grande */
+    background-size: 140%; 
     opacity: 1;
   }
   100% {
-    background-size: 3000%; /* Zoom finale più intenso */
+    background-size: 3000%;
     opacity: 0.2;
   }
 }
@@ -104,7 +95,6 @@ body.zoom-animation {
   animation: zoomAndFade 1s ease-in-out forwards;
 }
 
-/* Nascondi gli elementi con transizione */
 .hide-elements {
   opacity: 0;
   transition: opacity 1s ease-in-out;

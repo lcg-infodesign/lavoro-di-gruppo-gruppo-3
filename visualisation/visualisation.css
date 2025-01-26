@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   margin: 4vh 1vw;
   gap: 2vw;
-  padding: 0 4vw; /*padding simmetrico a destra e a sinistra */
+  padding: 0 4vw; 
 }
 
 /* Box sinistro */
