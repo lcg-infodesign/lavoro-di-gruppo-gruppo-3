@@ -1,4 +1,4 @@
-/*File CSS che defnisce lo stile di tutti gli elementi da visualizzare all'interno della pagina "About"*/
+/* File CSS che definisce lo stile di tutti gli elementi da visualizzare all'interno della pagina "About" */
 
 /* Inserimento font */
 @font-face {
@@ -34,7 +34,6 @@
   font-size: 0.9em;
 }
 
-
 /* Stile per il contenitore del testo */
 .text-container {
   display: flex;
@@ -47,14 +46,13 @@
 
 /* Stile per la sezione del testo */
 .text {
-  width: 40%;
+  width: 40%; /* Larghezza predefinita del testo */
   color: #f8ffb890;
   font-size: 1.0em;
   line-height: 1.6em;
   letter-spacing: 0.02em; 
-  margin: 0;
+  margin: 0 auto; /* Centra il testo orizzontalmente */
 }
-
 
 .title {
   font-family: 'LibreBaskerville Italic', serif;
@@ -63,6 +61,7 @@
   color: #F8FFB8; 
   font-weight: 500; 
 }
+
 .subtitle {
   font-family: 'LibreBaskerville Italic', serif;
   font-size: 1.1rem;
@@ -75,9 +74,29 @@
   margin-bottom: 15%; /* Aggiunge distanza tra ogni sezione */
 }
 
-
 .text p {
   margin-bottom: 6%; /* Spazio tra i paragrafi all'interno di ogni sezione */
+}
+
+/* Media query per dispositivi mobili */
+@media screen and (max-width: 480px) {
+  .text {
+    width: 60%; /* Cambia la larghezza del testo al 60% per schermi piccoli */
+    font-size: 0.9em; 
+    padding: 0 5%; 
+  }
+
+  .title {
+    font-size: 1.2rem; 
+  }
+
+  .subtitle {
+    font-size: 1rem; 
+  }
+
+  .section {
+    margin-bottom: 10%; 
+  }
 }
 
 

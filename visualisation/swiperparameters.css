@@ -140,7 +140,7 @@
 /* Contenitore per la categoria */
 .category-container {
   position: relative; 
-  margin-bottom: 15px;
+  margin-bottom: 5%;
 }
 
 /* Stile delle categorie */
@@ -173,6 +173,7 @@
   font-size: 0.9em; 
   background-color: transparent; 
   color: inherit; 
+  padding-top: 3%;
 }
 /* Stile per la freccia */
 .back-arrow {
