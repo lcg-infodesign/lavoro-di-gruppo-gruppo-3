@@ -136,7 +136,6 @@ function draw() {
     textFont(RegularBaskerville);
     textSize (size *0.04)
     textAlign(LEFT, TOP);
-    //text(spicchiText[indiceSpicchio]+"\n\n"+paese[spicchiText[indiceSpicchio]], xPos - 13/16*xPos, (totalHeight/2)-(8/16*size));
     let stringhetta = spicchiText[indiceSpicchio].replace(/_/g, '\n');
     text(stringhetta, xPos - 12.8/16*xPos, (totalHeight/2 - 8/50*size));
     }
@@ -318,7 +317,7 @@ function drawSecondRay(index, rayLengthData, size) {
   if(isNaN(rayLength)) {
     
     rayLength = 100;
-     // Crea il colore #F8FFB8 con trasparenza (ad esempio alpha = 128)
+     
   let c = color(248, 255, 184 ,0); // RGB (248, 255, 184) con alpha 128
   
   fill(c); // Applica il colore con trasparenza
@@ -365,8 +364,8 @@ function drawTRay(index, rayLengthData, size) {
   if(isNaN(rayLength)) {
     
     rayLength = 100;
-     // Crea il colore #F8FFB8 con trasparenza (ad esempio alpha = 128)
-  let c = color(248, 255, 184 ,0); // RGB (248, 255, 184) con alpha 128
+     // Crea il colore #F8FFB8 con trasparenza
+  let c = color(248, 255, 184 ,0); 
  
   fill(c); // Applica il colore con trasparenza
   
@@ -444,7 +443,7 @@ function disegnaCerchi(x, y, size, paese){
 }
 
 
-///////////Testi curvi///////////////// (fino a riga 656)
+///////////Testi curvi///////////////// (fino a riga 655)
 function testoCurvoEconomic (x, y, size) {
   textSize(size * 0.04);
   textAlign(CENTER, CENTER);

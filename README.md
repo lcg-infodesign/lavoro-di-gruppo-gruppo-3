@@ -10,7 +10,7 @@ Siamo sei studentesse del Politecnico di Milano.
 Insieme, abbiamo sviluppato *A Thousand Splendid Suns*, un progetto di Information Design a cui ognuna di noi ha contribuito con le proprie competenze: 
 - **Francesca e Syria** si sono occupate del design visivo e hanno sviluppato il codice HTML, CSS e JavaScript del sito web del progetto.  
 - **Arianna e Marta** hanno gestito l'elaborazione dei dataset, la ricerca dei contenuti e lo sviluppo del concept.  
-- **Giacinta e Chiara** sono state responsabili della creazione del codice p5.js, della visualizzazione globale e di quella individuale dei singoli soli.
+- **Giacinta e Chiara** sono state responsabili della creazione del codice p5.js, della visualizzazione globale e di quella individuale dei singoli soli, compresa la progettazione visiva.
 
 ## IL PROGETTO
 *A Thousand Splendid Suns* è un progetto che esplora come opportunità e percezioni individuali vengano spesso plasmate da diversi fattori - quali ambiente, famiglia, società e cultura - alimentando le diseguaglianze e la discriminazione sistemica verso le donne.
