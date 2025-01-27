@@ -91,53 +91,7 @@ function draw() {
     let scaleFactor = 0.00169*size;
     let scaledWidth = legenda.width * scaleFactor;
     let scaledHeight = legenda.height * scaleFactor;
-    image(legenda, x1 * 7.7, y1, scaledWidth, scaledHeight);
-    
-    // Scritta responsiva dei continenti
-    fill(253, 255, 200, 0.51);
-    noStroke();
-    textSize(map(windowWidth, 400, 1920, 14, 24)); // Dimensione dinamica del testo
-    textFont(baskerville);
-    
-    // Africa
-    push();
-    let africaX = map(windowWidth, 400, 1920, width * 0.4, width * 0.3);
-    let africaY = map(windowHeight, 300, 1080, height * 0.8, height * 0.45);
-    translate(africaX, africaY);
-    text("Africa", 50, 100);
-    pop();
-    
-    // Europe
-    push();
-    let europeX = map(windowWidth, 400, 1920, width * 0.13, width * 0.3);
-    let europeY = map(windowHeight, 300, 1080, height * 0.1, height * 0.03);
-    translate(europeX, europeY);
-    text("Europe", 50, 100);
-    pop();
-    
-    // Asia
-    push();
-    let asiaX = map(windowWidth, 400, 1920, width * 0.28, width * 0.8);
-    let asiaY = map(windowHeight, 300, 1080, height * 0, height * 0);
-    translate(asiaX, asiaY);
-    text("Asia", 50, 100);
-    pop();
-    
-    // America
-    push();
-    let americaX = map(windowWidth, 400, 1920, width * 0.3, width * 0);
-    let americaY = map(windowHeight, 300, 1080, height * 0, height * 0);
-    translate(americaX, americaY);
-    text("America", 50, 100);
-    pop();
-    
-    // Oceania
-    push();
-    let oceaniaX = map(windowWidth, 400, 1920, width * 0.35, width * 0.9);
-    let oceaniaY = map(windowHeight, 300, 1080, height * 0.6, height * 0.8);
-    translate(oceaniaX, oceaniaY);
-    text("Oceania", 50, 100);
-    pop();
+    image(legenda, x1 * 7.45, y1, scaledWidth, scaledHeight);
     
     let link = createA(`../sun/sun.html?country=${encodeURIComponent(paese)}`, paese);    
     // Posiziona il link sovrapposto il glifo
