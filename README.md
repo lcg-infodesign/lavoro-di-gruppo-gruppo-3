@@ -23,7 +23,7 @@ Il progetto adotta un sistema di visualizzazione a due livelli per rappresentare
 - una **visualizzazione globale** che mostra ogni paese come un punto organizzato geograficamente.
 - una **visualizzazione individuale** in cui ogni sole diventa un glifo dettagliato con 14 raggi, ciascuno corrispondente a un parametro.
 
-Questa metafora ha l'obbiettivo di trasformare dati astratti ed invisibili in un’immagine intuitiva e tangibile delle disparità e dei progressi globali.
+Questa metafora ha l'obbiettivo di trasformare dati astratti ed invisibili in un’immagine intuitiva e tangibile delle disparità e dei progressi globali percepiti da un punto di vista unicamente femminile.
 
 
 ## IL DATASET
