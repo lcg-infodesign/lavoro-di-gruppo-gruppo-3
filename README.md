@@ -3,25 +3,34 @@
 This repository is the starting point of the assignments given in the course [Computergrafica per l'Information Design](https://www11.ceda.polimi.it/schedaincarico/schedaincarico/controller/scheda_pubblica/SchedaPublic.do?&evn_default=evento&c_classe=834257&lang=IT&__pj0=0&__pj1=9c10fe379e96db59d55d49b6b4252c5e).
 
 # **A Thousand Splendid Suns**
+di Ambrosi Arianna, Cucchetti Chiara, Dominante Syria, Mazzoleni Marta, Popolizio Giacinta, Porcile Francesca
+
+## IL TEAM
+Siamo sei studentesse del Politecnico di Milano.
+Insieme, abbiamo sviluppato *A Thousand Splendid Suns*, un progetto di Information Design a cui ognuna di noi ha contribuito con le proprie competenze: 
+- **Francesca e Syria** si sono occupate del design visivo e hanno sviluppato il codice HTML, CSS e JavaScript del sito web del progetto.  
+- **Arianna e Marta** hanno gestito l'elaborazione dei dataset, la ricerca dei contenuti e lo sviluppo del concept.  
+- **Giacinta e Chiara** sono state responsabili della creazione del codice p5.js, della visualizzazione globale e di quella individuale dei singoli soli.
+
 ## IL PROGETTO
-*A Thousand Splendid Suns* è un progetto di Information Design che esplora come ambiente, famiglia, società e cultura plasmino opportunità e percezioni individuali, spesso alimentando le diseguaglianze e la discriminazione sistemica contro le donne.
+*A Thousand Splendid Suns* è un progetto che esplora come opportunità e percezioni individuali vengano spesso plasmate da diversi fattori - quali ambiente, famiglia, società e cultura - alimentando le diseguaglianze e la discriminazione sistemica verso le donne.
 
 Ispirato al romanzo di Khaled Hosseini *A Thousand Splendid Suns*, il progetto riflette le sfide universali che le donne affrontano nei diversi ambiti della vita quotidiana. Il romanzo racconta le vite di due donne afghane: due percorsi distinti, ma intrecciati dalla stessa lotta universale contro il controllo esercitato dalle aspettative sociali e familiari. Hosseini cattura questa dinamica dal punto di vista della forza e della resistenza femminile di fronte all’oppressione. Il titolo, ripreso dalla poesia del XVII secolo di Saib-e-Tabrizi, simboleggia tenacia, speranza e il valore intrinseco delle donne nella società.
 
-*A Thousand Splendid Suns* utilizza una rappresentazione geografica per dar vita a questa narrazione. Ogni paese è rappresentato come un sole, la cui luminosità simboleggia i progressi in partecipazione economica, sicurezza e rappresentanza. I soli più luminosi indicano le zone in cui le donne vivono in condizioni migliori, mentre quelli più scuri rivelano ancora la presenza di barriere significative. I paesi con dati mancanti appaiono meno luminosi, indipendentemente dalla loro condizione effettiva: in questo modo si evidenziano le lacune nei dati, pur mostrando lo stato generale dei diritti delle donne. 
+*A Thousand Splendid Suns* utilizza una rappresentazione geografica per dar vita a questa narrazione. Ogni paese è rappresentato come un sole, la cui luminosità simboleggia i progressi in partecipazione economica, sicurezza e rappresentanza. I soli più luminosi indicano le zone in cui, secondo dati raccolti da testimonianze femminili, le donne vivono in condizioni migliori, mentre quelli più scuri rivelano ancora la presenza di barriere significative. I paesi con dati mancanti appaiono meno luminosi, indipendentemente dalla loro condizione effettiva: in questo modo si evidenziano le lacune nei dati, pur mostrando lo stato generale dei diritti delle donne. 
 
 Il progetto adotta un sistema di visualizzazione a due livelli per rappresentare efficacemente i dati:
 - una **visualizzazione globale** che mostra ogni paese come un punto organizzato geograficamente.
 - una **visualizzazione individuale** in cui ogni sole diventa un glifo dettagliato con 14 raggi, ciascuno corrispondente a un parametro.
 
-Questa metafora ha l'obbiettivo di trasformare dati astratti ed invisibili in un’immagine intuitiva e tangibile delle disparità e dei progressi globali.
+Questa metafora ha l'obbiettivo di trasformare dati astratti ed invisibili in un’immagine intuitiva e tangibile delle disparità e dei progressi globali percepiti da un punto di vista unicamente femminile.
 
 
 ## IL DATASET
 Il dataset , tratto dall’OECD Gender, Institutions and Development Database ( https://data-explorer.oecd.org/vis?lc=en&pg=0&snb=1&vw=tb&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_GID%40DF_GID_2023&df[ag]=OECD.DEV.NPG&df[vs]=&pd=2023%2C2023&dq=OECD ) e da contributi del 2023 di SIGI, UNICEF, Nazioni Unite e Organizzazione Mondiale della Sanità, fornisce una panoramica globale delle condizioni femminili e la analizza su due aspetti:
 
 - **realtà pratiche:** accesso a servizi finanziari, sicurezza e diritti.
-- **percezioni culturali**: atteggiamenti verso la violenza di genere, l’uguaglianza e il valore della donna nella società.
+- **percezioni culturali**: percezione femminile riguardo violenza di genere, uguaglianza e valore della donna nella società.
 
 Questo dataset è stato rielaborato rispetto al dataset originale per fornire una panoramica globale e oggettiva sulla condizione femminile.
 Il dataset si sviluppa su diverse colonne principali:
@@ -41,9 +50,3 @@ Modifiche apportate rispetto al dataset originale:
 - **Colonna Average**: la media in % dei 14 parametri di ogni paese, utile per la visualizzazione globale.
 - **Focalizzazione sui pareri femminili**: eliminazione di eventuali opinioni maschili (nella colonna SEX) presenti nel dataset originale per favorire un esercizio di autoconsapevolezza delle donne stesse.
 
-
-## IL TEAM
-Siamo sei studentesse del Politecnico di Milano e, insieme, abbiamo sviluppato *A Thousand Splendid Suns* ed ognuna di noi ha contribuito con le proprie competenze: 
-- **Francesca e Syria** si sono occupate del design visivo e hanno sviluppato il codice HTML, CSS e JavaScript del sito web del progetto.  
-- **Arianna e Marta** hanno gestito l'elaborazione dei dataset, la ricerca dei contenuti e lo sviluppo del concept.  
-- **Giacinta e Chiara** sono state responsabili della creazione del codice p5.js, della visualizzazione globale e di quella individuale dei singoli soli.
