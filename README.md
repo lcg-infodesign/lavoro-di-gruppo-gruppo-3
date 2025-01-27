@@ -3,6 +3,8 @@
 This repository is the starting point of the assignments given in the course [Computergrafica per l'Information Design](https://www11.ceda.polimi.it/schedaincarico/schedaincarico/controller/scheda_pubblica/SchedaPublic.do?&evn_default=evento&c_classe=834257&lang=IT&__pj0=0&__pj1=9c10fe379e96db59d55d49b6b4252c5e).
 
 # **A Thousand Splendid Suns**
+di Ambrosi Arianna, Cucchetti Chiara, Dominante Syria, Mazzoleni Marta, Popolizio Giacinta, Porcile Francesca
+
 ## IL PROGETTO
 *A Thousand Splendid Suns* è un progetto di Information Design che esplora come ambiente, famiglia, società e cultura plasmino opportunità e percezioni individuali, spesso alimentando le diseguaglianze e la discriminazione sistemica contro le donne.
 
