@@ -91,7 +91,7 @@ function draw() {
     let scaleFactor = 0.00169*size;
     let scaledWidth = legenda.width * scaleFactor;
     let scaledHeight = legenda.height * scaleFactor;
-    image(legenda, x1 * 7.25, y1, scaledWidth, scaledHeight);
+    image(legenda, x1 * 7.3, y1, scaledWidth, scaledHeight);
     
     let link = createA(`../sun/sun.html?country=${encodeURIComponent(paese)}`, paese);    
     // Posiziona il link sovrapposto il glifo
