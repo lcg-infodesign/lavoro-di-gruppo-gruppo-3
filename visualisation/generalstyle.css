@@ -81,7 +81,7 @@ nav a:hover {
 @media (max-width: 768px) {
   /* Menu di navigazione su schermi piccoli */
   nav {
-    gap: 1vw; /* Riduce lo spazio tra gli elementi del menu */
+    gap: 3vw; /* Riduce lo spazio tra gli elementi del menu */
   }
 
   nav a {
